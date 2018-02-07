@@ -96,9 +96,13 @@ QColor GenerationTableModel::getColor(int gen, int ind, int index_gen,double sco
     {
         return QColor(0,mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore()*255,mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore()*255) ;
     }
-    else
+    else if(gen == index_gen)
     {
         return QColor(0,0,0) ;
+    }
+    else
+    {
+        return QColor(0,mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore()*35,mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore()*35) ;
     }
 }
 
