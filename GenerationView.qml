@@ -15,7 +15,7 @@ Frame {
     property int horizontalVisibleItemCount : Math.ceil(width / (cellSize + horizontalSpacing)) - 1
 
     property double scoreFilter: perfSlider.valueAt(perfSlider.position);
-    property int index_gen ;
+    property int index_gen: -1 ;
 
     padding: 10
 
@@ -33,7 +33,7 @@ Frame {
 
         model: generationModel.rowCount()
 
-        contentWidth: generationModel.columnCount() * (cellSize + horizontalSpacing)
+        contentWidth: generationModel.columnCount() * (cellSize + verticalSpacing)
 
         delegate: Row {
             id: rowDelegate

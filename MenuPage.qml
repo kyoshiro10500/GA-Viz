@@ -12,11 +12,18 @@ Page {
 
     ColumnLayout {
         anchors.fill: parent
-
-        Button {
-            text: "Load File"
+        RowLayout
+        {
             anchors.centerIn: parent
-            onClicked: fileDialog.open()
+            Button {
+                text: "Load File"
+                onClicked: fileDialog.open()
+            }
+
+            Button {
+                text: "Quit"
+                onClicked: Qt.quit()
+            }
         }
     }
 

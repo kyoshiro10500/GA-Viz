@@ -8,7 +8,7 @@ Frame {
     Layout.fillWidth: true
     Layout.fillHeight: true
 
-    property int cellSize : 20 * showSlider.valueAt(showSlider.position)
+    property int cellSize : 40 * showSlider.valueAt(showSlider.position)
     property int verticalSpacing : 5 * showSlider.valueAt(showSlider.position)
     property int horizontalSpacing : 10 * showSlider.valueAt(showSlider.position)
     property int verticalVisibleItemCount : Math.ceil(height / (cellSize + verticalSpacing)) - 1
@@ -28,7 +28,7 @@ Frame {
 
         model: clusterModel.rowCount()
 
-        contentWidth: clusterModel.columnCount() * (cellSize + horizontalSpacing)
+        contentWidth: clusterModel.columnCount() * (cellSize + verticalSpacing)
 
         delegate: Row {
             id: rowDelegate
@@ -45,11 +45,11 @@ Frame {
                         id: cell
                         width: calculateCellSize(rowDelegate.row, column)
                         Text {
-                                text: (parent.width <= 50) ? clusterModel.data(clusterModel.index(rowDelegate.row, column), 0) : ""
+                                text: (parent.width <= 150) ? clusterModel.data(clusterModel.index(rowDelegate.row, column), 0) : ""
                                 anchors.horizontalCenter: parent.horizontalCenter
                                 anchors.verticalCenter: parent.verticalCenter
                                 font.pixelSize: calculateCellSize(rowDelegate.row, column) / 4
-                                color: (parent.width <= 50) ? "white" : "transparent"
+                                color: (parent.width <= 150) ? "white" : "transparent"
                         }
                         color: clusterModel.data(clusterModel.index(rowDelegate.row, column), 8)
 

@@ -104,7 +104,7 @@ Page {
             Frame {
                 Label {
                     id: test
-                    text: "POPULATION"
+                    text: afficheText()
                     font.pixelSize: 20
                     color: "white"
                 }
@@ -152,8 +152,7 @@ Page {
                             to: 1
 
                             onValueChanged: {
-                                //console.log("perfSlider Value changed to: " + value)
-                                //console.log("populationModel.scoreValue : " + populationModel.getScoreFilter())
+
                             }
                         }
                     }
@@ -164,13 +163,44 @@ Page {
                 }
             }
 
+
             PopulationView {id: population
                             visible: true}
+            /*PopulationPanel{
+                id: populationPanel
+                visible: true
+            }*/
+
             GenerationView{id: generation
                             visible: false}
+            /*GenerationPanel{
+                id: populationPanel
+                visible: false
+            }*/
+
             ClusterView{id:cluster
                         visible: false}
+            /*ClusterPanel{
+              id:clusterPanel
+              visible: false
+              }*/
 
+        }
+    }
+
+    function afficheText()
+    {
+        if(population.visible)
+        {
+            return "POPULATION" ;
+        }
+        else if(generation.visible)
+        {
+            return "GENERATION" ;
+        }
+        else if(cluster.visible)
+        {
+            return "CLUSTER"
         }
     }
 }
