@@ -155,7 +155,6 @@ Frame {
                                         }*/
                                     }
                                 }
-
                             }
                         }
                     }
@@ -164,7 +163,11 @@ Frame {
         }
 
         ScrollBar.horizontal: ScrollBar { id: hScrollIndicator }
-        ScrollBar.vertical: ScrollBar { id: vScrollIndicator}
+
+        ScrollBar.vertical: ScrollBar {
+            id: vScrollIndicator
+            active: true
+        }
     }
 
     function calculateCellSize(rowIndex, columnIndex) {

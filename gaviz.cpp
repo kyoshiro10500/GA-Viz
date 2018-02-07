@@ -5,18 +5,13 @@
 #include <QQmlContext>
 #include <QDebug>
 
-bool erasePrefix = true;
-#ifdef W_OS_LINUX
-  erasePrefix = false;
-#endif
-
 bool GAViz::parse (QUrl fileUrl) {
 
     std::string filePath = fileUrl.path().toStdString();
 
-    if (erasePrefix) {
+    #ifdef Q_OS_WIN
         filePath = filePath.erase(0, 1);
-    }
+    #endif
 
     Parseur parseur = Parseur(filePath, "ressources/c101.txt") ;
     Population_clustered population = parseur.parseFile();
