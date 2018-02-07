@@ -9,5 +9,6 @@
         <file>GenerationView.qml</file>
         <file>VizPage.qml</file>
         <file>MenuPage.qml</file>
+        <file>DrawerInfo.qml</file>
     </qresource>
 </RCC>

@@ -59,7 +59,7 @@ Frame {
 
                         MouseArea {
                                 anchors.fill: parent
-                                acceptedButtons: Qt.RightButton
+                                //acceptedButtons: Qt.RightButton
                                 onClicked: {
                                     if (mouse.button == Qt.RightButton)
                                     {
@@ -68,7 +68,9 @@ Frame {
                                         generation.visible = true ;
                                         generation.index_gen = rowDelegate.row ;
                                     }
-
+                                    else if (mouse.button == Qt.LeftButton) {
+                                        infoDrawer.updateIndividualInfo(rowDelegate.row, column);
+                                    }
                                 }
                             }
 
@@ -162,7 +164,10 @@ Frame {
             }
         }
 
-        ScrollBar.horizontal: ScrollBar { id: hScrollIndicator }
+        ScrollBar.horizontal: ScrollBar {
+            id: hScrollIndicator
+            active: true
+        }
 
         ScrollBar.vertical: ScrollBar {
             id: vScrollIndicator

@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
 
 Page {
+    id: vizPage
 
     background: Rectangle {
         color: "black"
@@ -185,6 +186,56 @@ Page {
               visible: false
               }*/
 
+        }
+
+        Drawer {
+            id: infoDrawer
+            edge: Qt.RightEdge
+            width: 400
+            height: parent.height - vizPage.header.height
+            y: vizPage.header.height
+            interactive: true
+            modal: false
+
+            background: Rectangle {
+                anchors.fill: parent
+                color: "black"
+                border.color: "grey"
+            }
+
+            ColumnLayout {
+                anchors.fill: parent
+
+                Label {
+                    id: drawerTitle
+                    Layout.fillWidth: true
+
+                    text: "DETAILS"
+                    color: "white"
+                    font.pixelSize: 30
+                    horizontalAlignment: Text.AlignHCenter
+                }
+
+                DrawerInfo {
+                    id: info1
+                }
+
+                Item {
+                    Layout.fillHeight: true
+                }
+            }
+
+            function updateIndividualInfo(rowIndex, columnIndex) {
+                info1.infoTitle = "Lifetime"
+                // add more info and edit it depending on index
+
+                if (position != 1.0)
+                    open()
+            }
+
+            function updateGenerationInfo(rowIndex) {
+
+            }
         }
     }
 
