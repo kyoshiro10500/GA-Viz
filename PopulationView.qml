@@ -56,6 +56,22 @@ Frame {
                         height: width
                         radius: 0.5 * width
                         anchors.centerIn: parent
+
+                        MouseArea {
+                                anchors.fill: parent
+                                acceptedButtons: Qt.RightButton
+                                onClicked: {
+                                    if (mouse.button == Qt.RightButton)
+                                    {
+                                        generationModel.setGeneration(rowDelegate.row) ;
+                                        population.visible = false ;
+                                        generation.visible = true ;
+                                        generation.index_gen = rowDelegate.row ;
+                                    }
+
+                                }
+                            }
+
                         Canvas {
                             id: populationCanvas
                             width: calculateCellSize(rowDelegate.row, column)

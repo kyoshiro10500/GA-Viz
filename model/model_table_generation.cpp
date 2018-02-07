@@ -27,17 +27,6 @@ QVariant GenerationTableModel::data(const QModelIndex &index, int role) const
     switch (role)
     {
         case Qt::BackgroundColorRole :
-            if(mElements[index.row()][index.column()/mElements.get_number_individuals()][index.column()%mElements.get_number_individuals()].getScore() >= scoreFilter &&
-               (mElements[index.row()][index.column()/mElements.get_number_individuals()][index.column()%mElements.get_number_individuals()].getMutation() == mutationFilter || !mutationFilter) &&
-               (mElements[index.row()][index.column()/mElements.get_number_individuals()][index.column()%mElements.get_number_individuals()].getCrossing() == crossingoverFilter || !crossingoverFilter) &&
-               index.row() == generationIndex)
-            {
-                return QColor(0,mElements[index.row()][index.column()/mElements.get_number_individuals()][index.column()%mElements.get_number_individuals()].getScore()*255,mElements[index.row()][index.column()/mElements.get_number_individuals()][index.column()%mElements.get_number_individuals()].getScore()*255) ;
-            }
-            else
-            {
-                return QColor(0,0,0) ;
-            }
             break ;
         case Qt::DisplayRole:
             break ;
@@ -92,3 +81,46 @@ void GenerationTableModel::setGeneration(int value)
 {
     generationIndex = value ;
 }
+
+int GenerationTableModel::getGeneration() const
+{
+    return generationIndex ;
+}
+
+QColor GenerationTableModel::getColor(int gen, int ind, int index_gen,double score)
+{
+    if(mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore() >= score &&
+       (mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getMutation() == mutationFilter || !mutationFilter )&&
+       (mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getCrossing() == crossingoverFilter || !crossingoverFilter) &&
+        gen == index_gen)
+    {
+        return QColor(0,mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore()*255,mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore()*255) ;
+    }
+    else
+    {
+        return QColor(0,0,0) ;
+    }
+}
+
+float GenerationTableModel::getScoreFilter() const
+{
+    return scoreFilter;
+}
+
+
+bool GenerationTableModel::getNew(int gen,int ind) const
+{
+     return mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getNew() ;
+}
+
+bool GenerationTableModel::getCrossing(int gen,int ind) const
+{
+    return mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getCrossing() ;
+}
+
+bool GenerationTableModel::getMutation(int gen,int ind) const
+{
+    return mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getMutation() ;
+}
+
+

@@ -20,10 +20,17 @@ class GenerationTableModel : public QAbstractTableModel
         void addElement(const QString &element, int value);
         Population_clustered mElements;
 
-        void setScoreFilter(float value) ;
-        void setMutationFilter(bool value) ;
-        void setCrossingoverFilter(bool value) ;
-        void setGeneration(int value) ;
+        Q_INVOKABLE void setScoreFilter(float value) ;
+        Q_INVOKABLE void setMutationFilter(bool value) ;
+        Q_INVOKABLE void setCrossingoverFilter(bool value) ;
+        Q_INVOKABLE void setGeneration(int value) ;
+
+        Q_INVOKABLE QColor getColor(int gen, int ind, int index_gen, double score) ;
+        Q_INVOKABLE bool getNew(int gen,int ind) const ;
+        Q_INVOKABLE bool getCrossing(int gen,int ind) const ;
+        Q_INVOKABLE bool getMutation(int gen,int ind) const ;
+        Q_INVOKABLE float getScoreFilter() const;
+        Q_INVOKABLE int getGeneration() const ;
     private:
         float scoreFilter = 0 ;
         bool mutationFilter = false ;
