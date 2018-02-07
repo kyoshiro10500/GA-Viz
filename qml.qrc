@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>PopulationView.qml</file>
+        <file>ToolBarButton.qml</file>
+        <file>Filter.qml</file>
+        <file>ClusterView.qml</file>
+        <file>GenerationView.qml</file>
+        <file>VizPage.qml</file>
+        <file>MenuPage.qml</file>
+    </qresource>
+</RCC>
