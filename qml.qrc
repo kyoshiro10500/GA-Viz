@@ -10,6 +10,10 @@
         <file>VizPage.qml</file>
         <file>MenuPage.qml</file>
         <file>DrawerInfo.qml</file>
+<<<<<<< HEAD
         <file>FilterSlider.qml</file>
+=======
+        <file>IndividualView.qml</file>
+>>>>>>> e98e3f30faf7e7f4fada7b87fa81ebfd376ca760
     </qresource>
 </RCC>
