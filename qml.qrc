@@ -10,5 +10,6 @@
         <file>VizPage.qml</file>
         <file>MenuPage.qml</file>
         <file>DrawerInfo.qml</file>
+        <file>FilterSlider.qml</file>
     </qresource>
 </RCC>

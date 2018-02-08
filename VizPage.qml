@@ -133,22 +133,26 @@ Page {
                     }
 
                     Filter {
+                        id: showFilter
                         filterName: "Show"
-                        Slider {
+
+                        FilterSlider {
                             id: showSlider
-                            width: parent.width
-                            height: 50
+                            parent: showFilter.filterLayout
+
                             from: 1
                             to: 10
                         }
                     }
 
                     Filter {
+                        id: perfFilter
                         filterName: "Performance"
-                        Slider {
+
+                        FilterSlider {
                             id: perfSlider
-                            width: parent.width
-                            height: 50
+                            parent: perfFilter.filterLayout
+
                             from: 0
                             to: 1
 
@@ -197,10 +201,17 @@ Page {
             interactive: true
             modal: false
 
+            Rectangle {
+                width: 1
+                height: parent.height
+                x: parent.x - 2
+                color: "grey"
+            }
+
             background: Rectangle {
                 anchors.fill: parent
                 color: "black"
-                border.color: "grey"
+                border.color: "black"
             }
 
             ColumnLayout {
@@ -227,7 +238,7 @@ Page {
 
             function updateIndividualInfo(rowIndex, columnIndex) {
                 info1.infoTitle = "Lifetime"
-                // add more info and edit it depending on index
+                // add more info and edit it depending on indexes
 
                 if (position != 1.0)
                     open()

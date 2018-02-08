@@ -4,6 +4,8 @@ import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 
 Frame {
+    id: populationView
+
     Layout.preferredWidth: parent.width
     Layout.fillHeight: true
 
@@ -16,6 +18,7 @@ Frame {
     property double scoreFilter: perfSlider.valueAt(perfSlider.position);
 
     padding: 10
+    leftPadding: 70
 
     background: Rectangle {
         color: "black"
@@ -23,20 +26,20 @@ Frame {
     }
 
     ListView {
-
         id: populationListView
-        anchors.fill: parent
-
-        clip: true ;
+        model: populationModel.rowCount()
         flickableDirection: Flickable.HorizontalAndVerticalFlick
 
-        model: populationModel.rowCount() ;
-
+        anchors.fill: parent
         contentWidth: populationModel.columnCount() * (cellSize + verticalSpacing)
+
+        clip: true
 
         delegate: Row {
             id: rowDelegate
             property int row: index
+
+            leftPadding: 20
 
             Repeater {
                 model: populationModel.columnCount()
@@ -160,14 +163,24 @@ Frame {
             }
         }
 
-        ScrollBar.horizontal: ScrollBar {
-            id: hScrollIndicator
-            active: true
-        }
-
         ScrollBar.vertical: ScrollBar {
             id: vScrollIndicator
+
+            anchors.left: populationListView.left
+            anchors.leftMargin: 1
+            width: 15
+
             active: true
+            contentItem.opacity: 1
+        }
+
+        ScrollBar.horizontal: ScrollBar {
+            id: hScrollIndicator
+
+            height: 15
+
+            active: true
+            contentItem.opacity: 1
         }
     }
 

@@ -4,6 +4,7 @@ import QtQuick.Layouts 1.3
 
 Frame {
     property string filterName: ""
+    property alias filterLayout: layout
 
     Layout.preferredWidth: 200
     Layout.fillHeight: true
@@ -15,10 +16,17 @@ Frame {
         border.color: "black"
     }
 
-    Label {
-        text: filterName
-        color: "yellow"
-        font.pixelSize: 15
-        font.underline: true
+    ColumnLayout {
+        id: layout
+
+        Label {
+            Layout.fillWidth: true
+            Layout.preferredHeight: 10
+
+            text: filterName
+            color: "yellow"
+            font.pixelSize: 15
+            font.underline: true
+        }
     }
 }
