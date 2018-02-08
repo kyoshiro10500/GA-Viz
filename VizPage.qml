@@ -41,6 +41,7 @@ Page {
                     population.visible = true ;
                     generation.visible = false ;
                     cluster.visible = false ;
+                    individual.visible = false;
                 }
             }
 
@@ -51,6 +52,7 @@ Page {
                     population.visible = false ;
                     generation.visible = true ;
                     cluster.visible = false ;
+                    individual.visible = false;
                 }
             }
 
@@ -61,6 +63,7 @@ Page {
                     population.visible = false ;
                     generation.visible = false ;
                     cluster.visible = true ;
+                    individual.visible = false;
                 }
             }
 
@@ -68,6 +71,10 @@ Page {
                 buttonText: "Individual"
                 onClicked:
                 {
+                    population.visible = false ;
+                    generation.visible = false ;
+                    cluster.visible = false ;
+                    individual.visible = true;
 
                 }
             }
@@ -186,6 +193,14 @@ Page {
               visible: false
               }*/
 
+            IndividualView{id:individual
+                        visible: false}
+            /*IndividualPanel{
+              id: individualPanel
+              visible: false
+              }*/
+
+
         }
 
         Drawer {
@@ -252,6 +267,10 @@ Page {
         else if(cluster.visible)
         {
             return "CLUSTER"
+        }
+        else if(individual.visible)
+        {
+            return "INDIVIDUAL"
         }
     }
 }
