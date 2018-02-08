@@ -59,7 +59,7 @@ Frame {
 
                         MouseArea {
                                 anchors.fill: parent
-                                //acceptedButtons: Qt.RightButton
+                                acceptedButtons: Qt.LeftButton | Qt.RightButton
                                 onClicked: {
                                     if (mouse.button == Qt.RightButton)
                                     {
@@ -87,10 +87,6 @@ Frame {
                             property double vScrollposition: vScrollIndicator.position
                             property double hScrollposition: hScrollIndicator.position
                             onPaint: {
-                                console.log(Math.ceil(vScrollposition*populationModel.rowCount()) - 1) ;
-                                console.log(Math.ceil(vScrollposition*populationModel.rowCount()) + verticalVisibleItemCount + 1) ;
-                                console.log(Math.ceil(hScrollposition*populationModel.columnCount()) - 1) ;
-                                console.log(Math.ceil(hScrollposition*populationModel.columnCount()) + horizontalVisibleItemCount + 1);
                                 if(rowDelegate.row >= Math.ceil(vScrollposition*populationModel.rowCount()) - 1 &&
                                         rowDelegate.row <= Math.ceil(vScrollposition*populationModel.rowCount()) + verticalVisibleItemCount + 1 &&
                                         column >= Math.ceil(hScrollposition*populationModel.columnCount()) - 1 &&
