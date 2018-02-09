@@ -14,38 +14,51 @@ Frame {
         color: "black"
         border.color: "black"
     }
-      ColumnLayout {
-          anchors.fill: parent
+    ColumnLayout {
+        anchors.fill: parent
 
-          RowLayout {
+        Rectangle {
+            color: "black"
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Text {
+                color: "white"
+                text: 'Generation number - Individual number'
+                font.pointSize: 12
+            }
 
-              Layout.fillWidth: true
-              Layout.fillHeight: true
-                    Rectangle {
-                        color: 'green'
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
-                        Text {
-                            anchors.centerIn: parent
-                            text: 'Individu'
-                        }
-                    }
-          }
+            Text {
+                anchors.centerIn: parent
+                color: "white"
+                text: 'Individu'
+            }
 
-          RowLayout {
+            Canvas {
+                id: mycanvas
+                anchors.centerIn: parent
+                width: parent.height
+                height: parent.width
+                onPaint: {
+                    var ctx = getContext("2d");
+                    var radius = 300;
 
-              Layout.fillWidth: true
-              Layout.preferredHeight: 0.2
-                    Rectangle {
-                        color: "red"
-                        Layout.fillWidth: true
-                        Layout.fillHeight: true
+                          ctx.beginPath();
+                          ctx.arc(width/2, height/2, radius, 0, 2 * Math.PI, false);
+                          ctx.fillStyle = populationModel.getColor(1, 1, 0);
+                          ctx.fill();
+                }
+            }
+        }
+        Rectangle {
+            color: "black"
+            Layout.fillWidth: true
+            Layout.preferredHeight: 0.2 * parent.height
 
-                        Text {
-                            anchors.centerIn: parent
-                            text: 'score'
-                        }
-                    }
-          }
-      }
-  }
+            Text {
+                anchors.centerIn: parent
+                color: "white"
+                text: 'score'
+            }
+        }
+    }
+}
