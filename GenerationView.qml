@@ -5,6 +5,8 @@ import QtQuick.Layouts 1.3
 
 
 Frame {
+    id: generationView
+
     Layout.fillWidth: true
     Layout.fillHeight: true
 
@@ -14,13 +16,13 @@ Frame {
     property int verticalVisibleItemCount : Math.ceil(height / (cellSize + verticalSpacing)) - 1
     property int horizontalVisibleItemCount : Math.ceil(width / (cellSize + horizontalSpacing)) - 1
 
-    property double scoreFilter: perfSlider.valueAt(perfSlider.position);
-    property int index_gen: -1 ;
+    property double scoreFilter: perfSlider.valueAt(perfSlider.position)
+    property int index_gen: -1
+
+    property alias vScrollBar: vScrollBar
+    property alias hScrollBar: hScrollBar
 
     padding: 10
-
-    id: generationView
-
     leftPadding: 70
 
     background: Rectangle {
@@ -42,6 +44,8 @@ Frame {
         delegate: Row {
             id: rowDelegate
             property int row: index
+
+            leftPadding: 20
 
             Repeater {
                 model: generationModel.columnCount()
@@ -73,10 +77,10 @@ Frame {
                             property bool isCrossing: generationModel.getCrossing(rowDelegate.row,column)
                             onPaint: {
                                 if(generationView.visible &&
-                                        rowDelegate.row >= Math.ceil(vScrollIndicator.position*generationModel.rowCount()) - 1 &&
-                                        rowDelegate.row <= Math.ceil(vScrollIndicator.position*generationModel.rowCount()) + verticalVisibleItemCount + 1 &&
-                                        column >= Math.ceil(hScrollIndicator.position*generationModel.columnCount()) - 1 &&
-                                        column <= Math.ceil(hScrollIndicator.position*generationModel.columnCount()) + horizontalVisibleItemCount + 1)
+                                        rowDelegate.row >= Math.ceil(vScrollBar.position*generationModel.rowCount()) - 1 &&
+                                        rowDelegate.row <= Math.ceil(vScrollBar.position*generationModel.rowCount()) + verticalVisibleItemCount + 1 &&
+                                        column >= Math.ceil(hScrollBar.position*generationModel.columnCount()) - 1 &&
+                                        column <= Math.ceil(hScrollBar.position*generationModel.columnCount()) + horizontalVisibleItemCount + 1)
                                 {
                                     var ctx = generationCanvas.getContext("2d");
                                     ctx.fillStyle = Qt.rgba(0, 0, 0, 1);
@@ -116,7 +120,7 @@ Frame {
         }
 
         ScrollBar.vertical: ScrollBar {
-            id: vScrollIndicator
+            id: vScrollBar
 
             anchors.left: generationListView.left
             anchors.leftMargin: 1
@@ -127,7 +131,7 @@ Frame {
         }
 
         ScrollBar.horizontal: ScrollBar {
-            id: hScrollIndicator
+            id: hScrollBar
 
             height: 15
 
@@ -138,7 +142,7 @@ Frame {
 
     function calculateCellSize(rowIndex, columnIndex) {
         //return Math.min(cellSize - (cellSize * (Math.abs(rowIndex - vScrollIndicator.position*generationModel.rowCount() - verticalVisibleItemCount/2) - verticalVisibleItemCount/2)), cellSize);
-        return Math.min(cellSize - (cellSize * (Math.abs(columnIndex - hScrollIndicator.position*generationModel.columnCount() - horizontalVisibleItemCount/2) - horizontalVisibleItemCount/2)), cellSize);
+        return Math.min(cellSize - (cellSize * (Math.abs(columnIndex - hScrollBar.position*generationModel.columnCount() - horizontalVisibleItemCount/2) - horizontalVisibleItemCount/2)), cellSize);
     }
 
 }
