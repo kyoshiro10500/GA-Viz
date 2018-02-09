@@ -38,10 +38,10 @@ Page {
                 buttonText: "Population"
                 onClicked:
                 {
-                    population.visible = true ;
-                    generation.visible = false ;
-                    cluster.visible = false ;
-                    individual.visible = false;
+                    populationView.visible = true ;
+                    generationView.visible = false ;
+                    clusterView.visible = false ;
+                    individualView.visible = false;
                 }
             }
 
@@ -49,10 +49,10 @@ Page {
                 buttonText: "Generation"
                 onClicked:
                 {
-                    population.visible = false ;
-                    generation.visible = true ;
-                    cluster.visible = false ;
-                    individual.visible = false;
+                    populationView.visible = false ;
+                    generationView.visible = true ;
+                    clusterView.visible = false ;
+                    individualView.visible = false;
                 }
             }
 
@@ -60,10 +60,10 @@ Page {
                 buttonText: "Cluster"
                 onClicked:
                 {
-                    population.visible = false ;
-                    generation.visible = false ;
-                    cluster.visible = true ;
-                    individual.visible = false;
+                    populationView.visible = false ;
+                    generationView.visible = false ;
+                    clusterView.visible = true ;
+                    individualView.visible = false;
                 }
             }
 
@@ -71,10 +71,10 @@ Page {
                 buttonText: "Individual"
                 onClicked:
                 {
-                    population.visible = false ;
-                    generation.visible = false ;
-                    cluster.visible = false ;
-                    individual.visible = true;
+                    populationView.visible = false ;
+                    generationView.visible = false ;
+                    clusterView.visible = false ;
+                    individualView.visible = true;
 
                 }
             }
@@ -176,35 +176,25 @@ Page {
             }
 
 
-            PopulationView {id: population
-                            visible: true}
-            /*PopulationPanel{
-                id: populationPanel
+            PopulationView {
+                id: populationView
                 visible: true
-            }*/
+            }
 
-            GenerationView{id: generation
-                            visible: false}
-            /*GenerationPanel{
-                id: populationPanel
+            GenerationView {
+                id: generationView
                 visible: false
-            }*/
+            }
 
-            ClusterView{id:cluster
-                        visible: false}
-            /*ClusterPanel{
-              id:clusterPanel
-              visible: false
-              }*/
+            ClusterView {
+                id: clusterView
+                visible: false
+            }
 
-            IndividualView{id:individual
-                        visible: false}
-            /*IndividualPanel{
-              id: individualPanel
-              visible: false
-              }*/
-
-
+            IndividualView {
+                id: individualView
+                visible: false
+            }
         }
 
         Drawer {
@@ -267,19 +257,19 @@ Page {
 
     function afficheText()
     {
-        if(population.visible)
+        if(populationView.visible)
         {
             return "POPULATION" ;
         }
-        else if(generation.visible)
+        else if(generationView.visible)
         {
             return "GENERATION" ;
         }
-        else if(cluster.visible)
+        else if(clusterView.visible)
         {
             return "CLUSTER"
         }
-        else if(individual.visible)
+        else if(individualView.visible)
         {
             return "INDIVIDUAL"
         }
