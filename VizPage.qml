@@ -42,6 +42,7 @@ Page {
                     generation.visible = false ;
                     cluster.visible = false ;
                     individual.visible = false;
+                    filters.visible = true;
                 }
             }
 
@@ -53,6 +54,7 @@ Page {
                     generation.visible = true ;
                     cluster.visible = false ;
                     individual.visible = false;
+                    filters.visible = true;
                 }
             }
 
@@ -64,6 +66,7 @@ Page {
                     generation.visible = false ;
                     cluster.visible = true ;
                     individual.visible = false;
+                    filters.visible = true;
                 }
             }
 
@@ -75,6 +78,7 @@ Page {
                     generation.visible = false ;
                     cluster.visible = false ;
                     individual.visible = true;
+                    filters.visible = false;
 
                 }
             }
@@ -119,6 +123,7 @@ Page {
             }
 
             Frame {
+                id: filters
                 Layout.fillWidth: true
                 Layout.preferredHeight: 100
 
