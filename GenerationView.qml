@@ -25,7 +25,7 @@ Frame {
     }
 
     ListView {
-        id: listView
+        id: generationListView
         anchors.fill: parent
 
         clip: true
@@ -104,8 +104,25 @@ Frame {
             }
         }
 
-        ScrollIndicator.horizontal: ScrollIndicator { id: hScrollIndicator }
-        ScrollIndicator.vertical: ScrollIndicator { id: vScrollIndicator }
+        ScrollBar.vertical: ScrollBar {
+            id: vScrollIndicator
+
+            anchors.left: generationListView.left
+            anchors.leftMargin: 1
+            width: 15
+
+            active: true
+            contentItem.opacity: 1
+        }
+
+        ScrollBar.horizontal: ScrollBar {
+            id: hScrollIndicator
+
+            height: 15
+
+            active: true
+            contentItem.opacity: 1
+        }
     }
 
     function calculateCellSize(rowIndex, columnIndex) {

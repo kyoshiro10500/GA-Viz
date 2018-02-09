@@ -21,7 +21,7 @@ Frame {
     }
 
     ListView {
-        id: listView
+        id: clusterListView
         anchors.fill: parent
         clip: true
         flickableDirection: Flickable.HorizontalAndVerticalFlick
@@ -88,8 +88,25 @@ Frame {
             }
         }
 
-        ScrollIndicator.horizontal: ScrollIndicator { id: hScrollIndicator }
-        ScrollIndicator.vertical: ScrollIndicator { id: vScrollIndicator }
+        ScrollBar.vertical: ScrollBar {
+            id: vScrollIndicator
+
+            anchors.left: clusterListView.left
+            anchors.leftMargin: 1
+            width: 15
+
+            active: true
+            contentItem.opacity: 1
+        }
+
+        ScrollBar.horizontal: ScrollBar {
+            id: hScrollIndicator
+
+            height: 15
+
+            active: true
+            contentItem.opacity: 1
+        }
     }
 
     function calculateCellSize(rowIndex, columnIndex) {
