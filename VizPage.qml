@@ -36,20 +36,12 @@ Page {
 
             ToolBarButton {
                 buttonText: "Population"
-                onClicked:
-                {
-<<<<<<< HEAD
+                onClicked: {
                     populationView.visible = true ;
                     generationView.visible = false ;
                     clusterView.visible = false ;
                     individualView.visible = false;
-=======
-                    population.visible = true ;
-                    generation.visible = false ;
-                    cluster.visible = false ;
-                    individual.visible = false;
                     filters.visible = true;
->>>>>>> 76974c889a8e7301fa43aa840ff7603f335dee16
                 }
             }
 
@@ -57,18 +49,11 @@ Page {
                 buttonText: "Generation"
                 onClicked:
                 {
-<<<<<<< HEAD
                     populationView.visible = false ;
                     generationView.visible = true ;
                     clusterView.visible = false ;
                     individualView.visible = false;
-=======
-                    population.visible = false ;
-                    generation.visible = true ;
-                    cluster.visible = false ;
-                    individual.visible = false;
                     filters.visible = true;
->>>>>>> 76974c889a8e7301fa43aa840ff7603f335dee16
                 }
             }
 
@@ -76,18 +61,11 @@ Page {
                 buttonText: "Cluster"
                 onClicked:
                 {
-<<<<<<< HEAD
                     populationView.visible = false ;
                     generationView.visible = false ;
                     clusterView.visible = true ;
                     individualView.visible = false;
-=======
-                    population.visible = false ;
-                    generation.visible = false ;
-                    cluster.visible = true ;
-                    individual.visible = false;
                     filters.visible = true;
->>>>>>> 76974c889a8e7301fa43aa840ff7603f335dee16
                 }
             }
 
@@ -95,19 +73,11 @@ Page {
                 buttonText: "Individual"
                 onClicked:
                 {
-<<<<<<< HEAD
                     populationView.visible = false ;
                     generationView.visible = false ;
                     clusterView.visible = false ;
                     individualView.visible = true;
-=======
-                    population.visible = false ;
-                    generation.visible = false ;
-                    cluster.visible = false ;
-                    individual.visible = true;
                     filters.visible = false;
->>>>>>> 76974c889a8e7301fa43aa840ff7603f335dee16
-
                 }
             }
 
