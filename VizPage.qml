@@ -200,61 +200,22 @@ Page {
             }
         }
 
-        Drawer {
-            id: infoDrawer
-            edge: Qt.RightEdge
-            width: 400
-            height: parent.height - vizPage.header.height
-            y: vizPage.header.height
-            interactive: true
-            modal: false
+        InfoDrawer {
+            id: populationInfoDrawer
 
-            Rectangle {
-                width: 1
-                height: parent.height
-                x: parent.x - 2
-                color: "grey"
+            Item {
+                parent: populationInfoDrawer.drawerContent
+
+                Layout.fillHeight: true
             }
 
-            background: Rectangle {
-                anchors.fill: parent
-                color: "black"
-                border.color: "black"
+            DrawerInfo {
+                parent: populationInfoDrawer.drawerContent
+
+                infoTitle: "Global performance"
             }
 
-            ColumnLayout {
-                anchors.fill: parent
 
-                Label {
-                    id: drawerTitle
-                    Layout.fillWidth: true
-
-                    text: "DETAILS"
-                    color: "white"
-                    font.pixelSize: 30
-                    horizontalAlignment: Text.AlignHCenter
-                }
-
-                DrawerInfo {
-                    id: info1
-                }
-
-                Item {
-                    Layout.fillHeight: true
-                }
-            }
-
-            function updateIndividualInfo(rowIndex, columnIndex) {
-                info1.infoTitle = "Lifetime"
-                // add more info and edit it depending on indexes
-
-                if (position != 1.0)
-                    open()
-            }
-
-            function updateGenerationInfo(rowIndex) {
-
-            }
         }
     }
 

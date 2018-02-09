@@ -12,5 +12,6 @@
         <file>DrawerInfo.qml</file>
         <file>FilterSlider.qml</file>
         <file>IndividualView.qml</file>
+        <file>InfoDrawer.qml</file>
     </qresource>
 </RCC>

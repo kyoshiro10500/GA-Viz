@@ -75,7 +75,7 @@ Frame {
                                         generationView.index_gen = rowDelegate.row ;
                                     }
                                     else if (mouse.button == Qt.LeftButton) {
-                                        infoDrawer.updateIndividualInfo(rowDelegate.row, column);
+                                        populationInfoDrawer.open();
                                     }
                                 }
                             }
