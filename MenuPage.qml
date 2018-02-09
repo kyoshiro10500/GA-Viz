@@ -10,6 +10,7 @@ Page {
         border.color: "black"
     }
 
+
     ColumnLayout {
         anchors.fill: parent
         RowLayout

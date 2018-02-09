@@ -87,13 +87,12 @@ Frame {
                             property bool showGenealogy: populationModel.getGenealogy()
                             property int parent1: populationModel.getParent1(rowDelegate.row,column)
                             property int parent2: populationModel.getParent2(rowDelegate.row,column)
-                            property double vScrollposition: vScrollIndicator.position
-                            property double hScrollposition: hScrollIndicator.position
                             onPaint: {
-                                if(rowDelegate.row >= Math.ceil(vScrollposition*populationModel.rowCount()) - 1 &&
-                                        rowDelegate.row <= Math.ceil(vScrollposition*populationModel.rowCount()) + verticalVisibleItemCount + 1 &&
-                                        column >= Math.ceil(hScrollposition*populationModel.columnCount()) - 1 &&
-                                        column <= Math.ceil(hScrollposition*populationModel.columnCount()) + horizontalVisibleItemCount + 1)
+                                if(populationView.visible &&
+                                        rowDelegate.row >= Math.ceil(vScrollIndicator.position*populationModel.rowCount()) - 1 &&
+                                        rowDelegate.row <= Math.ceil(vScrollIndicator.position*populationModel.rowCount()) + verticalVisibleItemCount + 1 &&
+                                        column >= Math.ceil(hScrollIndicator.position*populationModel.columnCount()) - 1 &&
+                                        column <= Math.ceil(hScrollIndicator.position*populationModel.columnCount()) + horizontalVisibleItemCount + 1)
                                 {
                                     var ctx = populationCanvas.getContext("2d");
                                     ctx.fillStyle = Qt.rgba(0, 0, 0, 1);

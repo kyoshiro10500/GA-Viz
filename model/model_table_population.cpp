@@ -1,25 +1,25 @@
 #include "model/model_table_population.h"
 #include <QDebug>
 
-PopulationTableModel::PopulationTableModel(Population_clustered population) : mElements(population)
+PopulationTableModel::PopulationTableModel(Population_clustered * population) : mElements(population)
 {
 
 }
 
 int PopulationTableModel::columnCount(const QModelIndex &parent) const
 {
-    return parent.isValid() ? 0 : mElements.get_number_individuals()*mElements.get_number_cluster();
+    return parent.isValid() ? 0 : mElements->get_number_individuals()*mElements->get_number_cluster();
 }
 
 int PopulationTableModel::rowCount(const QModelIndex &parent) const
 {
-    return parent.isValid() ? 0 : mElements.get_number_generation();
+    return parent.isValid() ? 0 : mElements->get_number_generation();
 }
 
 
 QVariant PopulationTableModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid() || index.row() < 0 || index.row() >= mElements.get_number_generation())
+    if (!index.isValid() || index.row() < 0 || index.row() >= mElements->get_number_generation())
     {
         return QVariant();
     }
@@ -84,17 +84,17 @@ void PopulationTableModel::setCrossingoverFilter(bool value)
 
 bool PopulationTableModel::getNew(int gen,int ind) const
 {
-     return mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getNew() ;
+     return (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getNew() ;
 }
 
 bool PopulationTableModel::getCrossing(int gen,int ind) const
 {
-    return mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getCrossing() ;
+    return (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getCrossing() ;
 }
 
 bool PopulationTableModel::getMutation(int gen,int ind) const
 {
-    return mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getMutation() ;
+    return (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getMutation() ;
 }
 
 bool PopulationTableModel::getGenealogy() const
@@ -109,21 +109,21 @@ void PopulationTableModel::setGenealogy(bool value)
 
 int PopulationTableModel::getParent1(int gen, int ind) const
 {
-    return mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getParent1() ;
+    return (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getParent1() ;
 }
 
 int PopulationTableModel::getParent2(int gen, int ind) const
 {
-    return mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getParent2() ;
+    return (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getParent2() ;
 }
 
 QColor PopulationTableModel::getColor(int gen, int ind, double score)
 {
-    if(mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore() >= score &&
-       (mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getMutation() == mutationFilter || !mutationFilter )&&
-       (mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getCrossing() == crossingoverFilter || !crossingoverFilter))
+    if((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore() >= score &&
+       ((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getMutation() == mutationFilter || !mutationFilter )&&
+       ((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getCrossing() == crossingoverFilter || !crossingoverFilter))
     {
-        return QColor(0,mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore()*255,mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore()*255) ;
+        return QColor(0,(*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore()*255,(*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore()*255) ;
     }
     else
     {

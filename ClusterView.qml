@@ -12,8 +12,12 @@ Frame {
     property int verticalSpacing : 5 * showSlider.valueAt(showSlider.position)
     property int horizontalSpacing : 10 * showSlider.valueAt(showSlider.position)
     property int verticalVisibleItemCount : Math.ceil(height / (cellSize + verticalSpacing)) - 1
+    property int horizontalVisibleItemCount : Math.ceil(width / (cellSize + horizontalSpacing)) - 1
 
     padding: 10
+    leftPadding: 70
+
+    id: clusterView
 
     background: Rectangle {
         color: "black"
@@ -60,25 +64,32 @@ Frame {
                             width: calculateCellSize(rowDelegate.row, column)
                             height: calculateCellSize(rowDelegate.row, column)
                             onPaint: {
-                                var ctx = getContext("2d");
-                                ctx.fillStyle = Qt.rgba(0, 0, 0, 1);
-                                ctx.beginPath();
-                                ctx.moveTo(0, 0);
-                                ctx.lineTo(width/4, 0);
-                                ctx.lineTo(0, height/2);
+                                if(clusterView.visible &&
+                                        rowDelegate.row >= Math.ceil(vScrollIndicator.position*clusterModel.rowCount()) - 1 &&
+                                        rowDelegate.row <= Math.ceil(vScrollIndicator.position*clusterModel.rowCount()) + verticalVisibleItemCount + 1 &&
+                                        column >= Math.ceil(hScrollIndicator.position*clusterModel.columnCount()) - 1 &&
+                                        column <= Math.ceil(hScrollIndicator.position*clusterModel.columnCount()) + horizontalVisibleItemCount + 1)
+                                {
+                                    var ctx = getContext("2d");
+                                    ctx.fillStyle = Qt.rgba(0, 0, 0, 1);
+                                    ctx.beginPath();
+                                    ctx.moveTo(0, 0);
+                                    ctx.lineTo(width/4, 0);
+                                    ctx.lineTo(0, height/2);
 
-                                ctx.moveTo(width, 0);
-                                ctx.lineTo(3*width/4, 0);
-                                ctx.lineTo(width, height/2);
+                                    ctx.moveTo(width, 0);
+                                    ctx.lineTo(3*width/4, 0);
+                                    ctx.lineTo(width, height/2);
 
-                                ctx.moveTo(width, height);
-                                ctx.lineTo(3*width/4, height);
-                                ctx.lineTo(width, height/2);
+                                    ctx.moveTo(width, height);
+                                    ctx.lineTo(3*width/4, height);
+                                    ctx.lineTo(width, height/2);
 
-                                ctx.moveTo(0, height);
-                                ctx.lineTo(width/4, height);
-                                ctx.lineTo(0, height/2);
-                                ctx.fill();
+                                    ctx.moveTo(0, height);
+                                    ctx.lineTo(width/4, height);
+                                    ctx.lineTo(0, height/2);
+                                    ctx.fill();
+                                }
                             }
                         }
 

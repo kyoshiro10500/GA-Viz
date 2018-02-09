@@ -9,7 +9,7 @@ class PopulationTableModel : public QAbstractTableModel
 {
     Q_OBJECT
     public:
-        PopulationTableModel(Population_clustered population) ;
+        PopulationTableModel(Population_clustered * population) ;
         int rowCount(const QModelIndex &parent = QModelIndex()) const;
         int columnCount(const QModelIndex &parent = QModelIndex()) const;
 
@@ -18,7 +18,7 @@ class PopulationTableModel : public QAbstractTableModel
         bool setData(const QModelIndex &index, const QVariant &value, int role);
 
         void addElement(const QString &element, int value);
-        Population_clustered mElements;
+        Population_clustered * mElements;
 
         Q_INVOKABLE void setScoreFilter(float value) ;
         Q_INVOKABLE void setMutationFilter(bool value) ;

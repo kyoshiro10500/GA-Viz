@@ -10,7 +10,7 @@ class ClusterTableModel : public QAbstractTableModel
     Q_OBJECT
     public:
 
-        ClusterTableModel(Population_clustered population) ;
+        ClusterTableModel(Population_clustered * population) ;
         int rowCount(const QModelIndex &parent = QModelIndex()) const;
         int columnCount(const QModelIndex &parent = QModelIndex()) const;
 
@@ -19,7 +19,7 @@ class ClusterTableModel : public QAbstractTableModel
         bool setData(const QModelIndex &index, const QVariant &value, int role);
 
         void addElement(const QString &element, int value);
-        Population_clustered mElements;
+        Population_clustered * mElements;
 
 private:
         bool _isForPopulation ;

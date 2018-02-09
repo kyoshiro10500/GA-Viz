@@ -19,6 +19,10 @@ Frame {
 
     padding: 10
 
+    id: generationView
+
+    leftPadding: 70
+
     background: Rectangle {
         color: "black"
         border.color: "black"
@@ -68,34 +72,41 @@ Frame {
                             property bool isMutated: generationModel.getMutation(rowDelegate.row,column)
                             property bool isCrossing: generationModel.getCrossing(rowDelegate.row,column)
                             onPaint: {
-                                var ctx = generationCanvas.getContext("2d");
-                                ctx.fillStyle = Qt.rgba(0, 0, 0, 1);
-                                //New Individual
-                                if(isNew && 0.1 * width >= 0.001)
+                                if(generationView.visible &&
+                                        rowDelegate.row >= Math.ceil(vScrollIndicator.position*generationModel.rowCount()) - 1 &&
+                                        rowDelegate.row <= Math.ceil(vScrollIndicator.position*generationModel.rowCount()) + verticalVisibleItemCount + 1 &&
+                                        column >= Math.ceil(hScrollIndicator.position*generationModel.columnCount()) - 1 &&
+                                        column <= Math.ceil(hScrollIndicator.position*generationModel.columnCount()) + horizontalVisibleItemCount + 1)
                                 {
-                                    ctx.beginPath() ;
-                                    ctx.arc(width/2.0, height/2.0, 0.1*width, 0, 2 * Math.PI, false);
-                                    ctx.fill();
-                                }
+                                    var ctx = generationCanvas.getContext("2d");
+                                    ctx.fillStyle = Qt.rgba(0, 0, 0, 1);
+                                    //New Individual
+                                    if(isNew && 0.1 * width >= 0.001)
+                                    {
+                                        ctx.beginPath() ;
+                                        ctx.arc(width/2.0, height/2.0, 0.1*width, 0, 2 * Math.PI, false);
+                                        ctx.fill();
+                                    }
 
-                                //Mutation
-                                if(isMutated)
-                                {
-                                    ctx.beginPath();
-                                    ctx.moveTo(width, 0);
-                                    ctx.lineTo(width, height/2.0);
-                                    ctx.lineTo(width/2.0, 0);
-                                    ctx.fill();
-                                }
+                                    //Mutation
+                                    if(isMutated)
+                                    {
+                                        ctx.beginPath();
+                                        ctx.moveTo(width, 0);
+                                        ctx.lineTo(width, height/2.0);
+                                        ctx.lineTo(width/2.0, 0);
+                                        ctx.fill();
+                                    }
 
-                                //Crossing over
-                                if(isCrossing)
-                                {
-                                    ctx.beginPath();
-                                    ctx.moveTo(width, height);
-                                    ctx.lineTo(width/2.0, height);
-                                    ctx.lineTo(width, height/2.0);
-                                    ctx.fill();
+                                    //Crossing over
+                                    if(isCrossing)
+                                    {
+                                        ctx.beginPath();
+                                        ctx.moveTo(width, height);
+                                        ctx.lineTo(width/2.0, height);
+                                        ctx.lineTo(width, height/2.0);
+                                        ctx.fill();
+                                    }
                                 }
                          }
                     }

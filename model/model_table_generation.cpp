@@ -1,25 +1,25 @@
 #include "model/model_table_generation.h"
 #include <QDebug>
 
-GenerationTableModel::GenerationTableModel(Population_clustered population) : mElements(population)
+GenerationTableModel::GenerationTableModel(Population_clustered * population) : mElements(population)
 {
 
 }
 
 int GenerationTableModel::columnCount(const QModelIndex &parent) const
 {
-    return parent.isValid() ? 0 : mElements.get_number_individuals()*mElements.get_number_cluster();
+    return parent.isValid() ? 0 : mElements->get_number_individuals()*mElements->get_number_cluster();
 }
 
 int GenerationTableModel::rowCount(const QModelIndex &parent) const
 {
-    return parent.isValid() ? 0 : mElements.get_number_generation();
+    return parent.isValid() ? 0 : mElements->get_number_generation();
 }
 
 
 QVariant GenerationTableModel::data(const QModelIndex &index, int role) const
 {
-    if (!index.isValid() || index.row() < 0 || index.row() >= mElements.get_number_generation())
+    if (!index.isValid() || index.row() < 0 || index.row() >= mElements->get_number_generation())
     {
         return QVariant();
     }
@@ -89,12 +89,12 @@ int GenerationTableModel::getGeneration() const
 
 QColor GenerationTableModel::getColor(int gen, int ind, int index_gen,double score)
 {
-    if(mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore() >= score &&
-       (mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getMutation() == mutationFilter || !mutationFilter )&&
-       (mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getCrossing() == crossingoverFilter || !crossingoverFilter) &&
+    if((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore() >= score &&
+       ((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getMutation() == mutationFilter || !mutationFilter )&&
+       ((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getCrossing() == crossingoverFilter || !crossingoverFilter) &&
         gen == index_gen)
     {
-        return QColor(0,mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore()*255,mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore()*255) ;
+        return QColor(0,(*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore()*255,(*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore()*255) ;
     }
     else if(gen == index_gen)
     {
@@ -102,7 +102,7 @@ QColor GenerationTableModel::getColor(int gen, int ind, int index_gen,double sco
     }
     else
     {
-        return QColor(0,mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore()*35,mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getScore()*35) ;
+        return QColor(0,(*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore()*35,(*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore()*35) ;
     }
 }
 
@@ -114,17 +114,17 @@ float GenerationTableModel::getScoreFilter() const
 
 bool GenerationTableModel::getNew(int gen,int ind) const
 {
-     return mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getNew() ;
+     return (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getNew() ;
 }
 
 bool GenerationTableModel::getCrossing(int gen,int ind) const
 {
-    return mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getCrossing() ;
+    return (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getCrossing() ;
 }
 
 bool GenerationTableModel::getMutation(int gen,int ind) const
 {
-    return mElements[gen][ind/mElements.get_number_individuals()][ind%mElements.get_number_individuals()].getMutation() ;
+    return (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getMutation() ;
 }
 
 

@@ -19,6 +19,7 @@ public:
     PopulationTableModel *populationModel;
     ClusterTableModel *clusterModel;
     GenerationTableModel *generationModel;
+    Population_clustered * population ;
 
 private:
     QQmlApplicationEngine *mEngine;

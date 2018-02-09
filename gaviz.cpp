@@ -14,7 +14,7 @@ bool GAViz::parse (QUrl fileUrl) {
     #endif
 
     Parseur parseur = Parseur(filePath, "ressources/c101.txt") ;
-    Population_clustered population = parseur.parseFile();
+    population = new Population_clustered(parseur.parseFile());
     populationModel = new PopulationTableModel(population);
     clusterModel = new ClusterTableModel(population);
     generationModel = new GenerationTableModel(population);
