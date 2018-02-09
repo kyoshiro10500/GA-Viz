@@ -7,10 +7,7 @@ import QtQuick.Dialogs 1.0
 ApplicationWindow {
     id: window
     visible: true
-
-    width: Screen.width
-    height: Screen.height
-    visibility: Window.FullScreen
+    visibility: "Maximized"
 
     StackView {
         id: stackView
