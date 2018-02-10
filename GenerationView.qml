@@ -102,12 +102,6 @@ Frame {
                         property bool isMutated: generationModel.getMutation(rowDelegate.rowIndex, columnDelegate.columnIndex)
                         property bool isCrossing: generationModel.getCrossing(rowDelegate.rowIndex, columnDelegate.columnIndex)
                         onPaint: {
-                            if(generationView.visible &&
-                                    rowDelegate.rowIndex >= Math.ceil(vScrollBar.position*generationModel.rowCount()) - 1 &&
-                                    rowDelegate.rowIndex <= Math.ceil(vScrollBar.position*generationModel.rowCount()) + verticalVisibleItemCount + 1 &&
-                                    columnDelegate.columnIndex >= Math.ceil(hScrollBar.position*generationModel.columnCount()) - 1 &&
-                                    columnDelegate.columnIndex <= Math.ceil(hScrollBar.position*generationModel.columnCount()) + horizontalVisibleItemCount + 1)
-                            {
                                 var ctx = generationCanvas.getContext("2d");
                                 ctx.fillStyle = Qt.rgba(0, 0, 0, 1);
                                 //New Individual
@@ -137,7 +131,6 @@ Frame {
                                     ctx.lineTo(width, height/2.0);
                                     ctx.fill();
                                 }
-                            }
                         }
                     }
                 }

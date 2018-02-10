@@ -96,12 +96,6 @@ Frame {
                         property int parent2: populationModel.getParent2(rowDelegate.rowIndex, columnDelegate.columnIndex)
 
                         onPaint: {
-                            if (populationView.visible &&
-                                    rowDelegate.rowIndex >= Math.ceil(vScrollBar.position*populationModel.rowCount()) - 1 &&
-                                    rowDelegate.rowIndex <= Math.ceil(vScrollBar.position*populationModel.rowCount()) + verticalVisibleItemCount + 1 &&
-                                    columnDelegate.columnIndex >= Math.ceil(hScrollBar.position*populationModel.columnCount()) - 1 &&
-                                    columnDelegate.columnIndex <= Math.ceil(hScrollBar.position*populationModel.columnCount()) + horizontalVisibleItemCount + 1)
-                            {
                                 var ctx = populationCanvas.getContext("2d");
                                 ctx.fillStyle = Qt.rgba(0, 0, 0, 1);
                                 //New Individual
@@ -161,7 +155,6 @@ Frame {
                                         genealogyctx.lineTo(width/2 + individual_gap2*cellSize -0.25 * width, height/2 + generation_gap2*cellSize);
                                         genealogyctx.fill();
                                     }*/
-                                }
                             }
                         }
                     }
