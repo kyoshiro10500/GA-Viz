@@ -106,6 +106,26 @@ QColor GenerationTableModel::getColor(int gen, int ind, int index_gen,double sco
     }
 }
 
+double GenerationTableModel::getScoreBus(int gen, int ind, int index_gen, double score)
+{
+    (void)gen;
+    (void)ind;
+    (void)index_gen;
+    (void)score;
+    double result = -1;
+    return result;
+}
+
+double GenerationTableModel::getScoreDistance(int gen, int ind, int index_gen, double score)
+{
+    (void)gen;
+    (void)ind;
+    (void)index_gen;
+    (void)score;
+    double result = -1;
+    return result;
+}
+
 float GenerationTableModel::getScoreFilter() const
 {
     return scoreFilter;
