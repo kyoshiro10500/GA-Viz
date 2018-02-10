@@ -14,6 +14,7 @@ Frame {
         color: "black"
         border.color: "black"
     }
+
     ColumnLayout {
         anchors.fill: parent
 
@@ -33,6 +34,12 @@ Frame {
                 text: 'Individu'
             }
 
+            MouseArea {
+                id: trigger
+                anchors.fill: parent
+                onClicked: console.log("prout")
+            }
+
             Canvas {
                 id: mycanvas
                 anchors.centerIn: parent
@@ -42,6 +49,7 @@ Frame {
                 property real animationProgress: 0
 
                 states: State {
+                    when: trigger.pressed
                     PropertyChanges { animationProgress: 1; target: mycanvas }
                 }
                 transitions: Transition {
