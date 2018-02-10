@@ -83,9 +83,12 @@ Frame {
                         onClicked: {
                             if (mouse.button == Qt.LeftButton)
                             {
-                                generationToIndividualTransition(columnDelegate)
-                                individualView.generationNumber = rowDelegate.rowIndex
-                                individualView.individualNumber = columnDelegate.columnIndex
+                                if(index_gen == rowDelegate.rowIndex)
+                                {
+                                    generationToIndividualTransition(columnDelegate)
+                                    individualView.generationNumber = rowDelegate.rowIndex
+                                    individualView.individualNumber = columnDelegate.columnIndex
+                                }
                             }
                         }
                     }
