@@ -36,16 +36,49 @@ Frame {
             Canvas {
                 id: mycanvas
                 anchors.centerIn: parent
-                width: parent.height
-                height: parent.width
-                onPaint: {
-                    var ctx = getContext("2d");
-                    var radius = 300;
+                width: parent.width
+                height: parent.height
 
-                          ctx.beginPath();
-                          ctx.arc(width/2, height/2, radius, 0, 2 * Math.PI, false);
-                          ctx.fillStyle = populationModel.getColor(1, 1, 0);
-                          ctx.fill();
+                property real animationProgress: 0
+
+                states: State {
+                    PropertyChanges { animationProgress: 1; target: mycanvas }
+                }
+                transitions: Transition {
+                    NumberAnimation {
+                        property: "animationProgress"
+                        easing.type: Easing.InOutCubic
+                    }
+                }
+
+                onAnimationProgressChanged: requestPaint()
+
+                renderTarget: Canvas.FramebufferObject
+                renderStrategy: Canvas.Cooperative
+
+                onPaint: {
+                    var radius = 0.4*parent.height;
+                    var lineWidth = 0.2*radius;
+                    var ctx = getContext("2d");
+                    ctx.reset();
+                    ctx.beginPath();
+                    ctx.lineWidth= lineWidth;
+                    ctx.strokeStyle = populationModel.getColor(1, 1, 0);
+                    ctx.arc(width/2, height/2, radius, 1.5*Math.PI, 0.5*Math.PI*animationProgress, true);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.lineWidth = lineWidth/2;
+                    ctx.strokeStyle = "#85cdde";
+                    ctx.arc(width/2, height/2, radius-0.5*lineWidth/2, 1.5*Math.PI, 0.5*Math.PI, true);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.strokeStyle = "#2e94cc";
+                    ctx.arc(width/2, height/2, radius-1.5*lineWidth/2, 1.5*Math.PI, 0.5*Math.PI, true);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.strokeStyle = "#142424";
+                    ctx.arc(width/2, height/2, radius-2.5*lineWidth/2, 1.5*Math.PI, 0.5*Math.PI, true);
+                    ctx.stroke();
                 }
             }
         }
