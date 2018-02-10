@@ -28,6 +28,7 @@ Frame {
 
     padding: 10
     leftPadding: 70
+     bottomPadding: 50
 
     background: Rectangle {
         color: "black"
@@ -89,10 +90,19 @@ Frame {
                         onClicked: {
                             if (mouse.button == Qt.LeftButton)
                             {
+<<<<<<< HEAD
                                 generationToIndividualTransition(columnDelegate)
                                 selectedIndividual = generationCanvas
                                 individualView.generationNumber = rowDelegate.rowIndex
                                 individualView.individualNumber = columnDelegate.columnIndex
+=======
+                                if(index_gen == rowDelegate.rowIndex)
+                                {
+                                    generationToIndividualTransition(columnDelegate)
+                                    individualView.generationNumber = rowDelegate.rowIndex
+                                    individualView.individualNumber = columnDelegate.columnIndex
+                                }
+>>>>>>> 71d17b4a9eb36b68c6a2a9c8ac8485415c9f8cd6
                             }
                         }
                     }
