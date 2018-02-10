@@ -7,9 +7,7 @@ Page {
     id: vizPage
 
     background: Rectangle {
-        color: "green"
-        width: parent.width/2
-        height: parent.height/2 + header.height
+        color: "black"
         border.color: "black"
     }
 

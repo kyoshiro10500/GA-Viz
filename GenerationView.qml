@@ -21,15 +21,16 @@ Frame {
     property alias vScrollBar: vScrollBar
     property alias hScrollBar: hScrollBar
 
-    property double zoomScale: 1.0
-    property int zoomX: 0
-    property int zoomY: 0
+    property double zoomScale: 0.8 * 0.8 * parent.height / cellSize
+    property double zoomX: 0
+    property double zoomY: 0
+    property Item zoomTarget
 
     padding: 10
     leftPadding: 70
 
     background: Rectangle {
-        color: "transparent"
+        color: "black"
         border.color: "black"
     }
 
@@ -82,13 +83,13 @@ Frame {
                         onClicked: {
                             if (mouse.button == Qt.LeftButton)
                             {
-                                //filtersFadeOut.start()
-                                zoomScale = parent.height / 0.8 * cellSize
-                                zoomX = vizPage.width/2 - vizPage.padding - columnDelegate.mapToItem(generationView, 0, 0).x - columnDelegate.width/2
-                                zoomY = vizPage.height/2 - vizPage.padding - columnDelegate.mapToItem(generationView, 0, 0).y - columnDelegate.height/2
-                                generationView.transformOrigin = Item.Center
+                                filtersFadeOut.start()
+                                vScrollBar.visible = false
+                                hScrollBar.visible = false
+                                zoomX = vizPage.width/2 - vizPage.padding - columnDelegate.mapToItem(generationView, 0, 0).x - (columnDelegate.mapToItem(generationView, 0, 0).x) * (zoomScale-1) - zoomScale * columnDelegate.width/2
+                                zoomY = vizPage.height/2 - vizPage.padding - columnDelegate.mapToItem(generationView, 0, 0).y - (columnDelegate.mapToItem(generationView, 0, 0).y) * (zoomScale-1) - zoomScale * columnDelegate.height/2
+                                zoomTarget = columnDelegate
                                 zoomIn.start()
-                                // generationView fade out
                             }
                         }
                     }
@@ -170,53 +171,40 @@ Frame {
         contentItem.opacity: 1
     }
 
-    SequentialAnimation {
+    ParallelAnimation {
         id: zoomIn
-
-        ParallelAnimation {
-            id: moveIn
-            NumberAnimation {
-                id: xMoveIn
-                target: generationView
-                property: "x"
-                to: zoomX
-                duration: 2000
-                easing.type: Easing.InOutQuad
-            }
-
-            NumberAnimation {
-                id: yMoveIn
-                target: generationView
-                property: "y"
-                to: zoomY
-                duration: 2000
-                easing.type: Easing.InOutQuad
-            }
+        NumberAnimation {
+            target: generationView
+            property: "x"
+            to: zoomX
+            duration: 2000
+            easing.type: Easing.InOutQuad
         }
 
+        NumberAnimation {
+            target: generationView
+            property: "y"
+            to: zoomY
+            duration: 2000
+            easing.type: Easing.InOutQuad
+        }
 
-        ParallelAnimation {
-            id: scaleUp
+        NumberAnimation {
+            target: scale
+            property: "xScale"
+            from: 1.0
+            to: zoomScale
+            duration: 2000
+            easing.type: Easing.InOutQuad
+        }
 
-            NumberAnimation {
-                id: xScaleUp
-                target: scale
-                property: "xScale"
-                from: 1.0
-                to: 1.5
-                duration: 2000
-                easing.type: Easing.InOutQuad
-            }
-
-            NumberAnimation {
-                id: yScaleUp
-                target: scale
-                property: "yScale"
-                from: 1.0
-                to: 1.5
-                duration: 2000
-                easing.type: Easing.InOutQuad
-            }
+        NumberAnimation {
+            target: scale
+            property: "yScale"
+            from: 1.0
+            to: zoomScale
+            duration: 2000
+            easing.type: Easing.InOutQuad
         }
     }
 
