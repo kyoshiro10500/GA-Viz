@@ -238,5 +238,15 @@ Page {
             return "INDIVIDUAL"
         }
     }
+
+
+    NumberAnimation {
+        id: filtersFadeOut
+        target: filters
+        property: "opacity"
+        to: 0.0
+        duration: 200
+        easing.type: Easing.InOutQuad
+    }
 }
 

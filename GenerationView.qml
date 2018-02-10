@@ -22,11 +22,15 @@ Frame {
     property alias vScrollBar: vScrollBar
     property alias hScrollBar: hScrollBar
 
+    property double targetScale: 1.0
+    property int targetX: 0
+    property int targetY: 0
+
     padding: 10
     leftPadding: 70
 
     background: Rectangle {
-        color: "black"
+        color: "red"
         border.color: "black"
     }
 
@@ -67,6 +71,25 @@ Frame {
                         radius: 0.5 * width
                         anchors.centerIn: parent
                         color: generationModel.getColor(rowDelegate.row, column, index_gen,scoreFilter)
+
+                        MouseArea {
+                            anchors.fill: parent
+                            acceptedButtons: Qt.LeftButton | Qt.RightButton
+                            onClicked: {
+                                if (mouse.button == Qt.LeftButton)
+                                {
+                                    //filtersFadeOut.start()
+                                    targetScale = parent.height / 0.8 * cellSize
+                                    targetX = vizPage.width/2 - cellDelegate.mapToItem(vizPage, 0, 0).x - cellDelegate.width/2
+                                    console.log(cellDelegate.width/2)
+                                    //scaleUp.start()
+                                    xMoveIn.start()
+
+                                    // generationView x y -> calc
+                                    // generationView fade out
+                                }
+                            }
+                        }
 
                         Canvas {
                             id: generationCanvas
@@ -138,6 +161,24 @@ Frame {
             active: true
             contentItem.opacity: 1
         }
+    }
+
+    ScaleAnimator {
+        id: scaleUp
+        target: generationView
+        from: 1.0
+        to: targetScale
+        duration: 200
+        easing.type: Easing.InOutQuad
+    }
+
+    NumberAnimation {
+        id: xMoveIn
+        target: generationView
+        property: "x"
+        to: targetX
+        duration: 200
+        easing.type: Easing.InOutQuad
     }
 
     function calculateCellSize(rowIndex, columnIndex) {
