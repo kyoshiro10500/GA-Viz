@@ -10,7 +10,7 @@ Frame {
     property int individualNumber: 0
     property double individualDistanceScore : generationModel.getScoreDistance(generationNumber, individualNumber)
     property double individualBusesScore : generationModel.getScoreBus(generationNumber, individualNumber)
-
+    contentHeight: parent.height
 
     id: individualView
 
