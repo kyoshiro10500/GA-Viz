@@ -2,6 +2,7 @@ import QtQuick 2.7
 import QtQuick.Controls 1.0
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
+import QtQuick.Controls.Styles 1.4
 
 Frame {
 
@@ -26,12 +27,6 @@ Frame {
                 color: "white"
                 text: 'Generation number - Individual number'
                 font.pointSize: 12
-            }
-
-            Text {
-                anchors.centerIn: parent
-                color: "white"
-                text: 'Individu'
             }
 
             Canvas {
@@ -87,11 +82,53 @@ Frame {
             Layout.fillWidth: true
             Layout.preferredHeight: 0.2 * parent.height
 
+            Column{
 
-            Text {
-                anchors.centerIn: parent
-                color: "white"
-                text: 'score'
+                spacing: 20
+                anchors.top: parent.top
+                anchors.topMargin: 0.2 * parent.height
+                anchors.right: parent.right
+                anchors.rightMargin: 0.45 * parent.width
+
+                Frame{
+                    background: Rectangle {
+                        color: "black"
+                        border.color: "black"
+                    }
+                    Label {
+                        text: "Distance"
+                        color: "yellow"
+                        font.pixelSize: 15
+                        anchors.right: distanceBar.left
+                        anchors.rightMargin: 20
+                    }
+                    ProgressBar {
+                        id:distanceBar
+                        value: 0.5
+                        width: 500
+                        transform: Translate { y: 5 }
+                    }
+                }
+
+                Frame{
+                    background: Rectangle {
+                        color: "black"
+                        border.color: "black"
+                    }
+                    Label {
+                        text: "Trucks"
+                        color: "yellow"
+                        font.pixelSize: 15
+                        anchors.right: trucksBar.left
+                        anchors.rightMargin: 20
+                    }
+                    ProgressBar {
+                        id:trucksBar
+                        value: 0.5
+                        width: 500
+                        transform: Translate { y: 5 }
+                    }
+                }
             }
         }
     }
