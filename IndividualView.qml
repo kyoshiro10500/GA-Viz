@@ -9,7 +9,7 @@ Frame {
     property int generationNumber: 0
     property int individualNumber: 0
     property double individualDistanceScore : generationModel.getScoreDistance(generationNumber, individualNumber)
-    property double individualBusesScore : generationModel.getScoreBuses(generationNumber, individualNumber)
+    property double individualBusesScore : generationModel.getScoreBus(generationNumber, individualNumber)
 
 
     id: individualView

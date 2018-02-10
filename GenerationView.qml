@@ -27,6 +27,7 @@ Frame {
 
     padding: 10
     leftPadding: 70
+     bottomPadding: 50
 
     background: Rectangle {
         color: "black"
