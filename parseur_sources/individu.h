@@ -12,7 +12,8 @@ class Individu
 		bool _isCrossing;
         double _distance;
         int _number_buses;
-        double _score ;
+        double _scoreBuses ;
+        double _scoreDistance ;
         int _gIdx ;
         int _parent1 = -1 ;
         int _parent2 = -1 ;
@@ -44,6 +45,8 @@ class Individu
         int getGIdx() const ;
         int getParent1() const ;
         int getParent2() const ;
+        double getScoreBuses() const ;
+        double getScoreDistance() const ;
 
 		//Operator
 		friend std::ostream& operator<<(std::ostream& os, const Individu& individu);
