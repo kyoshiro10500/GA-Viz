@@ -24,7 +24,6 @@ Frame {
     property double zoomScale: 0.8 * 0.8 * parent.height / cellSize
     property double zoomX: 0
     property double zoomY: 0
-    property Item zoomTarget
 
     padding: 10
     leftPadding: 70
@@ -83,13 +82,7 @@ Frame {
                         onClicked: {
                             if (mouse.button == Qt.LeftButton)
                             {
-                                filtersFadeOut.start()
-                                vScrollBar.visible = false
-                                hScrollBar.visible = false
-                                zoomX = vizPage.width/2 - vizPage.padding - columnDelegate.mapToItem(generationView, 0, 0).x - (columnDelegate.mapToItem(generationView, 0, 0).x) * (zoomScale-1) - zoomScale * columnDelegate.width/2
-                                zoomY = vizPage.height/2 - vizPage.padding - columnDelegate.mapToItem(generationView, 0, 0).y - (columnDelegate.mapToItem(generationView, 0, 0).y) * (zoomScale-1) - zoomScale * columnDelegate.height/2
-                                zoomTarget = columnDelegate
-                                zoomIn.start()
+                                generationToIndividualTransition(columnDelegate)
                             }
                         }
                     }
@@ -206,6 +199,81 @@ Frame {
             duration: 2000
             easing.type: Easing.InOutQuad
         }
+    }
+
+    ParallelAnimation {
+        id: zoomOut
+        NumberAnimation {
+            target: generationView
+            property: "x"
+            to: 0
+            duration: 2000
+            easing.type: Easing.InOutQuad
+        }
+
+        NumberAnimation {
+            target: generationView
+            property: "y"
+            to: filters.x + filters.height + viewLayout.spacing
+            duration: 2000
+            easing.type: Easing.InOutQuad
+        }
+
+        NumberAnimation {
+            target: scale
+            property: "xScale"
+            from: zoomScale
+            to: 1.0
+            duration: 2000
+            easing.type: Easing.InOutQuad
+        }
+
+        NumberAnimation {
+            target: scale
+            property: "yScale"
+            from: zoomScale
+            to: 1.0
+            duration: 2000
+            easing.type: Easing.InOutQuad
+        }
+    }
+
+    NumberAnimation {
+        id: generationViewFadeOut
+        target: generationView
+        property: "opacity"
+        to: 0.0
+        duration: 400
+        easing.type: Easing.InOutQuad
+    }
+
+    Timer {
+        id: individualTimer
+        interval: 2000
+        onTriggered: {
+            filters.visible = false
+            generationView.visible = false
+            individualView.visible = true
+        }
+    }
+
+    function generationToIndividualTransition(item) {
+        filtersFadeOut.start()
+        vScrollBar.visible = false
+        hScrollBar.visible = false
+        zoomX = vizPage.width/2 - vizPage.padding - item.mapToItem(generationView, 0, 0).x - (item.mapToItem(generationView, 0, 0).x) * (zoomScale-1) - zoomScale * item.width/2
+        zoomY = vizPage.height/2 - vizPage.padding - item.mapToItem(generationView, 0, 0).y - (item.mapToItem(generationView, 0, 0).y) * (zoomScale-1) - zoomScale * item.height/2 - filters.height
+        zoomIn.start()
+        individualTimer.start()
+    }
+
+    function individualToGenerationTransition() {
+        filters.visible = true
+        vScrollBar.visible = true
+        hScrollBar.visible = true
+        generationView.visible = true
+        individualView.visible = false
+        zoomOut.start()
     }
 
     function calculateCellSize(rowIndex, columnIndex) {

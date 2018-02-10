@@ -72,13 +72,13 @@ Frame {
                         anchors.fill: parent
                         acceptedButtons: Qt.LeftButton | Qt.RightButton
                         onClicked: {
-                            if (mouse.button == Qt.RightButton) {
+                            if (mouse.button == Qt.LeftButton) {
                                 generationModel.setGeneration(rowDelegate.rowIndex)
                                 populationView.visible = false
                                 generationView.visible = true
                                 generationView.index_gen = rowDelegate.rowIndex
                             }
-                            else if (mouse.button == Qt.LeftButton) {
+                            else if (mouse.button == Qt.RightButton) {
                                 populationInfoDrawer.open()
                             }
                         }

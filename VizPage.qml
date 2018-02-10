@@ -49,11 +49,16 @@ Page {
                 buttonText: "Generation"
                 onClicked:
                 {
-                    populationView.visible = false ;
-                    generationView.visible = true ;
-                    clusterView.visible = false ;
-                    individualView.visible = false;
-                    filters.visible = true;
+                    if (individualView.visible) {
+                        generationView.individualToGenerationTransition()
+                    }
+                    else {
+                        generationView.visible = true
+                        individualView.visible = false
+                        filters.visible = true
+                    }
+                    populationView.visible = false
+                    clusterView.visible = false
                 }
             }
 
@@ -103,17 +108,20 @@ Page {
 
     RowLayout {
         anchors.fill: parent
-        id: view
-        property int view: 1
+
         ColumnLayout {
+            id: viewLayout
+
             width : parent.width
             height: parent.height
 
             spacing: 10
 
             Frame {
+                id: viewTitle
+                z: 1
+
                 Label {
-                    id: test
                     text: afficheText()
                     font.pixelSize: 20
                     color: "white"
@@ -239,12 +247,21 @@ Page {
         }
     }
 
-
     NumberAnimation {
         id: filtersFadeOut
         target: filters
         property: "opacity"
         to: 0.0
+        duration: 200
+        easing.type: Easing.InOutQuad
+    }
+
+    NumberAnimation {
+        id: filtersFadeIn
+        target: filters
+        property: "opacity"
+        from: 0.0
+        to: 1.0
         duration: 200
         easing.type: Easing.InOutQuad
     }

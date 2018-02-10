@@ -34,12 +34,6 @@ Frame {
                 text: 'Individu'
             }
 
-            MouseArea {
-                id: trigger
-                anchors.fill: parent
-                onClicked: console.log("prout")
-            }
-
             Canvas {
                 id: mycanvas
                 anchors.centerIn: parent
