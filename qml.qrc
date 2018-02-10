@@ -13,5 +13,6 @@
         <file>FilterSlider.qml</file>
         <file>IndividualView.qml</file>
         <file>InfoDrawer.qml</file>
+        <file>IndividualScoreMeter.qml</file>
     </qresource>
 </RCC>

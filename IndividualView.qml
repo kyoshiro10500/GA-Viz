@@ -31,8 +31,8 @@ Frame {
             Layout.fillHeight: true
             Text {
                 color: "white"
-                text: generationNumber + "-" + individualNumber
-                font.pointSize: 12
+                text: generationNumber + " - " + individualNumber
+                font.pointSize: 25
             }
 
             Text{
@@ -79,7 +79,7 @@ Frame {
                     ctx.reset();
                     ctx.beginPath();
                     ctx.lineWidth= lineWidth;
-                    ctx.strokeStyle = populationModel.getColor(1, 1, 0);
+                    ctx.strokeStyle = populationModel.getColor(generationNumber, individualNumber, 0);
                     ctx.arc(width/2, height/2, radius, 1.5*Math.PI, 1.5*Math.PI-Math.PI*animationProgress, true);
                     ctx.stroke();
                     ctx.beginPath();
