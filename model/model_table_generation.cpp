@@ -147,4 +147,12 @@ bool GenerationTableModel::getMutation(int gen,int ind) const
     return (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getMutation() ;
 }
 
+double GenerationTableModel::getScoreBuses(int gen, int ind) const
+{
+    return 0.0;
+}
 
+double GenerationTableModel::getScoreDistance(int gen, int ind) const
+{
+    return 0.0;
+}

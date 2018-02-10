@@ -64,12 +64,6 @@ Frame {
                             width: calculateCellSize(rowDelegate.row, column)
                             height: calculateCellSize(rowDelegate.row, column)
                             onPaint: {
-                                if(clusterView.visible &&
-                                        rowDelegate.row >= Math.ceil(vScrollIndicator.position*clusterModel.rowCount()) - 1 &&
-                                        rowDelegate.row <= Math.ceil(vScrollIndicator.position*clusterModel.rowCount()) + verticalVisibleItemCount + 1 &&
-                                        column >= Math.ceil(hScrollIndicator.position*clusterModel.columnCount()) - 1 &&
-                                        column <= Math.ceil(hScrollIndicator.position*clusterModel.columnCount()) + horizontalVisibleItemCount + 1)
-                                {
                                     var ctx = getContext("2d");
                                     ctx.fillStyle = Qt.rgba(0, 0, 0, 1);
                                     ctx.beginPath();
@@ -89,7 +83,6 @@ Frame {
                                     ctx.lineTo(width/4, height);
                                     ctx.lineTo(0, height/2);
                                     ctx.fill();
-                                }
                             }
                         }
 
