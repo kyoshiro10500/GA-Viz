@@ -32,7 +32,7 @@ class PopulationTableModel : public QAbstractTableModel
         Q_INVOKABLE int getParent1(int gen,int ind) const ;
         Q_INVOKABLE int getParent2(int gen,int ind) const ;
         Q_INVOKABLE float getScoreFilter() const;
-        Q_INVOKABLE QColor getColor(int gen, int ind, double score) ;
+        Q_INVOKABLE QColor getColor(int gen, int ind, double score) const ;
 
     private:
         float scoreFilter = 0 ;

@@ -117,7 +117,7 @@ int PopulationTableModel::getParent2(int gen, int ind) const
     return (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getParent2() ;
 }
 
-QColor PopulationTableModel::getColor(int gen, int ind, double score)
+QColor PopulationTableModel::getColor(int gen, int ind, double score) const
 {
     if((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore() >= score &&
        ((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getMutation() == mutationFilter || !mutationFilter )&&

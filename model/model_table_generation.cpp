@@ -87,7 +87,7 @@ int GenerationTableModel::getGeneration() const
     return generationIndex ;
 }
 
-QColor GenerationTableModel::getColor(int gen, int ind, int index_gen,double score)
+QColor GenerationTableModel::getColor(int gen, int ind, int index_gen,double score) const
 {
     if((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore() >= score &&
        ((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getMutation() == mutationFilter || !mutationFilter )&&
@@ -127,7 +127,7 @@ bool GenerationTableModel::getMutation(int gen,int ind) const
     return (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getMutation() ;
 }
 
-double GenerationTableModel::getScoreBuses(int gen, int ind) const
+double GenerationTableModel::getScoreBus(int gen, int ind) const
 {
     return  (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScoreBuses() ;
 }
