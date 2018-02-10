@@ -14,7 +14,8 @@
         _isCrossing = ind.getCrossing() ;
         _distance = ind.getDistance();
         _number_buses = ind.getNumberBuses();
-        _score = ind.getScore() ;
+        _scoreBuses = ind.getScoreBuses() ;
+        _scoreDistance = ind.getScoreDistance() ;
         _gIdx = ind.getGIdx() ;
         _parent1 = ind.getParent1() ;
         _parent2 = ind.getParent2() ;
@@ -100,7 +101,7 @@
 
     double Individu::getScore() const
     {
-        return _score;
+        return (_scoreBuses + _scoreDistance)/2.0 ;
     }
 
     int Individu::getParent1() const
@@ -111,6 +112,16 @@
     int Individu::getParent2() const
     {
         return _parent2 ;
+    }
+
+    double Individu::getScoreBuses() const
+    {
+        return _scoreBuses ;
+    }
+
+    double Individu::getScoreDistance() const
+    {
+        return _scoreDistance ;
     }
 
     //Operators
@@ -126,7 +137,6 @@
     void Individu::calculateScore(double min_distance, int min_number_buses, int max_distance, int max_buses)
     {
         //The score is the mean value between the score on distance and the score on number_buses regarding the minimum values
-        double score_buses =(double) (_number_buses- max_buses) / (min_number_buses - max_buses) ;
-        double score_distance = (double) (_distance - max_distance) / (min_distance - max_distance) ;
-        _score = (score_buses + score_distance) / 2.0 ;
+        _scoreBuses =(double) (_number_buses- max_buses) / (min_number_buses - max_buses) ;
+        _scoreDistance = (double) (_distance - max_distance) / (min_distance - max_distance) ;
     }

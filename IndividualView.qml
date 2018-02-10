@@ -56,6 +56,7 @@ Frame {
                     NumberAnimation {
                         property: "animationProgress"
                         easing.type: Easing.InOutCubic
+                        duration: 1000
                     }
                 }
 
@@ -91,6 +92,7 @@ Frame {
             color: "black"
             Layout.fillWidth: true
             Layout.preferredHeight: 0.2 * parent.height
+
 
             Text {
                 anchors.centerIn: parent
