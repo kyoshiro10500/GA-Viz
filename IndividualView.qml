@@ -8,8 +8,8 @@ Frame {
 
     property int generationNumber: 0
     property int individualNumber: 0
-    property double individualDistanceScore : generationModel.getScoreDistance(4,5)
-    property double individualBusesScore : generationModel.getScoreBuses(5,5)
+    property double individualDistanceScore : generationModel.getScoreDistance(generationNumber, individualNumber)
+    property double individualBusesScore : generationModel.getScoreBuses(generationNumber, individualNumber)
 
 
     id: individualView

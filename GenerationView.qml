@@ -83,6 +83,8 @@ Frame {
                             if (mouse.button == Qt.LeftButton)
                             {
                                 generationToIndividualTransition(columnDelegate)
+                                individualView.generationNumber = rowDelegate.rowIndex
+                                individualView.individualNumber = columnDelegate.columnIndex
                             }
                         }
                     }
@@ -207,7 +209,7 @@ Frame {
         NumberAnimation {
             target: generationView
             property: "y"
-            to: filters.x + filters.height + viewLayout.spacing
+            to: title.height + viewLayout.spacing + filters.height + viewLayout.spacing
             duration: 2000
             easing.type: Easing.InOutQuad
         }
@@ -241,13 +243,38 @@ Frame {
     }
 
     Timer {
-        id: individualTimer
+        id: individualViewTimer
         interval: 2000
         onTriggered: {
             filters.visible = false
             generationView.visible = false
             individualView.visible = true
         }
+    }
+
+    Timer {
+        id: generationViewTimer
+        interval: 2000
+        onTriggered: {
+            filtersFadeIn.start()
+            vScrollBar.visible = true
+            hScrollBar.visible = true
+        }
+    }
+
+    function resetGenerationView() {
+        populationView.visible = false
+        clusterView.visible = false
+        filters.visible = true
+        filters.opacity = 1.0
+        individualView.visible = false
+        generationView.visible = true
+        vScrollBar.visible = true
+        hScrollBar.visible = true
+        generationView.x = 0
+        generationView.y = title.height + viewLayout.spacing + filters.height + viewLayout.spacing
+        scale.xScale = 1.0
+        scale.yScale = 1.0
     }
 
     function generationToIndividualTransition(item) {
@@ -257,15 +284,15 @@ Frame {
         zoomX = vizPage.width/2 - vizPage.padding - item.mapToItem(generationView, 0, 0).x - (item.mapToItem(generationView, 0, 0).x) * (zoomScale-1) - zoomScale * item.width/2
         zoomY = vizPage.height/2 - vizPage.padding - item.mapToItem(generationView, 0, 0).y - (item.mapToItem(generationView, 0, 0).y) * (zoomScale-1) - zoomScale * item.height/2 - filters.height
         zoomIn.start()
-        individualTimer.start()
+        individualViewTimer.start()
     }
 
     function individualToGenerationTransition() {
+        filters.opacity = 0.0
         filters.visible = true
-        vScrollBar.visible = true
-        hScrollBar.visible = true
-        generationView.visible = true
         individualView.visible = false
+        generationView.visible = true
+        generationViewTimer.start()
         zoomOut.start()
     }
 

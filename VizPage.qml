@@ -6,6 +6,8 @@ import QtQuick.Window 2.2
 Page {
     id: vizPage
 
+    property string viewTitle: "POPULATION"
+
     background: Rectangle {
         color: "black"
         border.color: "black"
@@ -35,7 +37,9 @@ Page {
             }
 
             ToolBarButton {
+                id: popButton
                 buttonText: "Population"
+                selected: true
                 onClicked: {
                     populationView.visible = true ;
                     generationView.visible = false ;
@@ -46,6 +50,7 @@ Page {
             }
 
             ToolBarButton {
+                id: genButton
                 buttonText: "Generation"
                 onClicked:
                 {
@@ -53,16 +58,13 @@ Page {
                         generationView.individualToGenerationTransition()
                     }
                     else {
-                        generationView.visible = true
-                        individualView.visible = false
-                        filters.visible = true
+                        generationView.resetGenerationView()
                     }
-                    populationView.visible = false
-                    clusterView.visible = false
                 }
             }
 
             ToolBarButton {
+                id: clusterButton
                 buttonText: "Cluster"
                 onClicked:
                 {
@@ -75,6 +77,7 @@ Page {
             }
 
             ToolBarButton {
+                id: indivButton
                 buttonText: "Individual"
                 onClicked:
                 {
@@ -118,11 +121,11 @@ Page {
             spacing: 10
 
             Frame {
-                id: viewTitle
+                id: title
                 z: 1
 
                 Label {
-                    text: afficheText()
+                    text: viewTitle
                     font.pixelSize: 20
                     color: "white"
                 }
@@ -190,21 +193,54 @@ Page {
             PopulationView {
                 id: populationView
                 visible: true
+
+                onVisibleChanged: {
+                    if (visible) {
+                        viewTitle = "POPULATION"
+                        popButton.selected = true
+                    }
+                    else
+                        popButton.selected = false
+                }
             }
 
             GenerationView {
                 id: generationView
                 visible: false
+                onVisibleChanged: {
+                    if (visible) {
+                        viewTitle = "GENERATION"
+                        genButton.selected = true
+                    }
+                    else
+                        genButton.selected = false
+                }
             }
 
             ClusterView {
                 id: clusterView
                 visible: false
+                onVisibleChanged: {
+                    if (visible) {
+                        viewTitle = "CLUSTER"
+                        clusterButton.selected = true
+                    }
+                    else
+                        clusterButton.selected = false
+                }
             }
 
             IndividualView {
                 id: individualView
                 visible: false
+                onVisibleChanged: {
+                    if (visible) {
+                        viewTitle = "INDIVIDUAL"
+                        indivButton.selected = true
+                    }
+                    else
+                        indivButton.selected = false
+                }
             }
         }
 
@@ -224,26 +260,6 @@ Page {
             }
 
 
-        }
-    }
-
-    function afficheText()
-    {
-        if(populationView.visible)
-        {
-            return "POPULATION" ;
-        }
-        else if(generationView.visible)
-        {
-            return "GENERATION" ;
-        }
-        else if(clusterView.visible)
-        {
-            return "CLUSTER"
-        }
-        else if(individualView.visible)
-        {
-            return "INDIVIDUAL"
         }
     }
 
