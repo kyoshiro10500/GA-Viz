@@ -6,6 +6,12 @@ import QtQuick.Controls.Styles 1.4
 
 Frame {
 
+    property int generationNumber: 0
+    property int individualNumber: 0
+    property double individualDistanceScore : generationModel.getScoreDistance(4,5)
+    property double individualBusesScore : generationModel.getScoreBuses(5,5)
+
+
     id: individualView
 
     Layout.preferredWidth: parent.width
@@ -25,10 +31,25 @@ Frame {
             Layout.fillHeight: true
             Text {
                 color: "white"
-                text: 'Generation number - Individual number'
+                text: generationNumber + "-" + individualNumber
                 font.pointSize: 12
             }
 
+            Text{
+                id:rankingText
+                anchors.centerIn: parent
+                anchors.verticalCenterOffset: -0.2*parent.height
+                font.pointSize: 25
+                text: "Ranking"
+                font.underline: true
+                color: "white"
+            }
+            Text{
+                font.pointSize: 20
+                anchors.centerIn: parent
+                text: "Average:" + " / "
+                color: "white"
+            }
             Canvas {
                 id: mycanvas
                 anchors.centerIn: parent
