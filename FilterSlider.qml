@@ -7,4 +7,14 @@ Slider {
 
     Layout.fillWidth: true
     Layout.preferredHeight: 50
+
+    handle: Rectangle {
+        x: slider.leftPadding + slider.visualPosition * (slider.availableWidth - width)
+        y: slider.topPadding + slider.availableHeight / 2 - height / 2
+        implicitWidth: 15
+        implicitHeight: 15
+        radius: 0
+        color: control.pressed ? "#f0f0f0" : "#f6f6f6"
+        border.color: "#bdbebf"
+    }
 }

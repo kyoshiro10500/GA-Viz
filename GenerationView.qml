@@ -24,6 +24,7 @@ Frame {
     property double zoomScale: 0.8 * 0.8 * parent.height / cellSize
     property double zoomX: 0
     property double zoomY: 0
+    property Canvas selectedIndividual
 
     padding: 10
     leftPadding: 70
@@ -35,6 +36,12 @@ Frame {
 
     transform: Scale {
         id: scale
+
+        onXScaleChanged: {
+             if (selectedIndividual) {
+                 selectedIndividual.requestPaint()
+             }
+         }
     }
 
     ListView {
@@ -83,6 +90,7 @@ Frame {
                             if (mouse.button == Qt.LeftButton)
                             {
                                 generationToIndividualTransition(columnDelegate)
+                                selectedIndividual = generationCanvas
                                 individualView.generationNumber = rowDelegate.rowIndex
                                 individualView.individualNumber = columnDelegate.columnIndex
                             }
@@ -249,6 +257,7 @@ Frame {
             filters.visible = false
             generationView.visible = false
             individualView.visible = true
+            filters.opacity = 1.0
         }
     }
 
