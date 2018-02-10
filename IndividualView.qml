@@ -49,7 +49,7 @@ Frame {
                 property real animationProgress: 0
 
                 states: State {
-                    when: trigger.pressed
+                    when: individualView.visible == true
                     PropertyChanges { animationProgress: 1; target: mycanvas }
                 }
                 transitions: Transition {
@@ -61,9 +61,6 @@ Frame {
 
                 onAnimationProgressChanged: requestPaint()
 
-                renderTarget: Canvas.FramebufferObject
-                renderStrategy: Canvas.Cooperative
-
                 onPaint: {
                     var radius = 0.4*parent.height;
                     var lineWidth = 0.2*radius;
@@ -72,20 +69,20 @@ Frame {
                     ctx.beginPath();
                     ctx.lineWidth= lineWidth;
                     ctx.strokeStyle = populationModel.getColor(1, 1, 0);
-                    ctx.arc(width/2, height/2, radius, 1.5*Math.PI, 0.5*Math.PI*animationProgress, true);
+                    ctx.arc(width/2, height/2, radius, 1.5*Math.PI, 1.5*Math.PI-Math.PI*animationProgress, true);
                     ctx.stroke();
                     ctx.beginPath();
                     ctx.lineWidth = lineWidth/2;
                     ctx.strokeStyle = "#85cdde";
-                    ctx.arc(width/2, height/2, radius-0.5*lineWidth/2, 1.5*Math.PI, 0.5*Math.PI, true);
+                    ctx.arc(width/2, height/2, radius-0.5*lineWidth/2, 1.5*Math.PI, 1.5*Math.PI-Math.PI*animationProgress, true);
                     ctx.stroke();
                     ctx.beginPath();
                     ctx.strokeStyle = "#2e94cc";
-                    ctx.arc(width/2, height/2, radius-1.5*lineWidth/2, 1.5*Math.PI, 0.5*Math.PI, true);
+                    ctx.arc(width/2, height/2, radius-1.5*lineWidth/2, 1.5*Math.PI, 1.5*Math.PI-Math.PI*animationProgress, true);
                     ctx.stroke();
                     ctx.beginPath();
                     ctx.strokeStyle = "#142424";
-                    ctx.arc(width/2, height/2, radius-2.5*lineWidth/2, 1.5*Math.PI, 0.5*Math.PI, true);
+                    ctx.arc(width/2, height/2, radius-2.5*lineWidth/2, 1.5*Math.PI, 1.5*Math.PI-Math.PI*animationProgress, true);
                     ctx.stroke();
                 }
             }
