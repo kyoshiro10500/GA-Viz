@@ -17,6 +17,9 @@ Frame {
 
     property double scoreFilter: perfSlider.valueAt(perfSlider.position);
 
+    property alias vScrollBar: vScrollBar
+    property alias hScrollBar: hScrollBar
+
     padding: 10
     leftPadding: 70
     bottomPadding: 50
@@ -195,10 +198,14 @@ Frame {
 
         active: true
         contentItem.opacity: 1
+
+        onPositionChanged: {
+            generationView.hScrollBar.position = position
+        }
     }
 
     function calculateCellSize(rowIndex, columnIndex) {
-        return Math.min(cellSize - (cellSize * (Math.abs(columnIndex - hScrollBar.position*generationModel.columnCount() - horizontalVisibleItemCount/2) - horizontalVisibleItemCount/2)), cellSize);
+        return Math.min(cellSize - (cellSize * (Math.abs(columnIndex - hScrollBar.position*populationModel.columnCount() - horizontalVisibleItemCount/2) - horizontalVisibleItemCount/2)), cellSize);
         //return Math.min(cellSize - (cellSize * (Math.abs(rowIndex - vScrollIndicator.position*generationModel.rowCount() - verticalVisibleItemCount/2) - verticalVisibleItemCount/2)), cellSize);
     }
 }
