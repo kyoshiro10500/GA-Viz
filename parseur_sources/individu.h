@@ -6,7 +6,6 @@
 
 /*!
  * \brief Individu class : represents an individual
- *
  */
 
 class Individu
