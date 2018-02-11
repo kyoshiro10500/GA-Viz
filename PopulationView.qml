@@ -43,9 +43,9 @@ Frame {
 
         delegate: ListView {
             id: rowDelegate
-            model:   (index >= (vScrollBar.position)*populationModel.rowCount() - 2 && index <= (vScrollBar.position)*populationModel.rowCount() +verticalVisibleItemCount+ 2) ? populationModel.columnCount() : 0
+            model:  populationModel.columnCount()
             orientation: ListView.Horizontal
-            width: parent.width
+            width:  (index >= (vScrollBar.position)*populationModel.rowCount() - 1 && index <= (vScrollBar.position)*populationModel.rowCount() +verticalVisibleItemCount+ 1) ? parent.width : 0
             height : cellSize + verticalSpacing
             property int rowIndex: index
 
@@ -59,7 +59,8 @@ Frame {
                 Rectangle {
                     id: cell
 
-                    width: (index >= (hScrollBar.position)*populationModel.columnCount() - 2 && index <= (hScrollBar.position)*populationModel.columnCount() +horizontalVisibleItemCount+ 2) ? calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex) : 0
+                    width: (index >= (hScrollBar.position)*populationModel.columnCount() - 1 && index <= (hScrollBar.position)*populationModel.columnCount() +horizontalVisibleItemCount+ 1) ? calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex) : 0
+                    visible : (index >= (hScrollBar.position)*populationModel.columnCount() - 1 && index <= (hScrollBar.position)*populationModel.columnCount() +horizontalVisibleItemCount+ 1)
                     height: width
                     radius: 0.5 * width
                     anchors.centerIn: parent
