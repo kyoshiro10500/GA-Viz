@@ -150,3 +150,13 @@ int PopulationTableModel::get_number_mutation() const
 {
     return mElements->get_number_mutation();
 }
+
+double PopulationTableModel::get_best_score() const
+{
+    return mElements->get_best_score();
+}
+
+double PopulationTableModel::get_worst_score() const
+{
+    return mElements->get_worst_score();
+}

@@ -37,6 +37,8 @@ class PopulationTableModel : public QAbstractTableModel
         Q_INVOKABLE int get_number_cluster() const ;
         Q_INVOKABLE int get_number_crossover() const ;
         Q_INVOKABLE int get_number_mutation() const ;
+        Q_INVOKABLE double get_best_score() const ;
+        Q_INVOKABLE double get_worst_score() const ;
 
     private:
         float scoreFilter = 0 ;

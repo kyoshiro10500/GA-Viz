@@ -8,12 +8,20 @@ Frame {
 
     property int generationNumber: 0
     property int individualNumber: 0
+    property double individualAverageScore: generationModel.getScore(generationNumber, individualNumber)
     property double individualDistanceScore : generationModel.getScoreDistance(generationNumber, individualNumber)
     property double individualBusesScore : generationModel.getScoreBus(generationNumber, individualNumber)
     property double totalDistance : generationModel.getDistance(generationNumber, individualNumber)
     property int numberBuses : generationModel.getNumberBuses(generationNumber, individualNumber)
     property int numberMutation : generationModel.getNumberMutation(generationNumber, individualNumber)
     property int numberCrossover : generationModel.getNumberCrossover(generationNumber, individualNumber)
+    property int numberTotalIndividuals : populationModel.get_number_individuals()
+    property double bestScore : populationModel.get_best_score()
+    property double worstScore : populationModel.get_worst_score()
+
+    property int averageRank: 0
+    property int distanceRank: 0
+    property int vehiclesRank: 0
 
 
     contentHeight: parent.height
@@ -77,7 +85,7 @@ Frame {
                         font.pointSize: 15
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
-                        text: "Average:" + " / "
+                        text: "Average: " + averageRank + " / " + numberTotalIndividuals
                         color: "white"
                     }
                     Text{
@@ -85,7 +93,7 @@ Frame {
                         font.pointSize: 15
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
-                        text: "Distance:" + " / "
+                        text: "Distance: " + distanceRank + " / " + numberTotalIndividuals
                         color: "white"
                     }
                     Text{
@@ -93,7 +101,7 @@ Frame {
                         font.pointSize: 15
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
-                        text: "Vehicles:" + " / "
+                        text: "Vehicles: " + vehiclesRank + " / " + numberTotalIndividuals
                         color: "white"
                     }
                 }
@@ -140,6 +148,7 @@ Frame {
                     height: parent.height
 
                     property bool change: false
+
                     states: State {
                         when: individualView.visible == true
                         PropertyChanges { change: true; target: scoreCanvas }
@@ -152,7 +161,7 @@ Frame {
                         ctx.reset();
 
                         var left = rankingColumn.x -0.8*parent.height
-                        var right = width * 0.6
+                        var right = width * 0.55
                         var vCenter = height * 0.5
 
                         ctx.lineCap = "square"
@@ -207,16 +216,16 @@ Frame {
                     ctx.beginPath();
                     ctx.lineWidth= lineWidth;
                     ctx.strokeStyle = populationModel.getColor(generationNumber, individualNumber, 0);
-                    ctx.arc(width/2, height/2, radius, 1.5*Math.PI, 1.5*Math.PI-Math.PI*animationProgress, true);
+                    ctx.arc(width/2, height/2, radius, 1.5*Math.PI, 1.5*Math.PI-2*Math.PI*animationProgress*individualAverageScore, true);
                     ctx.stroke();
                     ctx.beginPath();
                     ctx.lineWidth = lineWidth/2;
                     ctx.strokeStyle = "#85cdde";
-                    ctx.arc(width/2, height/2, radius-0.5*lineWidth/2, 1.5*Math.PI, 1.5*Math.PI-Math.PI*animationProgress, true);
+                    ctx.arc(width/2, height/2, radius-0.5*lineWidth/2, 1.5*Math.PI, 1.5*Math.PI-2*Math.PI*animationProgress*individualDistanceScore, true);
                     ctx.stroke();
                     ctx.beginPath();
                     ctx.strokeStyle = "#2e94cc";
-                    ctx.arc(width/2, height/2, radius-1.5*lineWidth/2, 1.5*Math.PI, 1.5*Math.PI-Math.PI*animationProgress, true);
+                    ctx.arc(width/2, height/2, radius-1.5*lineWidth/2, 1.5*Math.PI, 1.5*Math.PI-2*Math.PI*animationProgress*individualBusesScore, true);
                     ctx.stroke();
                 }
             }
@@ -285,7 +294,7 @@ Frame {
                 individualDrawer.currentGeneration = generationNumber
                 individualDrawer.currentIndividual = individualNumber
                 individualDrawer.lifetime = 0
-                individualDrawer.performance = 0
+                individualDrawer.performance = individualAverageScore
                 individualDrawer.nbMutations = numberMutation
                 individualDrawer.nbCrossovers = numberCrossover
                 individualDrawer.cluster = 0

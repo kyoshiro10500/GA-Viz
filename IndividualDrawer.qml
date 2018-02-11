@@ -9,7 +9,7 @@ Drawer {
     property int currentGeneration: 0
     property int currentIndividual: 0
     property int lifetime: 0
-    property int performance: 0
+    property double performance: 0
     property int nbMutations: 0
     property int nbCrossovers: 0
     property int cluster: 0

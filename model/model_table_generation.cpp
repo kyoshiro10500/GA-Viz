@@ -156,3 +156,8 @@ int GenerationTableModel::getNumberCrossover(int gen, int ind) const
 {
     return  (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getNumberCrossover() ;
 }
+
+double GenerationTableModel::getScore(int gen, int ind) const
+{
+    return  (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore();
+}

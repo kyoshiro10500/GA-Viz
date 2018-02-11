@@ -26,6 +26,7 @@ class GenerationTableModel : public QAbstractTableModel
         Q_INVOKABLE void setGeneration(int value) ;
 
         Q_INVOKABLE QColor getColor(int gen, int ind, int index_gen, double score) const;
+        Q_INVOKABLE double getScore(int gen, int ind) const;
         Q_INVOKABLE double getScoreBus(int gen, int ind) const ;
         Q_INVOKABLE double getScoreDistance(int gen, int ind) const ;
         Q_INVOKABLE double getDistance(int gen, int ind) const ;
