@@ -23,9 +23,9 @@ Drawer {
 
     Rectangle{
         anchors.centerIn: parent
-        anchors.verticalCenterOffset: 350
-        width: 50
-        height: 45
+        anchors.verticalCenterOffset: 400
+        width: 100
+        height: 90
         z:100
         color: "white"
 
@@ -34,7 +34,7 @@ Drawer {
             id:textNumberCluster
             text: cluster
             color: "black"
-            font.pixelSize: 30
+            font.pixelSize: 20
         }
 
 

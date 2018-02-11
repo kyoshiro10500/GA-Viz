@@ -18,7 +18,7 @@ Frame {
     property int numberTotalIndividuals : populationModel.get_number_generation()*populationModel.get_number_cluster()*populationModel.get_number_individuals()
     property double bestScore : populationModel.get_best_score()
     property double worstScore : populationModel.get_worst_score()
-    property int individualCluster: generationNumber/populationModel.get_number_individuals() + 1
+    property int individualCluster: individualNumber/populationModel.get_number_individuals() + 1
 
     property int averageRank: 0
     property int distanceRank: 0
