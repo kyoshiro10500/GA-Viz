@@ -57,7 +57,8 @@ Frame {
             model: generationModel.columnCount()
             orientation: ListView.Horizontal
 
-            width: parent.width
+            width: (index >= (vScrollBar.position)*generationModel.rowCount() - 1 && index <= (vScrollBar.position)*generationModel.rowCount() +verticalVisibleItemCount+ 1) ? parent.width : 0
+            visible : (index >= (vScrollBar.position)*generationModel.rowCount() - 1 && index <= (vScrollBar.position)*generationModel.rowCount() +verticalVisibleItemCount+ 1)
             height: cellSize + verticalSpacing
 
             property int rowIndex: index
@@ -73,7 +74,7 @@ Frame {
                 Rectangle {
                     id: cell
 
-                    width: calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                    width: (index >= (hScrollBar.position)*generationModel.columnCount() - 1 && index <= (hScrollBar.position)*generationModel.columnCount() +horizontalVisibleItemCount+ 1) ? calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex) : 0
                     height: width
                     radius: 0.5 * width
                     anchors.centerIn: parent
@@ -85,9 +86,6 @@ Frame {
                         onClicked: {
                             if (mouse.button == Qt.LeftButton)
                             {
-                                generationToIndividualTransition(columnDelegate)
-                                individualView.generationNumber = rowDelegate.rowIndex
-                                individualView.individualNumber = columnDelegate.columnIndex
                                 if(index_gen == rowDelegate.rowIndex)
                                 {
                                     generationToIndividualTransition(columnDelegate)
@@ -184,32 +182,71 @@ Frame {
 
         anchors.right: generationListView.left
         anchors.top: generationListView.top
+        anchors.rightMargin: 10
 
         width: 15
         height: generationListView.height
 
         active: true
-        contentItem.opacity: 1
+
+        contentItem: Rectangle {
+            opacity: 1
+            width: 5
+            radius: width / 2
+            color: vScrollBar.pressed ? Qt.darker("#ffffff", 1.5) : Qt.darker("#ffffff", 1.2)
+        }
+
+        background: Rectangle {
+            anchors.horizontalCenter: vScrollBar.horizontalCenter
+            anchors.verticalCenter: vScrollBar.verticalCenter
+            width: 1
+            height: vScrollBar.height - 10
+            color: Qt.darker("#ffffff", 2.0)
+        }
+
+        onPositionChanged: {
+            if (generationView.visible)
+                populationView.vScrollBar.position = position
+        }
     }
 
     ScrollBar {
         id: hScrollBar
 
         anchors.left: generationListView.left
-        y: generationListView.y + generationListView.height
+        y: generationListView.y + generationListView.height + 10
 
         width: generationListView.width
         height: 15
 
         active: true
-        contentItem.opacity: 1
+
+        contentItem: Rectangle {
+            opacity: 1
+            height: 5
+            radius: width / 2
+            color: hScrollBar.pressed ? Qt.darker("#ffffff", 1.5) : Qt.darker("#ffffff", 1.2)
+        }
+
+        background: Rectangle {
+            anchors.horizontalCenter: hScrollBar.horizontalCenter
+            anchors.verticalCenter: hScrollBar.verticalCenter
+            width: hScrollBar.width - 10
+            height: 1
+            color: Qt.darker("#ffffff", 2.0)
+        }
+
+        onPositionChanged: {
+            if (generationView.visible)
+                populationView.hScrollBar.position = position
+        }
     }
 
     ListView {
         id: rowIndicator
 
         anchors.right: vScrollBar.left
-        width: 20
+        width: 40
         height: vScrollBar.height
 
         model: populationModel.rowCount()
@@ -251,6 +288,22 @@ Frame {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             color: "white"
+        }
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.RightButton
+        onClicked: {
+            if (mouse.button == Qt.RightButton) {
+                generationDrawer.currentGeneration = index_gen
+                generationDrawer.globalPerformance = 0
+                generationDrawer.nbIndividuals = populationModel.columnCount()
+                generationDrawer.nbMutations = 0
+                generationDrawer.nbCrossovers = 0
+                generationDrawer.nbClusters = 0
+                generationDrawer.open()
+            }
         }
     }
 

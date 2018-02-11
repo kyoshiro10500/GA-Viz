@@ -272,4 +272,21 @@ Frame {
             }
         }
     }
+
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.RightButton
+        onClicked: {
+            if (mouse.button == Qt.RightButton) {
+                individualDrawer.currentGeneration = generationNumber
+                individualDrawer.currentIndividual = individualNumber
+                individualDrawer.lifetime = 0
+                individualDrawer.performance = 0
+                individualDrawer.nbMutations = 0
+                individualDrawer.nbCrossovers = 0
+                individualDrawer.cluster = 0
+                individualDrawer.open()
+            }
+        }
+    }
 }

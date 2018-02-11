@@ -10,22 +10,49 @@ Page {
         border.color: "black"
     }
 
+    FontLoader { id: titleFont; source: "/Mont-HeavyDEMO.otf" }
 
     ColumnLayout {
         anchors.fill: parent
-        RowLayout
-        {
-            anchors.centerIn: parent
-            Button {
-                text: "Load File"
+
+        spacing: 30
+
+        LoadingScreen {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+
+            Label {
+                anchors.centerIn: parent
+
+                text: "GA-VIZ"
+                color: "white"
+                font { family: titleFont.name; pixelSize: 80; capitalization: Font.Capitalize }
+            }
+        }
+
+        ColumnLayout {
+            Layout.fillWidth: true
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: 30
+
+            ToolBarButton {
+                anchors.horizontalCenter: parent.horizontalCenter
+                Layout.preferredHeight: 50
+                Layout.fillHeight: false
+                buttonText: "Load file"
                 onClicked: fileDialog.open()
             }
 
-            Button {
-                text: "Quit"
+            ToolBarButton {
+                anchors.horizontalCenter: parent.horizontalCenter
+                Layout.preferredHeight: 50
+                Layout.fillHeight: false
+                buttonText: "Quit"
                 onClicked: Qt.quit()
             }
         }
+
+        Item { Layout.preferredHeight: 30 }
     }
 
     FileDialog {

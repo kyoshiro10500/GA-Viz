@@ -195,11 +195,10 @@ Population_clustered Parseur::parseFile()
                             population[index_generation][index_cluster][index_individual].setGIdx(gIdx);
                             population[index_generation][index_cluster][index_individual].setNumberBuses(number_buses);
                             population[index_generation][index_cluster][index_individual].setDistance(distance);
-                            population[index_generation][index_cluster][index_individual].setCrossing(crossings != 0);
-                            population[index_generation][index_cluster][index_individual].setMutation(mutations != 0);
+                            population[index_generation][index_cluster][index_individual].setNumberCrossover(crossings);
+                            population[index_generation][index_cluster][index_individual].setNumberMutation(mutations);
                             population[index_generation][index_cluster][index_individual].setParent1(parent1);
                             population[index_generation][index_cluster][index_individual].setParent2(parent2);
-                            population[index_generation][index_cluster][index_individual].setIsNew(parent1 != -1 || parent2 != -1 || index_generation == 0);
 
                             index_individual++; //We go to the next individual
                         }

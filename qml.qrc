@@ -12,7 +12,11 @@
         <file>DrawerInfo.qml</file>
         <file>FilterSlider.qml</file>
         <file>IndividualView.qml</file>
-        <file>InfoDrawer.qml</file>
         <file>IndividualScoreMeter.qml</file>
+        <file>LoadingScreen.qml</file>
+        <file>Mont-HeavyDEMO.otf</file>
+        <file>PopulationDrawer.qml</file>
+        <file>GenerationDrawer.qml</file>
+        <file>IndividualDrawer.qml</file>
     </qresource>
 </RCC>
