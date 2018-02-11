@@ -146,3 +146,13 @@ int GenerationTableModel::getNumberBuses(int gen, int ind) const
 {
     return  (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getNumberBuses() ;
 }
+
+int GenerationTableModel::getNumberMutation(int gen, int ind) const
+{
+    return  (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getNumberMutation() ;
+}
+
+int GenerationTableModel::getNumberCrossover(int gen, int ind) const
+{
+    return  (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getNumberCrossover() ;
+}

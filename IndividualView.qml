@@ -12,6 +12,8 @@ Frame {
     property double individualBusesScore : generationModel.getScoreBus(generationNumber, individualNumber)
     property double totalDistance : generationModel.getDistance(generationNumber, individualNumber)
     property int numberBuses : generationModel.getNumberBuses(generationNumber, individualNumber)
+    property int numberMutation : generationModel.getNumberMutation(generationNumber, individualNumber)
+    property int numberCrossover : generationModel.getNumberCrossover(generationNumber, individualNumber)
 
 
     contentHeight: parent.height
@@ -119,7 +121,7 @@ Frame {
                         font.pointSize: 15
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
-                        text: totalDistance
+                        text: totalDistance + " km"
                         color: "white"
                     }
                     Text{
@@ -246,7 +248,7 @@ Frame {
                     }
                     ProgressBar {
                         id:distanceBar
-                        value: 0.5
+                        value: individualDistanceScore
                         width: 500
                         transform: Translate { y: 5 }
                     }
@@ -266,7 +268,7 @@ Frame {
                     }
                     ProgressBar {
                         id:trucksBar
-                        value: 0.5
+                        value: individualBusesScore
                         width: 500
                         transform: Translate { y: 5 }
                     }
@@ -284,8 +286,8 @@ Frame {
                 individualDrawer.currentIndividual = individualNumber
                 individualDrawer.lifetime = 0
                 individualDrawer.performance = 0
-                individualDrawer.nbMutations = 0
-                individualDrawer.nbCrossovers = 0
+                individualDrawer.nbMutations = numberMutation
+                individualDrawer.nbCrossovers = numberCrossover
                 individualDrawer.cluster = 0
                 individualDrawer.open()
             }

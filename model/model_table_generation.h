@@ -30,6 +30,8 @@ class GenerationTableModel : public QAbstractTableModel
         Q_INVOKABLE double getScoreDistance(int gen, int ind) const ;
         Q_INVOKABLE double getDistance(int gen, int ind) const ;
         Q_INVOKABLE int getNumberBuses(int gen, int ind) const ;
+        Q_INVOKABLE int getNumberMutation(int gen, int ind) const ;
+        Q_INVOKABLE int getNumberCrossover(int gen, int ind) const ;
         Q_INVOKABLE bool getNew(int gen,int ind) const ;
         Q_INVOKABLE bool getCrossing(int gen,int ind) const ;
         Q_INVOKABLE bool getMutation(int gen,int ind) const ;
