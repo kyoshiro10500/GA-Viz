@@ -102,7 +102,7 @@ Frame {
 
                     Rectangle {
                         id: newRectangle
-                        visible: cell.isNew
+                        visible: cell.isNew || rowDelegate.rowIndex == 0
                         anchors.centerIn: parent
                         width: parent.width * 0.2
                         height: width

@@ -211,6 +211,8 @@ Population_clustered Parseur::parseFile()
             //We will calculate the score of each individual
             int number_mutation = 0 ;
             int number_crossover = 0 ;
+            double worst_score = 1.0 ;
+            double best_score = 0.0 ;
             for (int i = 0; i < number_generation; i++)
             {
                 for (int j = 0; j < number_cluster; j++)
@@ -229,6 +231,14 @@ Population_clustered Parseur::parseFile()
                         {
                             number_mutation++ ;
                         }
+                        if(population[i][j][k].getScore() < worst_score)
+                        {
+                            worst_score = population[i][j][k].getScore() ;
+                        }
+                        if(population[i][j][k].getScore() > best_score)
+                        {
+                            best_score = population[i][j][k].getScore() ;
+                        }
                         meanBuses += population[i][j][k].getNumberBuses() ;
                         meanDistance += population[i][j][k].getDistance() ;
                         meanScore += population[i][j][k].getScore() ;
@@ -240,6 +250,8 @@ Population_clustered Parseur::parseFile()
             }
             population.set_number_crossover(number_crossover);
             population.set_number_mutation(number_mutation);
+            population.set_worst_score(worst_score);
+            population.set_best_score(best_score);
             return population;
         }
         else

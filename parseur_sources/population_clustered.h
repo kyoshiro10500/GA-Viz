@@ -15,6 +15,8 @@ class Population_clustered
         int _number_cluster ;
         int _number_crossover ;
         int _number_mutation ;
+        double _best_score ;
+        double _worst_score ;
 
     public :
         //Constructor
@@ -35,10 +37,14 @@ class Population_clustered
         int get_number_crossover() const ;
         int get_number_mutation() const ;
         std::vector<Generation_clustered> get_generation() const ;
+        double get_best_score() const ;
+        double get_worst_score() const ;
 
         //Setter
         void set_number_crossover(int number_crossover) ;
         void set_number_mutation(int number_mutation) ;
+        void set_best_score(double best_score) ;
+        void set_worst_score(double worst_score) ;
 
 };
 

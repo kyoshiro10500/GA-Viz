@@ -58,6 +58,16 @@ std::vector<Generation_clustered> Population_clustered::get_generation() const
     return _generations ;
 }
 
+double Population_clustered::get_best_score() const
+{
+    return _best_score ;
+}
+
+double Population_clustered::get_worst_score() const
+{
+    return _worst_score ;
+}
+
 //Setter
 void Population_clustered::set_number_crossover(int number_crossover)
 {
@@ -68,6 +78,16 @@ void Population_clustered::set_number_mutation(int number_mutation)
 {
     //qDebug() << number_mutation ;
     _number_mutation = number_mutation ;
+}
+
+void Population_clustered::set_best_score(double best_score)
+{
+    _best_score = best_score ;
+}
+
+void Population_clustered::set_worst_score(double worst_score)
+{
+    _worst_score = worst_score ;
 }
 
 //Operator
