@@ -19,10 +19,11 @@ Frame {
     property double bestScore : populationModel.get_best_score()
     property double worstScore : populationModel.get_worst_score()
     property int individualCluster: individualNumber/populationModel.get_number_individuals() + 1
+    property var rang : generationModel.getRang(generationNumber,individualNumber)
 
-    property int averageRank: 0
-    property int distanceRank: 0
-    property int vehiclesRank: 0
+    property int averageRank: rang[0]
+    property int distanceRank: rang[2]
+    property int vehiclesRank: rang[1]
 
 
     contentHeight: parent.height
