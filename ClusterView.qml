@@ -113,6 +113,16 @@ Frame {
         }
     }
 
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.RightButton
+        onClicked: {
+            if (mouse.button == Qt.RightButton) {
+                populationDrawer.open()
+            }
+        }
+    }
+
     function calculateCellSize(rowIndex, columnIndex) {
         return Math.min(cellSize - (cellSize * (Math.abs(rowIndex - vScrollIndicator.position*clusterModel.rowCount() - verticalVisibleItemCount/2) - verticalVisibleItemCount/2)), cellSize);
     }

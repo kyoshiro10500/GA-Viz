@@ -254,6 +254,22 @@ Frame {
         }
     }
 
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.RightButton
+        onClicked: {
+            if (mouse.button == Qt.RightButton) {
+                generationDrawer.currentGeneration = index_gen
+                generationDrawer.globalPerformance = 0
+                generationDrawer.nbIndividuals = populationModel.columnCount()
+                generationDrawer.nbMutations = 0
+                generationDrawer.nbCrossovers = 0
+                generationDrawer.nbClusters = 0
+                generationDrawer.open()
+            }
+        }
+    }
+
     ParallelAnimation {
         id: zoomIn
         NumberAnimation {

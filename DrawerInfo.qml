@@ -4,8 +4,12 @@ import QtQuick.Layouts 1.3
 
 Frame {
     property string infoTitle: ""
+    property string value: ""
 
     Layout.fillWidth: true
+    Layout.minimumHeight: 100
+    Layout.leftMargin: 20
+    Layout.topMargin: 15
 
     padding: 2
 
@@ -14,10 +18,18 @@ Frame {
         border.color: "black"
     }
 
-    Label {
-        text: infoTitle
-        color: "yellow"
-        font.pixelSize: 15
-        font.underline: true
+    ColumnLayout {
+        Label {
+            text: infoTitle
+            color: "yellow"
+            font.pixelSize: 15
+            font.underline: true
+        }
+
+        Label {
+            text: value
+            color: "white"
+            font.pixelSize: 30
+        }
     }
 }

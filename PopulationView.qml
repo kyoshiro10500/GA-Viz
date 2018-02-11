@@ -70,15 +70,12 @@ Frame {
 
                     MouseArea {
                         anchors.fill: parent
-                        acceptedButtons: Qt.LeftButton | Qt.RightButton
+                        acceptedButtons: Qt.LeftButton
                         onClicked: {
                             if (mouse.button == Qt.LeftButton) {
                                 generationModel.setGeneration(rowDelegate.rowIndex)
                                 generationView.resetGenerationView()
                                 generationView.index_gen = rowDelegate.rowIndex
-                            }
-                            else if (mouse.button == Qt.RightButton) {
-                                populationInfoDrawer.open()
                             }
                         }
                     }
@@ -207,6 +204,21 @@ Frame {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             color: "white"
+        }
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.RightButton
+        onClicked: {
+            if (mouse.button == Qt.RightButton) {
+                populationDrawer.globalPerformance = 0
+                populationDrawer.nbIndividuals = populationModel.rowCount() * populationModel.columnCount()
+                populationDrawer.nbMutations = 0
+                populationDrawer.nbCrossovers = 0
+                populationDrawer.nbClusters = 0
+                populationDrawer.open()
+            }
         }
     }
 

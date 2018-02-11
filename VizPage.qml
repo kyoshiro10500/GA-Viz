@@ -244,22 +244,16 @@ Page {
             }
         }
 
-        InfoDrawer {
-            id: populationInfoDrawer
+        PopulationDrawer {
+            id: populationDrawer
+        }
 
-            Item {
-                parent: populationInfoDrawer.drawerContent
+        GenerationDrawer {
+            id: generationDrawer
+        }
 
-                Layout.fillHeight: true
-            }
-
-            DrawerInfo {
-                parent: populationInfoDrawer.drawerContent
-
-                infoTitle: "Global performance"
-            }
-
-
+        IndividualDrawer {
+            id: individualDrawer
         }
     }
 
