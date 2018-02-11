@@ -34,38 +34,109 @@ Drawer {
         border.color: "black"
     }
 
+    Frame {
+        anchors.left: parent.left
+        anchors.leftMargin: 20
+        anchors.top: parent.top
+        anchors.topMargin: 30
+        padding: 8
+        z: 100
 
-    ColumnLayout {
-        anchors.fill: parent
-
-        Frame {
-            Layout.leftMargin: 20
-            Layout.topMargin: 30
-            padding: 8
-
-            background: Rectangle {
-                anchors.fill: parent
-                color: "black"
-                border.color: "white"
-            }
-
-            Label {
-                text: "DETAILS"
-                color: "white"
-                font.pixelSize: 30
-            }
+        background: Rectangle {
+            anchors.fill: parent
+            color: "black"
+            border.color: "white"
         }
 
         Label {
-            Layout.fillWidth: true
-            Layout.leftMargin: 20
-            Layout.topMargin: 30
-
-            text: "GENERATION " + currentGeneration + "\nINDIVIDUAL " + currentIndividual
+            text: "DETAILS"
             color: "white"
             font.pixelSize: 30
-            horizontalAlignment: Text.AlignHCenter
         }
+    }
+
+    Label {
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.leftMargin: 250
+        anchors.topMargin: 150
+        z:100
+
+        text: "G" + "\nI"
+        color: "yellow"
+        font.pixelSize: 30
+        font.underline: true
+        horizontalAlignment: Text.AlignHCenter
+    }
+
+    Label {
+        anchors.top: parent.top
+        anchors.left: parent.left
+        anchors.leftMargin: 300
+        anchors.topMargin: 150
+        z:100
+
+        text: currentGeneration + "\n" + currentIndividual
+        color: "white"
+        font.pixelSize: 30
+        horizontalAlignment: Text.AlignHCenter
+    }
+
+    Rectangle {
+        id: cell
+
+        width: 150
+        visible : true
+        height: width
+        radius: 0.5 * width
+        anchors.top: parent.top
+        anchors.topMargin: 120
+        anchors.left: parent.left
+        anchors.leftMargin: 50
+        color: populationModel.getColor(currentGeneration, currentIndividual, 0)
+
+        property bool isNew: populationModel.getNew(currentGeneration, currentIndividual)
+        property bool isMutated: populationModel.getMutation(currentGeneration, currentIndividual)
+        property bool isCrossing: populationModel.getCrossing(currentGeneration, currentIndividual)
+
+        Rectangle {
+            id: newRectangle
+            visible: cell.isNew
+            anchors.centerIn: parent
+            width: parent.width * 0.2
+            height: width
+            radius: width
+            color: "black"
+        }
+
+        Rectangle {
+            id: mutationRectangle
+            visible: cell.isMutated
+            x: width/2 * (1/Math.sqrt(2) + 0.5)
+            y: -x
+            width: parent.width
+            height: width
+            rotation: 45
+            color: "black"
+        }
+
+        Rectangle {
+            id: crossingOverRectangle
+            visible: cell.isCrossing
+            x: width/2 * (1/Math.sqrt(2) + 0.5)
+            y: x
+            width: parent.width
+            height: width
+            rotation: 45
+            color: "black"
+        }
+
+    }
+
+
+    ColumnLayout {
+        anchors.fill: parent
+        anchors.topMargin: 300
 
         DrawerInfo {
             infoTitle: "Lifetime"
