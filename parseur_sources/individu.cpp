@@ -128,15 +128,6 @@
         return _number_crossover ;
     }
 
-    //Operators
-    std::ostream& operator<<(std::ostream& os, const Individu& individu)
-    {
-        os << "NUMBER BUSES : " << individu.getNumberBuses() << "\n"
-            << "DISTANCE : " << individu.getDistance() << "\n"
-            << "SCORE : " << individu.getScore() << "\n";
-        return os;
-    }
-
     //Functions
     void Individu::calculateScore(double min_distance, int min_number_buses, int max_distance, int max_buses)
     {

@@ -117,18 +117,4 @@ Generation_clustered Population_clustered::operator [] (int i) const
     return _generations[i];
 }
 
-std::ostream& operator<<(std::ostream& os, const Population_clustered& population)
-{
-    for (int i = 0; i < population.get_number_generation(); i++)
-    {
-        for (int j = 0; j < population.get_number_cluster(); j++)
-        {
-            for(int k=0;k < population.get_number_individuals();k++)
-            {
-                os << population[i][j][k] << "\n";
-            }
-        }
-    }
-    return os;
-}
 

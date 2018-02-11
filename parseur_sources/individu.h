@@ -164,9 +164,6 @@ class Individu
          */
         int getNumberCrossover() const ;
 
-        //Operators
-        friend std::ostream& operator<<(std::ostream& os, const Individu& individu) ;
-
 		//Functions
         //! Calculate the score regarding buses and distance of an individual*/
         /*!
