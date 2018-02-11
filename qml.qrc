@@ -14,5 +14,7 @@
         <file>IndividualView.qml</file>
         <file>InfoDrawer.qml</file>
         <file>IndividualScoreMeter.qml</file>
+        <file>LoadingScreen.qml</file>
+        <file>Mont-HeavyDEMO.otf</file>
     </qresource>
 </RCC>
