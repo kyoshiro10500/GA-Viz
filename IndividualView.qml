@@ -35,21 +35,144 @@ Frame {
                 font.pointSize: 25
             }
 
-            Text{
-                id:rankingText
+            Frame {
+
+                property string text: ""
+                property double score: 0.0
+                property int    rank:0
+
+                width: parent.width
+                height: parent.height
+                z: 100
                 anchors.centerIn: parent
-                anchors.verticalCenterOffset: -0.2*parent.height
-                font.pointSize: 25
-                text: "Ranking"
-                font.underline: true
-                color: "white"
+
+                background:Rectangle{
+                    color: "transparent"
+                    border.color: "black"
+                }
+
+                Column{
+                    id:rankingColumn
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.verticalCenterOffset: -0.07*parent.height
+                    spacing:0.07*parent.height
+
+                    Text{
+                        id:rankingText
+                        font.pointSize: 20
+                        text: "Ranking"
+                        font.underline: true
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        color: "white"
+                    }
+                    Text{
+                        id:average
+                        font.pointSize: 15
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "Average:" + " / "
+                        color: "white"
+                    }
+                    Text{
+                        id:distance
+                        font.pointSize: 15
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "Distance:" + " / "
+                        color: "white"
+                    }
+                    Text{
+                        id:vehicles
+                        font.pointSize: 15
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "Vehicles:" + " / "
+                        color: "white"
+                    }
+                }
+                Column{
+                    x: rankingColumn.x -0.8*parent.height
+                    y: rankingColumn.y
+                    spacing:0.07*parent.height
+                    Text{
+                        opacity: 0.0
+                        font.pointSize: 20
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "void"
+                        color: "white"
+                    }
+                    Text{
+                        opacity: 0.0
+                        font.pointSize: 15
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        text: "void"
+                        color: "white"
+                    }
+                    Text{
+                        font.pointSize: 15
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        text: individualDistanceScore
+                        color: "white"
+                    }
+                    Text{
+                        font.pointSize: 15
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                        text: individualBusesScore
+                        color: "white"
+                    }
+
+                }
+
+                Canvas {
+                    id: scoreCanvas
+                    width: parent.width
+                    height: parent.height
+
+                    property bool change: false
+                    states: State {
+                        when: individualView.visible == true
+                        PropertyChanges { change: true; target: scoreCanvas }
+                    }
+
+                    onChangeChanged: requestPaint()
+
+                    onPaint: {
+                        var ctx = getContext('2d')
+                        ctx.reset();
+
+                        var left = rankingColumn.x -0.8*parent.height
+                        var right = width * 0.6
+                        var vCenter = height * 0.5
+
+                        ctx.lineCap = "square"
+                        ctx.lineWidth = height*0.02
+
+                        ctx.strokeStyle = populationModel.getColor(generationNumber, individualNumber, 0)
+                        ctx.beginPath()
+                        ctx.moveTo(width/2 - 0.43*parent.height, rankingColumn.y + average.y + 35)
+                        ctx.lineTo(right, rankingColumn.y + average.y + 35)
+                        ctx.stroke()
+                        ctx.strokeStyle = "#85cdde";
+                        ctx.beginPath()
+                        ctx.moveTo(left, rankingColumn.y + distance.y + 35)
+                        ctx.lineTo(right, rankingColumn.y + distance.y + 35)
+                        ctx.stroke()
+                        ctx.beginPath()
+                        ctx.strokeStyle = "#2e94cc";
+                        ctx.moveTo(left, rankingColumn.y + vehicles.y + 35)
+                        ctx.lineTo(right, rankingColumn.y + vehicles.y + 35)
+                        ctx.stroke()
+                    }
+                }
             }
-            Text{
-                font.pointSize: 20
-                anchors.centerIn: parent
-                text: "Average:" + " / "
-                color: "white"
-            }
+
+
             Canvas {
                 id: mycanvas
                 anchors.centerIn: parent
@@ -90,10 +213,6 @@ Frame {
                     ctx.beginPath();
                     ctx.strokeStyle = "#2e94cc";
                     ctx.arc(width/2, height/2, radius-1.5*lineWidth/2, 1.5*Math.PI, 1.5*Math.PI-Math.PI*animationProgress, true);
-                    ctx.stroke();
-                    ctx.beginPath();
-                    ctx.strokeStyle = "#142424";
-                    ctx.arc(width/2, height/2, radius-2.5*lineWidth/2, 1.5*Math.PI, 1.5*Math.PI-Math.PI*animationProgress, true);
                     ctx.stroke();
                 }
             }
