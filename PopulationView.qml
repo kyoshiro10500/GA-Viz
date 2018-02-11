@@ -243,10 +243,10 @@ Frame {
         onClicked: {
             if (mouse.button == Qt.RightButton) {
                 populationDrawer.globalPerformance = 0
-                populationDrawer.nbIndividuals = populationModel.rowCount() * populationModel.columnCount()
-                populationDrawer.nbMutations = 0
-                populationDrawer.nbCrossovers = 0
-                populationDrawer.nbClusters = 0
+                populationDrawer.nbIndividuals = populationModel.get_number_individuals()
+                populationDrawer.nbMutations = populationModel.get_number_mutation()
+                populationDrawer.nbCrossovers = populationModel.get_number_crossover()
+                populationDrawer.nbClusters = populationModel.get_number_cluster()
                 populationDrawer.open()
             }
         }

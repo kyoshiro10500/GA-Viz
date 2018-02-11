@@ -130,3 +130,23 @@ QColor PopulationTableModel::getColor(int gen, int ind, double score) const
         return QColor(0,0,0) ;
     }
 }
+
+int PopulationTableModel::get_number_individuals() const
+{
+    return mElements->get_number_individuals();
+}
+
+int PopulationTableModel::get_number_cluster() const
+{
+    return mElements->get_number_cluster();
+}
+
+int PopulationTableModel::get_number_crossover() const
+{
+    return mElements->get_number_crossover();
+}
+
+int PopulationTableModel::get_number_mutation() const
+{
+    return mElements->get_number_mutation();
+}
