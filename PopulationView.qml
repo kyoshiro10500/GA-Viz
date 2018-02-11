@@ -83,80 +83,45 @@ Frame {
                         }
                     }
 
-                    Canvas {
-                        id: populationCanvas
-                        width: calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex)
-                        height: calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex)
-                        property bool isNew: populationModel.getNew(rowDelegate.rowIndex, columnDelegate.columnIndex)
-                        property bool isMutated: populationModel.getMutation(rowDelegate.rowIndex, columnDelegate.columnIndex)
-                        property bool isCrossing: populationModel.getCrossing(rowDelegate.rowIndex, columnDelegate.columnIndex)
-                        property bool showGenealogy: populationModel.getGenealogy()
-                        property int parent1: populationModel.getParent1(rowDelegate.rowIndex, columnDelegate.columnIndex)
-                        property int parent2: populationModel.getParent2(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                    property bool isNew: populationModel.getNew(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                    property bool isMutated: populationModel.getMutation(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                    property bool isCrossing: populationModel.getCrossing(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                    property bool showGenealogy: populationModel.getGenealogy()
+                    property int parent1: populationModel.getParent1(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                    property int parent2: populationModel.getParent2(rowDelegate.rowIndex, columnDelegate.columnIndex)
 
-                        onPaint: {
-                                var ctx = populationCanvas.getContext("2d");
-                                ctx.fillStyle = Qt.rgba(0, 0, 0, 1);
-                                //New Individual
-                                if(isNew && 0.1 * width >= 0.001)
-                                {
-                                    ctx.beginPath() ;
-                                    ctx.arc(width/2.0, height/2.0, 0.1*width, 0, 2 * Math.PI, false);
-                                    ctx.fill();
-                                }
-
-                                //Mutation
-                                if(isMutated)
-                                {
-                                    ctx.beginPath();
-                                    ctx.moveTo(width, 0);
-                                    ctx.lineTo(width, height/2.0);
-                                    ctx.lineTo(width/2.0, 0);
-                                    ctx.fill();
-                                }
-
-                                //Crossing over
-                                if(isCrossing)
-                                {
-                                    ctx.beginPath();
-                                    ctx.moveTo(width, height);
-                                    ctx.lineTo(width/2.0, height);
-                                    ctx.lineTo(width, height/2.0);
-                                    ctx.fill();
-                                }
-
-                                //Genealogy
-                                if(true && isNew)
-                                {
-                                    /*var genealogyctx = canvasGenealogy.getContext("2d");
-                                    genealogyctx.fillStyle = Qt.rgba(255, 255, 0, 1);
-                                    if(parent1 != -1)
-                                    {
-                                        var generation1 = parent1 / populationModel.columnCount() ;
-                                        var individual1 = parent1 % populationModel.columnCount() ;
-                                        var generation_gap1 =  generation1 - rowDelegate.row ;
-                                        var individual_gap1 = individual1 - column ;
-                                        genealogyctx.beginPath();
-                                        genealogyctx.moveTo(width/2, height/2);
-                                        genealogyctx.lineTo(width/2 + individual_gap1*cellSize + 0.25 * width, height/2 + generation_gap1*cellSize);
-                                        genealogyctx.lineTo(width/2 + individual_gap1*cellSize -0.25 * width, height/2 + generation_gap1*cellSize);
-                                        genealogyctx.fill();
-                                    }
-                                    if(parent2 != -1)
-                                    {
-                                        var generation2 = parent2 / populationModel.columnCount() ;
-                                        var individual2 = parent2 % populationModel.columnCount() ;
-                                        var generation_gap2 =  generation2 - rowDelegate.row ;
-                                        var individual_gap2 = individual2 - column ;
-                                        genealogyctx.beginPath();
-                                        genealogyctx.moveTo(width/2, height/2);
-                                        genealogyctx.lineTo(width/2 + individual_gap2*cellSize + 0.25 * width, height/2 + generation_gap2*cellSize);
-                                        genealogyctx.lineTo(width/2 + individual_gap2*cellSize -0.25 * width, height/2 + generation_gap2*cellSize);
-                                        genealogyctx.fill();
-                                    }*/
-                            }
-                        }
+                    Rectangle {
+                        id: newRectangle
+                        visible: cell.isNew
+                        anchors.centerIn: parent
+                        width: parent.width * 0.2
+                        height: width
+                        radius: width
+                        color: "black"
                     }
+
+                    Rectangle {
+                        id: mutationRectangle
+                        visible: cell.isMutated
+                        x: width/2 * (1/Math.sqrt(2) + 0.5)
+                        y: -x
+                        width: parent.width
+                        height: width
+                        rotation: 45
+                        color: "black"
+                    }
+
+                    Rectangle {
+                        id: crossingOverRectangle
+                        visible: cell.isCrossing
+                        x: width/2 * (1/Math.sqrt(2) + 0.5)
+                        y: x
+                        width: parent.width
+                        height: width
+                        rotation: 45
+                        color: "black"
+                    }
+
                 }
             }
         }
