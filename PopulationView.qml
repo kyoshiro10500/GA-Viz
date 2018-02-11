@@ -127,15 +127,31 @@ Frame {
 
         anchors.right: populationListView.left
         anchors.top: populationListView.top
+        anchors.rightMargin: 10
 
         width: 15
         height: populationListView.height
 
         active: true
-        contentItem.opacity: 1
+
+        contentItem: Rectangle {
+            opacity: 1
+            width: 5
+            radius: width / 2
+            color: vScrollBar.pressed ? Qt.darker("#ffffff", 1.5) : Qt.darker("#ffffff", 1.2)
+        }
+
+        background: Rectangle {
+            anchors.horizontalCenter: vScrollBar.horizontalCenter
+            anchors.verticalCenter: vScrollBar.verticalCenter
+            width: 1
+            height: vScrollBar.height - 10
+            color: Qt.darker("#ffffff", 2.0)
+        }
 
         onPositionChanged: {
-            generationView.vScrollBar.position = position
+            if (populationView.visible)
+                generationView.vScrollBar.position = position
         }
     }
 
@@ -143,16 +159,31 @@ Frame {
         id: hScrollBar
 
         anchors.left: populationListView.left
-        y: populationListView.y + populationListView.height
+        y: populationListView.y + populationListView.height + 10
 
         width: populationListView.width
         height: 15
 
         active: true
-        contentItem.opacity: 1
+
+        contentItem: Rectangle {
+            opacity: 1
+            height: 5
+            radius: width / 2
+            color: hScrollBar.pressed ? Qt.darker("#ffffff", 1.5) : Qt.darker("#ffffff", 1.2)
+        }
+
+        background: Rectangle {
+            anchors.horizontalCenter: hScrollBar.horizontalCenter
+            anchors.verticalCenter: hScrollBar.verticalCenter
+            width: hScrollBar.width - 10
+            height: 1
+            color: Qt.darker("#ffffff", 2.0)
+        }
 
         onPositionChanged: {
-            generationView.hScrollBar.position = position
+            if (populationView.visible)
+                generationView.hScrollBar.position = position
         }
     }
 
@@ -160,6 +191,7 @@ Frame {
         id: rowIndicator
 
         anchors.right: vScrollBar.left
+        anchors.rightMargin: 10
         width: 20
         height: vScrollBar.height
 
