@@ -35,7 +35,7 @@ class PopulationTableModel : public QAbstractTableModel
         bool setData(const QModelIndex &index, const QVariant &value, int role);
 
         void addElement(const QString &element, int value);
-        Population_clustered * mElements;
+        Population_clustered * mElements; /*! A pointer to the population*/
 
         //! Set the value of scoreFilter*/
         Q_INVOKABLE void setScoreFilter(float value) ;

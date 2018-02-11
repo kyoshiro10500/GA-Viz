@@ -26,7 +26,7 @@ class ClusterTableModel : public QAbstractTableModel
 
         //! Holds the number of column of the model of the model*/
         /*!
-         * The number of column corresponds to the number of individuals per generations
+         * The number of column corresponds to the number of clusters per generations
          */
         int columnCount(const QModelIndex &parent = QModelIndex()) const;
 
@@ -35,7 +35,7 @@ class ClusterTableModel : public QAbstractTableModel
         bool setData(const QModelIndex &index, const QVariant &value, int role);
 
         void addElement(const QString &element, int value);
-        Population_clustered * mElements;
+        Population_clustered * mElements; /*! A pointer to the population*/
 
     private:
 
