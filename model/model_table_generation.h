@@ -38,7 +38,7 @@ class GenerationTableModel : public QAbstractTableModel
         Q_INVOKABLE bool getMutation(int gen,int ind) const ;
         Q_INVOKABLE float getScoreFilter() const;
         Q_INVOKABLE int getGeneration() const ;
-        Q_INVOKABLE int* getRang(int gen, int ind) const ;
+        Q_INVOKABLE QList<int> getRang(int gen, int ind) const ;
     private:
         float scoreFilter = 0 ;
         bool mutationFilter = false ;

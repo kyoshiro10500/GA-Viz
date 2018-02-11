@@ -162,9 +162,12 @@ double GenerationTableModel::getScore(int gen, int ind) const
     return  (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore();
 }
 
-int* GenerationTableModel::getRang(int gen, int ind) const
+QList<int> GenerationTableModel::getRang(int gen, int ind) const
 {
-    int rang[3] = {1,1,1} ; // {rangBus, rangDistance, rangScore}
+    int rangBus = 1 ;
+    int rangDistance = 1 ;
+    int rangScore = 1 ;
+    QList<int> rang ;
     double score = (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore();
     double scoreBus = (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScoreBuses() ;
     double scoreDistance = (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScoreDistance();
@@ -174,17 +177,18 @@ int* GenerationTableModel::getRang(int gen, int ind) const
         {
             if((*mElements)[g][i/mElements->get_number_individuals()][i%mElements->get_number_individuals()].getScore() >score)
             {
-                rang[2]++ ;
+                rangScore++ ;
             }
             if((*mElements)[g][i/mElements->get_number_individuals()][i%mElements->get_number_individuals()].getScoreBuses() >scoreBus)
             {
-                rang[0]++ ;
+                rangBus++ ;
             }
             if((*mElements)[g][i/mElements->get_number_individuals()][i%mElements->get_number_individuals()].getScoreDistance() >scoreDistance)
             {
-                rang[1]++ ;
+                rangDistance++ ;
             }
         }
     }
+    rang.append(rangScore); rang.append(rangBus); rang.append(rangDistance);
     return rang ;
 }
