@@ -185,25 +185,64 @@ Frame {
 
         anchors.right: generationListView.left
         anchors.top: generationListView.top
+        anchors.rightMargin: 10
 
         width: 15
         height: generationListView.height
 
         active: true
-        contentItem.opacity: 1
+
+        contentItem: Rectangle {
+            opacity: 1
+            width: 5
+            radius: width / 2
+            color: vScrollBar.pressed ? Qt.darker("#ffffff", 1.5) : Qt.darker("#ffffff", 1.2)
+        }
+
+        background: Rectangle {
+            anchors.horizontalCenter: vScrollBar.horizontalCenter
+            anchors.verticalCenter: vScrollBar.verticalCenter
+            width: 1
+            height: vScrollBar.height - 10
+            color: Qt.darker("#ffffff", 2.0)
+        }
+
+        onPositionChanged: {
+            if (generationView.visible)
+                populationView.vScrollBar.position = position
+        }
     }
 
     ScrollBar {
         id: hScrollBar
 
         anchors.left: generationListView.left
-        y: generationListView.y + generationListView.height
+        y: generationListView.y + generationListView.height + 10
 
         width: generationListView.width
         height: 15
 
         active: true
-        contentItem.opacity: 1
+
+        contentItem: Rectangle {
+            opacity: 1
+            height: 5
+            radius: width / 2
+            color: hScrollBar.pressed ? Qt.darker("#ffffff", 1.5) : Qt.darker("#ffffff", 1.2)
+        }
+
+        background: Rectangle {
+            anchors.horizontalCenter: hScrollBar.horizontalCenter
+            anchors.verticalCenter: hScrollBar.verticalCenter
+            width: hScrollBar.width - 10
+            height: 1
+            color: Qt.darker("#ffffff", 2.0)
+        }
+
+        onPositionChanged: {
+            if (generationView.visible)
+                populationView.hScrollBar.position = position
+        }
     }
 
     ListView {

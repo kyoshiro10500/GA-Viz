@@ -60,7 +60,7 @@ Drawer {
             Layout.leftMargin: 20
             Layout.topMargin: 30
 
-            text: "GENERATION " + currentGeneration
+            text: currentGeneration == -1 ? "NO GENERATION SELECTED" : "GENERATION " + currentGeneration
             color: "white"
             font.pixelSize: 30
             horizontalAlignment: Text.AlignHCenter
