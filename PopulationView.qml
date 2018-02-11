@@ -74,8 +74,7 @@ Frame {
                         onClicked: {
                             if (mouse.button == Qt.LeftButton) {
                                 generationModel.setGeneration(rowDelegate.rowIndex)
-                                populationView.visible = false
-                                generationView.visible = true
+                                generationView.resetGenerationView()
                                 generationView.index_gen = rowDelegate.rowIndex
                             }
                             else if (mouse.button == Qt.RightButton) {
@@ -194,6 +193,55 @@ Frame {
 
         onPositionChanged: {
             generationView.hScrollBar.position = position
+        }
+    }
+
+    ListView {
+        id: rowIndicator
+
+        anchors.right: vScrollBar.left
+        width: 20
+        height: vScrollBar.height
+
+        model: populationModel.rowCount()
+        orientation: ListView.Vertical
+        interactive: false
+        ScrollBar.vertical: vScrollBar
+        clip: true
+
+        delegate: Label {
+            width: parent.width
+            height: cellSize + verticalSpacing
+            text: index
+            font.pixelSize: Math.min(10 + showSlider.value, 20)
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: "white"
+        }
+    }
+
+    ListView {
+        id: columnIndicator
+
+        anchors.top: hScrollBar.bottom
+        anchors.topMargin: 10
+        width: hScrollBar.width
+        height: 20
+
+        model: populationModel.columnCount()
+        orientation: ListView.Horizontal
+        interactive: false
+        ScrollBar.horizontal: hScrollBar
+        clip: true
+
+        delegate: Label {
+            width: cellSize + horizontalSpacing
+            height: parent.height
+            text: index
+            font.pixelSize: Math.min(10 + showSlider.value, 20)
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: "white"
         }
     }
 

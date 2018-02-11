@@ -24,7 +24,6 @@ Frame {
     property double zoomScale: 0.8 * 0.8 * parent.height / cellSize
     property double zoomX: 0
     property double zoomY: 0
-    property Canvas selectedIndividual
 
     padding: 10
     leftPadding: 70
@@ -39,12 +38,6 @@ Frame {
         id: viewScale
         xScale: 1.0
         yScale: 1.0
-
-        onXScaleChanged: {
-             if (selectedIndividual) {
-                 selectedIndividual.requestPaint()
-             }
-         }
     }
 
     ListView {
@@ -93,7 +86,6 @@ Frame {
                             if (mouse.button == Qt.LeftButton)
                             {
                                 generationToIndividualTransition(columnDelegate)
-                                selectedIndividual = generationCanvas
                                 individualView.generationNumber = rowDelegate.rowIndex
                                 individualView.individualNumber = columnDelegate.columnIndex
                                 if(index_gen == rowDelegate.rowIndex)
@@ -213,6 +205,55 @@ Frame {
         contentItem.opacity: 1
     }
 
+    ListView {
+        id: rowIndicator
+
+        anchors.right: vScrollBar.left
+        width: 20
+        height: vScrollBar.height
+
+        model: populationModel.rowCount()
+        orientation: ListView.Vertical
+        interactive: false
+        ScrollBar.vertical: vScrollBar
+        clip: true
+
+        delegate: Label {
+            width: parent.width
+            height: cellSize + verticalSpacing
+            text: index
+            font.pixelSize: Math.min(10 + showSlider.value, 20)
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: "white"
+        }
+    }
+
+    ListView {
+        id: columnIndicator
+
+        anchors.top: hScrollBar.bottom
+        anchors.topMargin: 10
+        width: hScrollBar.width
+        height: 20
+
+        model: populationModel.columnCount()
+        orientation: ListView.Horizontal
+        interactive: false
+        ScrollBar.horizontal: hScrollBar
+        clip: true
+
+        delegate: Label {
+            width: cellSize + horizontalSpacing
+            height: parent.height
+            text: index
+            font.pixelSize: Math.min(10 + showSlider.value, 20)
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: "white"
+        }
+    }
+
     ParallelAnimation {
         id: zoomIn
         NumberAnimation {
@@ -314,6 +355,8 @@ Frame {
             filtersFadeIn.start()
             vScrollBar.visible = true
             hScrollBar.visible = true
+            rowIndicator.visible = true
+            columnIndicator.visible = true
         }
     }
 
@@ -324,18 +367,23 @@ Frame {
         filters.opacity = 1.0
         individualView.visible = false
         generationView.visible = true
+        viewScale.xScale = 1.0
+        viewScale.yScale = 1.0
         vScrollBar.visible = true
         hScrollBar.visible = true
+        rowIndicator.visible = true
+        columnIndicator.visible = true
         generationView.x = 0
         generationView.y = title.height + viewLayout.spacing + filters.height + viewLayout.spacing
-        scale.xScale = 1.0
-        scale.yScale = 1.0
+
     }
 
     function generationToIndividualTransition(item) {
         filtersFadeOut.start()
         vScrollBar.visible = false
         hScrollBar.visible = false
+        rowIndicator.visible = false
+        columnIndicator.visible = false
         zoomX = vizPage.width/2 - vizPage.padding - item.mapToItem(generationView, 0, 0).x - (item.mapToItem(generationView, 0, 0).x) * (zoomScale-1) - zoomScale * item.width/2
         zoomY = vizPage.height/2 - vizPage.padding - item.mapToItem(generationView, 0, 0).y - (item.mapToItem(generationView, 0, 0).y) * (zoomScale-1) - zoomScale * item.height/2 - filters.height
         zoomIn.start()
