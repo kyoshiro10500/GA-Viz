@@ -14,7 +14,7 @@ Slider {
         implicitWidth: 15
         implicitHeight: 15
         radius: 0
-        color: control.pressed ? "#f0f0f0" : "#f6f6f6"
+        color: slider.pressed ? "#f0f0f0" : "#f6f6f6"
         border.color: "#bdbebf"
     }
 }

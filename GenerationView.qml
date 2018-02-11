@@ -36,7 +36,9 @@ Frame {
     }
 
     transform: Scale {
-        id: scale
+        id: viewScale
+        xScale: 1.0
+        yScale: 1.0
 
         onXScaleChanged: {
              if (selectedIndividual) {
@@ -104,13 +106,50 @@ Frame {
                         }
                     }
 
-                    Canvas {
+                    property bool isNew: generationModel.getNew(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                    property bool isMutated: generationModel.getMutation(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                    property bool isCrossing: generationModel.getCrossing(rowDelegate.rowIndex, columnDelegate.columnIndex)
+
+                    Rectangle {
+                        id: newRectangle
+                        visible: cell.isNew
+                        anchors.centerIn: parent
+                        width: parent.width * 0.2
+                        height: width
+                        radius: width
+                        color: "black"
+                    }
+
+                    Rectangle {
+                        id: mutationRectangle
+                        visible: cell.isMutated
+                        x: width/2 * (1/Math.sqrt(2) + 0.5)
+                        y: -x
+                        width: parent.width
+                        height: width
+                        rotation: 45
+                        color: "black"
+                    }
+
+                    Rectangle {
+                        id: crossingOverRectangle
+                        visible: cell.isCrossing
+                        x: width/2 * (1/Math.sqrt(2) + 0.5)
+                        y: x
+                        width: parent.width
+                        height: width
+                        rotation: 45
+                        color: "black"
+                    }
+
+                    /*Canvas {
                         id: generationCanvas
                         width: calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex)
                         height: calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex)
                         property bool isNew: generationModel.getNew(rowDelegate.rowIndex, columnDelegate.columnIndex)
                         property bool isMutated: generationModel.getMutation(rowDelegate.rowIndex, columnDelegate.columnIndex)
                         property bool isCrossing: generationModel.getCrossing(rowDelegate.rowIndex, columnDelegate.columnIndex)
+
                         onPaint: {
                                 var ctx = generationCanvas.getContext("2d");
                                 ctx.fillStyle = Qt.rgba(0, 0, 0, 1);
@@ -142,7 +181,7 @@ Frame {
                                     ctx.fill();
                                 }
                         }
-                    }
+                    }*/
                 }
             }
         }
@@ -193,7 +232,7 @@ Frame {
         }
 
         NumberAnimation {
-            target: scale
+            target: viewScale
             property: "xScale"
             from: 1.0
             to: zoomScale
@@ -202,7 +241,7 @@ Frame {
         }
 
         NumberAnimation {
-            target: scale
+            target: viewScale
             property: "yScale"
             from: 1.0
             to: zoomScale
@@ -230,7 +269,7 @@ Frame {
         }
 
         NumberAnimation {
-            target: scale
+            target: viewScale
             property: "xScale"
             from: zoomScale
             to: 1.0
@@ -239,7 +278,7 @@ Frame {
         }
 
         NumberAnimation {
-            target: scale
+            target: viewScale
             property: "yScale"
             from: zoomScale
             to: 1.0
