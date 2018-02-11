@@ -21,6 +21,51 @@ Drawer {
     interactive: true
     modal: false
 
+    Rectangle{
+        anchors.centerIn: parent
+        anchors.verticalCenterOffset: 350
+        width: 50
+        height: 45
+        z:100
+        color: "white"
+
+        Label {
+            anchors.centerIn: parent
+            id:textNumberCluster
+            text: cluster
+            color: "black"
+            font.pixelSize: 30
+        }
+
+
+        Canvas{
+            id: clusterDrawer
+            width: parent.width
+            height: parent.height
+            onPaint: {
+                var ctx = getContext("2d");
+                ctx.fillStyle = "black";
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(width/4, 0);
+                ctx.lineTo(0, height/2);
+
+                ctx.moveTo(width, 0);
+                ctx.lineTo(3*width/4, 0);
+                ctx.lineTo(width, height/2);
+
+                ctx.moveTo(width, height);
+                ctx.lineTo(3*width/4, height);
+                ctx.lineTo(width, height/2);
+
+                ctx.moveTo(0, height);
+                ctx.lineTo(width/4, height);
+                ctx.lineTo(0, height/2);
+                ctx.fill();
+            }
+        }
+    }
+
     Rectangle {
         width: 1
         height: parent.height
@@ -160,7 +205,6 @@ Drawer {
 
         DrawerInfo {
             infoTitle: "Cluster"
-            value: cluster
         }
 
         Item { Layout.fillHeight: true }

@@ -151,6 +151,11 @@ int PopulationTableModel::get_number_mutation() const
     return mElements->get_number_mutation();
 }
 
+int PopulationTableModel::get_number_generation() const
+{
+    return mElements->get_number_generation();
+}
+
 double PopulationTableModel::get_best_score() const
 {
     return mElements->get_best_score();
