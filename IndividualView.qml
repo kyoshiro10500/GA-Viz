@@ -15,9 +15,10 @@ Frame {
     property int numberBuses : generationModel.getNumberBuses(generationNumber, individualNumber)
     property int numberMutation : generationModel.getNumberMutation(generationNumber, individualNumber)
     property int numberCrossover : generationModel.getNumberCrossover(generationNumber, individualNumber)
-    property int numberTotalIndividuals : populationModel.get_number_individuals()
+    property int numberTotalIndividuals : populationModel.get_number_generation()*populationModel.get_number_cluster()*populationModel.get_number_individuals()
     property double bestScore : populationModel.get_best_score()
     property double worstScore : populationModel.get_worst_score()
+    property int individualCluster: generationNumber/populationModel.get_number_individuals() + 1
 
     property int averageRank: 0
     property int distanceRank: 0
@@ -297,7 +298,7 @@ Frame {
                 individualDrawer.performance = individualAverageScore
                 individualDrawer.nbMutations = numberMutation
                 individualDrawer.nbCrossovers = numberCrossover
-                individualDrawer.cluster = 0
+                individualDrawer.cluster = individualCluster
                 individualDrawer.open()
             }
         }

@@ -35,6 +35,7 @@ class PopulationTableModel : public QAbstractTableModel
         Q_INVOKABLE QColor getColor(int gen, int ind, double score) const ;
         Q_INVOKABLE int get_number_individuals() const;
         Q_INVOKABLE int get_number_cluster() const ;
+        Q_INVOKABLE int get_number_generation() const;
         Q_INVOKABLE int get_number_crossover() const ;
         Q_INVOKABLE int get_number_mutation() const ;
         Q_INVOKABLE double get_best_score() const ;
