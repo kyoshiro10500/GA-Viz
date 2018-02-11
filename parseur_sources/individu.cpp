@@ -2,20 +2,19 @@
     #include <stack>
 
     //Constructor
-    Individu::Individu() : _isMutated(false),_isNew(false),_isCrossing(false)
+    Individu::Individu()
     {
 
     }
 
     Individu::Individu(const Individu& ind)
     {
-        _isMutated = ind.getMutation() ;
-        _isNew = ind.getNew() ;
-        _isCrossing = ind.getCrossing() ;
         _distance = ind.getDistance();
         _number_buses = ind.getNumberBuses();
         _scoreBuses = ind.getScoreBuses() ;
         _scoreDistance = ind.getScoreDistance() ;
+        _number_mutation = ind.getNumberCrossover() ;
+        _number_crossover = ind.getNumberMutation() ;
         _gIdx = ind.getGIdx() ;
         _parent1 = ind.getParent1() ;
         _parent2 = ind.getParent2() ;
@@ -43,19 +42,14 @@
         _gIdx = gIdx ;
     }
 
-    void Individu::setMutation(bool isMutated)
+    void Individu::setNumberMutation(int number_mutation)
     {
-        _isMutated = isMutated ;
+        _number_mutation = number_mutation ;
     }
 
-    void Individu::setCrossing(bool isCrossing)
+    void Individu::setNumberCrossover(int number_crossover)
     {
-        _isCrossing = isCrossing ;
-    }
-
-    void Individu::setIsNew(bool isNew)
-    {
-        _isNew = isNew ;
+        _number_crossover = number_crossover ;
     }
 
     void Individu::setParent1(int parent1)
@@ -71,17 +65,17 @@
     //Getter
     bool Individu::getMutation() const
     {
-        return _isMutated;
+        return _number_mutation != 0 ;
     }
 
     bool Individu::getNew() const
     {
-        return _isNew;
+        return _parent1 != -1 || _parent2 != -1 ;
     }
 
     bool Individu::getCrossing() const
     {
-        return _isCrossing;
+        return _number_crossover != 0 ;
     }
 
     int Individu::getGIdx() const
@@ -122,6 +116,16 @@
     double Individu::getScoreDistance() const
     {
         return _scoreDistance ;
+    }
+
+    int Individu::getNumberMutation() const
+    {
+        return _number_mutation ;
+    }
+
+    int Individu::getNumberCrossover() const
+    {
+        return _number_crossover ;
     }
 
     //Operators

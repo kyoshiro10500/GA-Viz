@@ -7,11 +7,10 @@
 class Individu
 {
 	private :
-		bool _isMutated;
-		bool _isNew;
-		bool _isCrossing;
-        double _distance;
+        int _number_mutation = 0 ;
+        int _number_crossover = 0 ;
         int _number_buses;
+        int _distance;
         double _scoreBuses ;
         double _scoreDistance ;
         int _gIdx ;
@@ -29,11 +28,10 @@ class Individu
 		void setDistance(double distance);
 		void setNumberBuses(int number_buses);
         void setGIdx(int gIdx) ;
-        void setMutation(bool isMutated) ;
-        void setCrossing(bool isCrossing) ;
-        void setIsNew(bool isNew) ;
         void setParent1(int parent1) ;
         void setParent2(int parent2) ;
+        void setNumberMutation(int number_mutation) ;
+        void setNumberCrossover(int number_crossover) ;
 
 		//getter
 		bool getMutation() const;
@@ -47,6 +45,8 @@ class Individu
         int getParent2() const ;
         double getScoreBuses() const ;
         double getScoreDistance() const ;
+        int getNumberMutation() const ;
+        int getNumberCrossover() const ;
 
 		//Operator
 		friend std::ostream& operator<<(std::ostream& os, const Individu& individu);
