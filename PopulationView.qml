@@ -43,12 +43,10 @@ Frame {
 
         delegate: ListView {
             id: rowDelegate
-            model: populationModel.columnCount()
+            model:   (index >= (vScrollBar.position)*populationModel.rowCount() - 2 && index <= (vScrollBar.position)*populationModel.rowCount() +verticalVisibleItemCount+ 2) ? populationModel.columnCount() : 0
             orientation: ListView.Horizontal
-
             width: parent.width
-            height: cellSize + verticalSpacing
-
+            height : cellSize + verticalSpacing
             property int rowIndex: index
 
             delegate: Item {
@@ -56,13 +54,12 @@ Frame {
 
                 width: cellSize + horizontalSpacing
                 height: cellSize + verticalSpacing
-
                 property int columnIndex: index
 
                 Rectangle {
                     id: cell
 
-                    width: calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                    width: (index >= (hScrollBar.position)*populationModel.columnCount() - 2 && index <= (hScrollBar.position)*populationModel.columnCount() +horizontalVisibleItemCount+ 2) ? calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex) : 0
                     height: width
                     radius: 0.5 * width
                     anchors.centerIn: parent
