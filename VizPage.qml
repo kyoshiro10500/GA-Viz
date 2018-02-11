@@ -115,7 +115,7 @@ Page {
         ColumnLayout {
             id: viewLayout
 
-            width : parent.width
+            width : parent.width - individualDrawer.position * individualDrawer.width
             height: parent.height
 
             spacing: 10

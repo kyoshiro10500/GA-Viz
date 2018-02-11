@@ -9,6 +9,10 @@ ApplicationWindow {
     visible: true
     visibility: "Maximized"
 
+    minimumWidth: 800
+    minimumHeight: 600
+
+
     StackView {
         id: stackView
         anchors.fill: parent
