@@ -136,3 +136,13 @@ double GenerationTableModel::getScoreDistance(int gen, int ind) const
 {
     return  (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScoreDistance() ;
 }
+
+double GenerationTableModel::getDistance(int gen, int ind) const
+{
+    return  (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getDistance() ;
+}
+
+int GenerationTableModel::getNumberBuses(int gen, int ind) const
+{
+    return  (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getNumberBuses() ;
+}

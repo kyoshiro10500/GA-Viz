@@ -10,12 +10,19 @@ Frame {
     property int individualNumber: 0
     property double individualDistanceScore : generationModel.getScoreDistance(generationNumber, individualNumber)
     property double individualBusesScore : generationModel.getScoreBus(generationNumber, individualNumber)
+    property double totalDistance : generationModel.getDistance(generationNumber, individualNumber)
+    property int numberBuses : generationModel.getNumberBuses(generationNumber, individualNumber)
+
+
     contentHeight: parent.height
 
     id: individualView
 
     Layout.preferredWidth: parent.width
     Layout.fillHeight: true
+
+
+
 
     background: Rectangle {
         color: "black"
@@ -36,10 +43,6 @@ Frame {
             }
 
             Frame {
-
-                property string text: ""
-                property double score: 0.0
-                property int    rank:0
 
                 width: parent.width
                 height: parent.height
@@ -68,7 +71,7 @@ Frame {
                         color: "white"
                     }
                     Text{
-                        id:average
+                        id:averageText
                         font.pointSize: 15
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
@@ -76,7 +79,7 @@ Frame {
                         color: "white"
                     }
                     Text{
-                        id:distance
+                        id:distanceText
                         font.pointSize: 15
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
@@ -84,7 +87,7 @@ Frame {
                         color: "white"
                     }
                     Text{
-                        id:vehicles
+                        id:vehiclesText
                         font.pointSize: 15
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
@@ -116,14 +119,14 @@ Frame {
                         font.pointSize: 15
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
-                        text: individualDistanceScore
+                        text: totalDistance
                         color: "white"
                     }
                     Text{
                         font.pointSize: 15
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
-                        text: individualBusesScore
+                        text: numberBuses
                         color: "white"
                     }
 
@@ -155,23 +158,22 @@ Frame {
 
                         ctx.strokeStyle = populationModel.getColor(generationNumber, individualNumber, 0)
                         ctx.beginPath()
-                        ctx.moveTo(width/2 - 0.43*parent.height, rankingColumn.y + average.y + 35)
-                        ctx.lineTo(right, rankingColumn.y + average.y + 35)
+                        ctx.moveTo(width/2 - 0.43*parent.height, rankingColumn.y + averageText.y + 35)
+                        ctx.lineTo(right, rankingColumn.y + averageText.y + 35)
                         ctx.stroke()
                         ctx.strokeStyle = "#85cdde";
                         ctx.beginPath()
-                        ctx.moveTo(left, rankingColumn.y + distance.y + 35)
-                        ctx.lineTo(right, rankingColumn.y + distance.y + 35)
+                        ctx.moveTo(left, rankingColumn.y + distanceText.y + 35)
+                        ctx.lineTo(right, rankingColumn.y + distanceText.y + 35)
                         ctx.stroke()
                         ctx.beginPath()
                         ctx.strokeStyle = "#2e94cc";
-                        ctx.moveTo(left, rankingColumn.y + vehicles.y + 35)
-                        ctx.lineTo(right, rankingColumn.y + vehicles.y + 35)
+                        ctx.moveTo(left, rankingColumn.y + vehiclesText.y + 35)
+                        ctx.lineTo(right, rankingColumn.y + vehiclesText.y + 35)
                         ctx.stroke()
                     }
                 }
             }
-
 
             Canvas {
                 id: mycanvas
