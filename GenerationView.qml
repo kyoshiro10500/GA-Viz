@@ -210,7 +210,7 @@ Frame {
         id: rowIndicator
 
         anchors.right: vScrollBar.left
-        width: 20
+        width: 40
         height: vScrollBar.height
 
         model: populationModel.rowCount()
