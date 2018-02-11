@@ -177,6 +177,28 @@ Page {
                             from: 0
                             to: 1
 
+                            background: Rectangle {
+                                x: perfSlider.leftPadding
+                                y: perfSlider.topPadding + perfSlider.availableHeight / 2 - height / 2
+                                implicitWidth: 200
+                                implicitHeight: 4
+                                width: perfSlider.availableWidth
+                                height: implicitHeight
+                                radius: 2
+                                color: "transparent"
+
+                                Rectangle {
+                                    anchors.centerIn: parent
+                                    width: parent.height
+                                    height: parent.width
+                                    rotation: 90
+                                    gradient: Gradient {
+                                        GradientStop { position: 0.0; color: "cyan" }
+                                        GradientStop { position: 1.0; color: Qt.lighter("black", 1.5) }
+                                    }
+                                }
+                            }
+
                             onValueChanged: {
 
                             }
