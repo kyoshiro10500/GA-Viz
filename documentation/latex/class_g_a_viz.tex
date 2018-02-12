@@ -1,0 +1,95 @@
+\hypertarget{class_g_a_viz}{}\section{G\+A\+Viz Class Reference}
+\label{class_g_a_viz}\index{G\+A\+Viz@{G\+A\+Viz}}
+
+
+\hyperlink{class_g_a_viz}{G\+A\+Viz} class \+: main class of the application. Holds the models which are used.  
+
+
+
+
+{\ttfamily \#include $<$gaviz.\+h$>$}
+
+
+
+Inheritance diagram for G\+A\+Viz\+:
+% FIG 0
+
+
+Collaboration diagram for G\+A\+Viz\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_g_a_viz_a25d7842507cad8f54ae2ff2b5104efff}{G\+A\+Viz} (Q\+Qml\+Application\+Engine $\ast$engine, Q\+Object $\ast$parent=0)
+\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE bool \hyperlink{class_g_a_viz_aa8c0e575e4948bb03627275b5049ddc9}{parse} (Q\+Url file\+Url)
+\begin{DoxyCompactList}\small\item\em Parse the file which is defined by the Q\+Url. Used by the file selector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_population_table_model}{Population\+Table\+Model} $\ast$ \hyperlink{class_g_a_viz_adc930d20d092eeab1badfab22bbc8b6d}{population\+Model}
+\item 
+\hyperlink{class_cluster_table_model}{Cluster\+Table\+Model} $\ast$ \hyperlink{class_g_a_viz_a54ca452496eac96f82e2d9d7f02318a9}{cluster\+Model}
+\item 
+\hyperlink{class_generation_table_model}{Generation\+Table\+Model} $\ast$ \hyperlink{class_g_a_viz_a7ecc629f7c9ab499cf483f836371f8f0}{generation\+Model}
+\item 
+\hyperlink{class_population__clustered}{Population\+\_\+clustered} $\ast$ \hyperlink{class_g_a_viz_a9b5057af4e3badc544bbab1efa0bdb39}{population}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_g_a_viz}{G\+A\+Viz} class \+: main class of the application. Holds the models which are used. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_g_a_viz_a25d7842507cad8f54ae2ff2b5104efff}\label{class_g_a_viz_a25d7842507cad8f54ae2ff2b5104efff}} 
+\index{G\+A\+Viz@{G\+A\+Viz}!G\+A\+Viz@{G\+A\+Viz}}
+\index{G\+A\+Viz@{G\+A\+Viz}!G\+A\+Viz@{G\+A\+Viz}}
+\subsubsection{\texorpdfstring{G\+A\+Viz()}{GAViz()}}
+{\footnotesize\ttfamily G\+A\+Viz\+::\+G\+A\+Viz (\begin{DoxyParamCaption}\item[{Q\+Qml\+Application\+Engine $\ast$}]{engine,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_g_a_viz_aa8c0e575e4948bb03627275b5049ddc9}\label{class_g_a_viz_aa8c0e575e4948bb03627275b5049ddc9}} 
+\index{G\+A\+Viz@{G\+A\+Viz}!parse@{parse}}
+\index{parse@{parse}!G\+A\+Viz@{G\+A\+Viz}}
+\subsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily bool G\+A\+Viz\+::parse (\begin{DoxyParamCaption}\item[{Q\+Url}]{file\+Url }\end{DoxyParamCaption})}
+
+
+
+Parse the file which is defined by the Q\+Url. Used by the file selector. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_g_a_viz_a54ca452496eac96f82e2d9d7f02318a9}\label{class_g_a_viz_a54ca452496eac96f82e2d9d7f02318a9}} 
+\index{G\+A\+Viz@{G\+A\+Viz}!cluster\+Model@{cluster\+Model}}
+\index{cluster\+Model@{cluster\+Model}!G\+A\+Viz@{G\+A\+Viz}}
+\subsubsection{\texorpdfstring{cluster\+Model}{clusterModel}}
+{\footnotesize\ttfamily \hyperlink{class_cluster_table_model}{Cluster\+Table\+Model}$\ast$ G\+A\+Viz\+::cluster\+Model}
+
+The model for the population\+View \mbox{\Hypertarget{class_g_a_viz_a7ecc629f7c9ab499cf483f836371f8f0}\label{class_g_a_viz_a7ecc629f7c9ab499cf483f836371f8f0}} 
+\index{G\+A\+Viz@{G\+A\+Viz}!generation\+Model@{generation\+Model}}
+\index{generation\+Model@{generation\+Model}!G\+A\+Viz@{G\+A\+Viz}}
+\subsubsection{\texorpdfstring{generation\+Model}{generationModel}}
+{\footnotesize\ttfamily \hyperlink{class_generation_table_model}{Generation\+Table\+Model}$\ast$ G\+A\+Viz\+::generation\+Model}
+
+The model for the cluster\+View \mbox{\Hypertarget{class_g_a_viz_a9b5057af4e3badc544bbab1efa0bdb39}\label{class_g_a_viz_a9b5057af4e3badc544bbab1efa0bdb39}} 
+\index{G\+A\+Viz@{G\+A\+Viz}!population@{population}}
+\index{population@{population}!G\+A\+Viz@{G\+A\+Viz}}
+\subsubsection{\texorpdfstring{population}{population}}
+{\footnotesize\ttfamily \hyperlink{class_population__clustered}{Population\+\_\+clustered}$\ast$ G\+A\+Viz\+::population}
+
+The model for the generation\+View \mbox{\Hypertarget{class_g_a_viz_adc930d20d092eeab1badfab22bbc8b6d}\label{class_g_a_viz_adc930d20d092eeab1badfab22bbc8b6d}} 
+\index{G\+A\+Viz@{G\+A\+Viz}!population\+Model@{population\+Model}}
+\index{population\+Model@{population\+Model}!G\+A\+Viz@{G\+A\+Viz}}
+\subsubsection{\texorpdfstring{population\+Model}{populationModel}}
+{\footnotesize\ttfamily \hyperlink{class_population_table_model}{Population\+Table\+Model}$\ast$ G\+A\+Viz\+::population\+Model}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gaviz_8h}{gaviz.\+h}\item 
+\hyperlink{gaviz_8cpp}{gaviz.\+cpp}\end{DoxyCompactItemize}

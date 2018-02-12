@@ -1,0 +1,245 @@
+\hypertarget{class_cluster}{}\section{Cluster Class Reference}
+\label{class_cluster}\index{Cluster@{Cluster}}
+
+
+\hyperlink{class_cluster}{Cluster} class \+: represents a cluster.  
+
+
+
+
+{\ttfamily \#include $<$cluster.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cluster_a6222a2684fffeb2ece34f556283e1299}{Cluster} (int number\+\_\+individual=-\/1)
+\begin{DoxyCompactList}\small\item\em Default constructor of a cluster. Set the number of individual default value to -\/1. \end{DoxyCompactList}\item 
+\hyperlink{class_cluster_a9f8b93e2cd87180f6518571c654a6a0a}{Cluster} (const \hyperlink{class_cluster}{Cluster} \&)
+\begin{DoxyCompactList}\small\item\em Copy constructor of a cluster. \end{DoxyCompactList}\item 
+\hyperlink{class_cluster_a4bddfc88ac859610acab15dd12851b58}{$\sim$\+Cluster} ()
+\begin{DoxyCompactList}\small\item\em Default destructor of a cluster. \end{DoxyCompactList}\item 
+\hyperlink{class_individu}{Individu} \& \hyperlink{class_cluster_a9460341680f84e640ad6744d97088948}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\begin{DoxyCompactList}\small\item\em Vector-\/like operator for the cluster. \end{DoxyCompactList}\item 
+\hyperlink{class_individu}{Individu} \hyperlink{class_cluster_a18e8355ff8f934e5e3deb10c1b7ec0f6}{operator\mbox{[}$\,$\mbox{]}} (int i) const
+\begin{DoxyCompactList}\small\item\em Vector-\/like operator for the cluster. \end{DoxyCompactList}\item 
+void \hyperlink{class_cluster_a42924ba44dffd0b688d811e547873e85}{set\+Mean\+Distance} (double mean\+Distance)
+\begin{DoxyCompactList}\small\item\em Set the mean distance of a cluster. \end{DoxyCompactList}\item 
+void \hyperlink{class_cluster_a6b34e5d03bb27757547ac442f1b79288}{set\+Mean\+Score} (double mean\+Score)
+\begin{DoxyCompactList}\small\item\em Set the mean score of a cluster. \end{DoxyCompactList}\item 
+void \hyperlink{class_cluster_a78748b29ae0d126a6228fb1e25128653}{set\+Mean\+Buses} (double mean\+Buses)
+\begin{DoxyCompactList}\small\item\em Set the mean buses of a cluster. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_individu}{Individu} $>$ \hyperlink{class_cluster_aeb50bef802b2ad60fa622184fd902644}{get\+Individuals} () const
+\begin{DoxyCompactList}\small\item\em Get the vector of the individuals inside a cluster. \end{DoxyCompactList}\item 
+double \hyperlink{class_cluster_adfc60f4505a0e78dc7a376bfafa0f352}{get\+Mean\+Distance} () const
+\begin{DoxyCompactList}\small\item\em Get the mean distance of a cluster. \end{DoxyCompactList}\item 
+double \hyperlink{class_cluster_af070716a9f6d89b07bfbdcffa3546d23}{get\+Mean\+Score} () const
+\begin{DoxyCompactList}\small\item\em Get the mean score of a cluster. \end{DoxyCompactList}\item 
+double \hyperlink{class_cluster_a09609cb787d9f70321a1a8681bd775ad}{get\+Mean\+Buses} () const
+\begin{DoxyCompactList}\small\item\em Get the mean buses of a cluster. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{class_individu}{Individu} $>$ \hyperlink{class_cluster_ab5145f01fde3720b93e2a04d2717e9af}{\+\_\+individus}
+\item 
+double \hyperlink{class_cluster_a5f5ee52e489d25ca51debbb0c8f51a61}{\+\_\+mean\+Distance}
+\item 
+double \hyperlink{class_cluster_afbbaa003e21c0ddaea31bd1884d343b5}{\+\_\+mean\+Buses}
+\item 
+double \hyperlink{class_cluster_ad4ed0c777b3e31bcdfa670b9c6fe63d9}{\+\_\+mean\+Score}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_cluster}{Cluster} class \+: represents a cluster. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cluster_a6222a2684fffeb2ece34f556283e1299}\label{class_cluster_a6222a2684fffeb2ece34f556283e1299}} 
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{Cluster()}{Cluster()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Cluster\+::\+Cluster (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+individual = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Default constructor of a cluster. Set the number of individual default value to -\/1. 
+
+The mean score of the cluster
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+individual} & \+: an int representing the number of individuals inside the cluster \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cluster_a9f8b93e2cd87180f6518571c654a6a0a}\label{class_cluster_a9f8b93e2cd87180f6518571c654a6a0a}} 
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\index{Cluster@{Cluster}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{Cluster()}{Cluster()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Cluster\+::\+Cluster (\begin{DoxyParamCaption}\item[{const \hyperlink{class_cluster}{Cluster} \&}]{clu }\end{DoxyParamCaption})}
+
+
+
+Copy constructor of a cluster. 
+
+Creates a new cluster and copy all the members of the old cluster inside it \mbox{\Hypertarget{class_cluster_a4bddfc88ac859610acab15dd12851b58}\label{class_cluster_a4bddfc88ac859610acab15dd12851b58}} 
+\index{Cluster@{Cluster}!````~Cluster@{$\sim$\+Cluster}}
+\index{````~Cluster@{$\sim$\+Cluster}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{$\sim$\+Cluster()}{~Cluster()}}
+{\footnotesize\ttfamily Cluster\+::$\sim$\+Cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default destructor of a cluster. 
+
+Destroy the cluster by freeing all the Individual contained inside it 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cluster_aeb50bef802b2ad60fa622184fd902644}\label{class_cluster_aeb50bef802b2ad60fa622184fd902644}} 
+\index{Cluster@{Cluster}!get\+Individuals@{get\+Individuals}}
+\index{get\+Individuals@{get\+Individuals}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{get\+Individuals()}{getIndividuals()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_individu}{Individu} $>$ Cluster\+::get\+Individuals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the vector of the individuals inside a cluster. 
+
+\begin{DoxyReturn}{Returns}
+a vector corresponding of all the individuals inside the cluster 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cluster_a09609cb787d9f70321a1a8681bd775ad}\label{class_cluster_a09609cb787d9f70321a1a8681bd775ad}} 
+\index{Cluster@{Cluster}!get\+Mean\+Buses@{get\+Mean\+Buses}}
+\index{get\+Mean\+Buses@{get\+Mean\+Buses}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{get\+Mean\+Buses()}{getMeanBuses()}}
+{\footnotesize\ttfamily double Cluster\+::get\+Mean\+Buses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the mean buses of a cluster. 
+
+\begin{DoxyReturn}{Returns}
+a double corresponding the mean buses of a cluster 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cluster_adfc60f4505a0e78dc7a376bfafa0f352}\label{class_cluster_adfc60f4505a0e78dc7a376bfafa0f352}} 
+\index{Cluster@{Cluster}!get\+Mean\+Distance@{get\+Mean\+Distance}}
+\index{get\+Mean\+Distance@{get\+Mean\+Distance}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{get\+Mean\+Distance()}{getMeanDistance()}}
+{\footnotesize\ttfamily double Cluster\+::get\+Mean\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the mean distance of a cluster. 
+
+\begin{DoxyReturn}{Returns}
+a double corresponding the mean distance of a cluster 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cluster_af070716a9f6d89b07bfbdcffa3546d23}\label{class_cluster_af070716a9f6d89b07bfbdcffa3546d23}} 
+\index{Cluster@{Cluster}!get\+Mean\+Score@{get\+Mean\+Score}}
+\index{get\+Mean\+Score@{get\+Mean\+Score}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{get\+Mean\+Score()}{getMeanScore()}}
+{\footnotesize\ttfamily double Cluster\+::get\+Mean\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the mean score of a cluster. 
+
+\begin{DoxyReturn}{Returns}
+a double corresponding the mean score of a cluster 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_cluster_a9460341680f84e640ad6744d97088948}\label{class_cluster_a9460341680f84e640ad6744d97088948}} 
+\index{Cluster@{Cluster}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_individu}{Individu} \& Cluster\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Vector-\/like operator for the cluster. 
+
+\mbox{\Hypertarget{class_cluster_a18e8355ff8f934e5e3deb10c1b7ec0f6}\label{class_cluster_a18e8355ff8f934e5e3deb10c1b7ec0f6}} 
+\index{Cluster@{Cluster}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_individu}{Individu} Cluster\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Vector-\/like operator for the cluster. 
+
+\mbox{\Hypertarget{class_cluster_a78748b29ae0d126a6228fb1e25128653}\label{class_cluster_a78748b29ae0d126a6228fb1e25128653}} 
+\index{Cluster@{Cluster}!set\+Mean\+Buses@{set\+Mean\+Buses}}
+\index{set\+Mean\+Buses@{set\+Mean\+Buses}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{set\+Mean\+Buses()}{setMeanBuses()}}
+{\footnotesize\ttfamily void Cluster\+::set\+Mean\+Buses (\begin{DoxyParamCaption}\item[{double}]{mean\+Buses }\end{DoxyParamCaption})}
+
+
+
+Set the mean buses of a cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mean\+Buses} & \+: a double corresponding to the value of mean buses of a cluster \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cluster_a42924ba44dffd0b688d811e547873e85}\label{class_cluster_a42924ba44dffd0b688d811e547873e85}} 
+\index{Cluster@{Cluster}!set\+Mean\+Distance@{set\+Mean\+Distance}}
+\index{set\+Mean\+Distance@{set\+Mean\+Distance}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{set\+Mean\+Distance()}{setMeanDistance()}}
+{\footnotesize\ttfamily void Cluster\+::set\+Mean\+Distance (\begin{DoxyParamCaption}\item[{double}]{mean\+Distance }\end{DoxyParamCaption})}
+
+
+
+Set the mean distance of a cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mean\+Distance} & \+: a double corresponding to the value of mean distance of a cluster \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_cluster_a6b34e5d03bb27757547ac442f1b79288}\label{class_cluster_a6b34e5d03bb27757547ac442f1b79288}} 
+\index{Cluster@{Cluster}!set\+Mean\+Score@{set\+Mean\+Score}}
+\index{set\+Mean\+Score@{set\+Mean\+Score}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{set\+Mean\+Score()}{setMeanScore()}}
+{\footnotesize\ttfamily void Cluster\+::set\+Mean\+Score (\begin{DoxyParamCaption}\item[{double}]{mean\+Score }\end{DoxyParamCaption})}
+
+
+
+Set the mean score of a cluster. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mean\+Score} & \+: a double corresponding to the value of mean score of a cluster \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_cluster_ab5145f01fde3720b93e2a04d2717e9af}\label{class_cluster_ab5145f01fde3720b93e2a04d2717e9af}} 
+\index{Cluster@{Cluster}!\+\_\+individus@{\+\_\+individus}}
+\index{\+\_\+individus@{\+\_\+individus}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{\+\_\+individus}{\_individus}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_individu}{Individu}$>$ Cluster\+::\+\_\+individus\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_cluster_afbbaa003e21c0ddaea31bd1884d343b5}\label{class_cluster_afbbaa003e21c0ddaea31bd1884d343b5}} 
+\index{Cluster@{Cluster}!\+\_\+mean\+Buses@{\+\_\+mean\+Buses}}
+\index{\+\_\+mean\+Buses@{\+\_\+mean\+Buses}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{\+\_\+mean\+Buses}{\_meanBuses}}
+{\footnotesize\ttfamily double Cluster\+::\+\_\+mean\+Buses\hspace{0.3cm}{\ttfamily [protected]}}
+
+The mean distance of the cluster \mbox{\Hypertarget{class_cluster_a5f5ee52e489d25ca51debbb0c8f51a61}\label{class_cluster_a5f5ee52e489d25ca51debbb0c8f51a61}} 
+\index{Cluster@{Cluster}!\+\_\+mean\+Distance@{\+\_\+mean\+Distance}}
+\index{\+\_\+mean\+Distance@{\+\_\+mean\+Distance}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{\+\_\+mean\+Distance}{\_meanDistance}}
+{\footnotesize\ttfamily double Cluster\+::\+\_\+mean\+Distance\hspace{0.3cm}{\ttfamily [protected]}}
+
+A vector representing all the individuals contained inside a cluster \mbox{\Hypertarget{class_cluster_ad4ed0c777b3e31bcdfa670b9c6fe63d9}\label{class_cluster_ad4ed0c777b3e31bcdfa670b9c6fe63d9}} 
+\index{Cluster@{Cluster}!\+\_\+mean\+Score@{\+\_\+mean\+Score}}
+\index{\+\_\+mean\+Score@{\+\_\+mean\+Score}!Cluster@{Cluster}}
+\subsubsection{\texorpdfstring{\+\_\+mean\+Score}{\_meanScore}}
+{\footnotesize\ttfamily double Cluster\+::\+\_\+mean\+Score\hspace{0.3cm}{\ttfamily [protected]}}
+
+The mean buses of the cluster 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+parseur\+\_\+sources/\hyperlink{cluster_8h}{cluster.\+h}\item 
+parseur\+\_\+sources/\hyperlink{cluster_8cpp}{cluster.\+cpp}\end{DoxyCompactItemize}

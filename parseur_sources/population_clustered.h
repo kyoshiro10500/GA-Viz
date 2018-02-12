@@ -24,7 +24,7 @@ class Population_clustered
 
     public :
         //Constructor
-        //! Default constructor of a population. The default values of number_generation, number_individual, number_cluster are -1*/
+        //! Default constructor of a population. The default values of number_generation, number_individual, number_cluster are -1
         /*!
          * \param number_generation : an int representing the number of generations inside the population
          * \param number_individual : an int representing the number of individuals per cluster
@@ -32,7 +32,7 @@ class Population_clustered
          */
         Population_clustered(int number_generation = -1,int number_individual = -1,int number_cluster = -1);
 
-        //! Copy constructor of a population*/
+        //! Copy constructor of a population
         /*!
          * Creates a population by copying another one members
          */
@@ -46,61 +46,61 @@ class Population_clustered
         ~Population_clustered();
 
         //Operator
-        //! Vector-like operator for the generation*/
+        //! Vector-like operator for the generation
         Generation_clustered & operator [] (int i);
         //! Vector-like operator for the generation*/
         Generation_clustered operator [] (int i) const;
 
         //Getter
-        //! Get the number of generation inside a population*/
+        //! Get the number of generation inside a population
         /*!
          * \return an int representing the number of generations of the population
          */
         int get_number_generation() const;
 
-        //! Get the number of individuals per cluster inside a population*/
+        //! Get the number of individuals per cluster inside a population
         /*!
          * \return an int representing the number of individuals per cluster of the population
          */
         int get_number_individuals() const;
 
-        //! Get the number of clusters per generation inside a population*/
+        //! Get the number of clusters per generation inside a population
         /*!
          * \return an int representing the number of clusters per generation of the population
          */
         int get_number_cluster() const ;
 
-        //! Get the number of crossing over inside a population*/
+        //! Get the number of crossing over inside a population
         /*!
          * \return an int representing the number of crossing over of the population
          */
         int get_number_crossover() const ;
 
-        //! Get the number of mutations inside a population*/
+        //! Get the number of mutations inside a population
         /*!
          * \return an int representing the number of mutations of the population
          */
         int get_number_mutation() const ;
 
-        //! Get the generations of a population*/
+        //! Get the generations of a population
         /*!
          * \return a vector containing all the generations of the population
          */
         std::vector<Generation_clustered> get_generation() const ;
 
-        //! Get the best score of a population*/
+        //! Get the best score of a population
         /*!
          * \return a double representing the best mean score inside a population
          */
         double get_best_score() const ;
 
-        //! Get the worst score of a population*/
+        //! Get the worst score of a population
         /*!
          * \return a double representing the worst mean score inside a population
          */
         double get_worst_score() const ;
 
-        //! Get the mean score of a population*/
+        //! Get the mean score of a population
         /*!
          * \return a double representing the global mean score inside a population
          */

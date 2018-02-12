@@ -1,0 +1,376 @@
+\hypertarget{class_generation_table_model}{}\section{Generation\+Table\+Model Class Reference}
+\label{class_generation_table_model}\index{Generation\+Table\+Model@{Generation\+Table\+Model}}
+
+
+\hyperlink{class_generation_table_model}{Generation\+Table\+Model} class \+: represents the model of the generation\+View.  
+
+
+
+
+{\ttfamily \#include $<$model\+\_\+table\+\_\+generation.\+h$>$}
+
+
+
+Inheritance diagram for Generation\+Table\+Model\+:
+% FIG 0
+
+
+Collaboration diagram for Generation\+Table\+Model\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_generation_table_model_a98fd1b28c293d4d92cf4fb9930598283}{Generation\+Table\+Model} (\hyperlink{class_population__clustered}{Population\+\_\+clustered} $\ast$population)
+\begin{DoxyCompactList}\small\item\em Constructor of the model. \end{DoxyCompactList}\item 
+int \hyperlink{class_generation_table_model_a7926bafcc1f8aee9c86d6f30011e7299}{row\+Count} (const Q\+Model\+Index \&parent=Q\+Model\+Index()) const
+\begin{DoxyCompactList}\small\item\em Holds the number of row of the model of the model. \end{DoxyCompactList}\item 
+int \hyperlink{class_generation_table_model_a0fe344e5bcfa0f832836f910e48de965}{column\+Count} (const Q\+Model\+Index \&parent=Q\+Model\+Index()) const
+\begin{DoxyCompactList}\small\item\em Holds the number of column of the model of the model. \end{DoxyCompactList}\item 
+Q\+Variant \hyperlink{class_generation_table_model_a7f391a05766aa4c3f696e54b04045b2e}{data} (const Q\+Model\+Index \&index, int role) const
+\item 
+Q\+Variant \hyperlink{class_generation_table_model_a82ba4ebad44e1b1bea80e9b00e63ce28}{header\+Data} (int section, Qt\+::\+Orientation orientation, int role) const
+\item 
+bool \hyperlink{class_generation_table_model_a8e66c46d9427fe327baecdbf107637f8}{set\+Data} (const Q\+Model\+Index \&index, const Q\+Variant \&value, int role)
+\item 
+void \hyperlink{class_generation_table_model_a2b7d4908fbe99194076d1a3aaa0c6e49}{add\+Element} (const Q\+String \&element, int value)
+\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE void \hyperlink{class_generation_table_model_ad44d26706e15a73874f97308685195f3}{set\+Score\+Filter} (float value)
+\begin{DoxyCompactList}\small\item\em Set the value of score\+Filter. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE void \hyperlink{class_generation_table_model_a0f1f2b72d9b75df22bc6c1ac3156be2f}{set\+Mutation\+Filter} (bool value)
+\begin{DoxyCompactList}\small\item\em Set the value of mutation\+Filter. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE void \hyperlink{class_generation_table_model_aa53056b850a7ca6f77deb5bdf312e52e}{set\+Crossingover\+Filter} (bool value)
+\begin{DoxyCompactList}\small\item\em Set the value of crossingover\+Filter. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE void \hyperlink{class_generation_table_model_ad288b648745cacc9c46aee376e0c6dda}{set\+Generation} (int value)
+\begin{DoxyCompactList}\small\item\em Set the value of the generation focused on. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+Color \hyperlink{class_generation_table_model_acbabf3965bbf7c7ce037f62d38a18ada}{get\+Color} (int gen, int ind, int index\+\_\+gen, double score, double number\+Mutations, double number\+Crossover) const
+\begin{DoxyCompactList}\small\item\em Get the color of the individual. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE double \hyperlink{class_generation_table_model_a4a5fc6202b2110ab2cfe69bf482f7c33}{get\+Score} (int gen, int ind) const
+\begin{DoxyCompactList}\small\item\em Get the score of the individual. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE double \hyperlink{class_generation_table_model_ac6ba8b04c5cdc79b3611090045c82be2}{get\+Score\+Bus} (int gen, int ind) const
+\begin{DoxyCompactList}\small\item\em Get the score regarding buses of the individual. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE double \hyperlink{class_generation_table_model_a4c8dec508fc7f18ea5dcc1d609cd01c8}{get\+Score\+Distance} (int gen, int ind) const
+\begin{DoxyCompactList}\small\item\em Get the score regarding distance of the individual. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE double \hyperlink{class_generation_table_model_ae0369f444796e2df883528cef9e92b4e}{get\+Distance} (int gen, int ind) const
+\begin{DoxyCompactList}\small\item\em Get the distance of the individual. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE int \hyperlink{class_generation_table_model_a01e8f13d7dee94267b57b287b67773cb}{get\+Number\+Buses} (int gen, int ind) const
+\begin{DoxyCompactList}\small\item\em Get the number of buses of the individual. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE int \hyperlink{class_generation_table_model_a501bf9195efc15cd8c9a56c6faa0a985}{get\+Number\+Mutation} (int gen, int ind) const
+\begin{DoxyCompactList}\small\item\em Get the number of mutation of the individual. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE int \hyperlink{class_generation_table_model_ac34258da2589b7cef71d6f8067b3c795}{get\+Number\+Crossover} (int gen, int ind) const
+\begin{DoxyCompactList}\small\item\em Get the number of crossing over of the individual. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE bool \hyperlink{class_generation_table_model_a8c771dcf22a7d54e77321584e3bbe065}{get\+New} (int gen, int ind) const
+\begin{DoxyCompactList}\small\item\em Get if the individual is new or not. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE bool \hyperlink{class_generation_table_model_aaad68ad9dd0a6990bdd3c268ebde67ef}{get\+Crossing} (int gen, int ind) const
+\begin{DoxyCompactList}\small\item\em Get if the individual has crossing over or not. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE bool \hyperlink{class_generation_table_model_a967452056ba563c77369bfbec87e8cec}{get\+Mutation} (int gen, int ind) const
+\begin{DoxyCompactList}\small\item\em Get if the individual has mutation or not. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE float \hyperlink{class_generation_table_model_aed119ccb032745029bebd626385b396d}{get\+Score\+Filter} () const
+\begin{DoxyCompactList}\small\item\em Get the value of score\+Filter. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE int \hyperlink{class_generation_table_model_a9f3637c9c02f8ae5f27084335672cbbf}{get\+Generation} () const
+\begin{DoxyCompactList}\small\item\em Get the focused generation. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE double \hyperlink{class_generation_table_model_ae2feb02d1d61e5a2d199c6b766334613}{get\+Mean\+Score} (int gen)
+\begin{DoxyCompactList}\small\item\em Get the mean score of the generation. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE int \hyperlink{class_generation_table_model_a71714de38cb532f42e72e6bb7c757243}{get\+Gen\+Number\+Mutations} (int gen)
+\begin{DoxyCompactList}\small\item\em Get the nb of mutations of the generation. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE int \hyperlink{class_generation_table_model_a6f86eb139344f0059ccddc2c44d433aa}{get\+Gen\+Number\+Crossover} (int gen)
+\begin{DoxyCompactList}\small\item\em Get the nb of crossing over of the generation. \end{DoxyCompactList}\item 
+Q\+\_\+\+I\+N\+V\+O\+K\+A\+B\+LE Q\+List$<$ int $>$ \hyperlink{class_generation_table_model_a46e66d82198f53e67a5b085908bf33e6}{get\+Rang} (int gen, int ind) const
+\begin{DoxyCompactList}\small\item\em Get the list of the rank of an individual \{Mean\+Score\+Rank, Buses\+Rank, Distance\+Rank\}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_population__clustered}{Population\+\_\+clustered} $\ast$ \hyperlink{class_generation_table_model_a9afa80382e60fd680d9b6f1fe29f5916}{m\+Elements}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_generation_table_model}{Generation\+Table\+Model} class \+: represents the model of the generation\+View. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_generation_table_model_a98fd1b28c293d4d92cf4fb9930598283}\label{class_generation_table_model_a98fd1b28c293d4d92cf4fb9930598283}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{Generation\+Table\+Model()}{GenerationTableModel()}}
+{\footnotesize\ttfamily Generation\+Table\+Model\+::\+Generation\+Table\+Model (\begin{DoxyParamCaption}\item[{\hyperlink{class_population__clustered}{Population\+\_\+clustered} $\ast$}]{population }\end{DoxyParamCaption})}
+
+
+
+Constructor of the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em population} & \+: the population on which the model will rely on \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_generation_table_model_a2b7d4908fbe99194076d1a3aaa0c6e49}\label{class_generation_table_model_a2b7d4908fbe99194076d1a3aaa0c6e49}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!add\+Element@{add\+Element}}
+\index{add\+Element@{add\+Element}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{add\+Element()}{addElement()}}
+{\footnotesize\ttfamily void Generation\+Table\+Model\+::add\+Element (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{element,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_generation_table_model_a0fe344e5bcfa0f832836f910e48de965}\label{class_generation_table_model_a0fe344e5bcfa0f832836f910e48de965}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!column\+Count@{column\+Count}}
+\index{column\+Count@{column\+Count}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{column\+Count()}{columnCount()}}
+{\footnotesize\ttfamily int Generation\+Table\+Model\+::column\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const}
+
+
+
+Holds the number of column of the model of the model. 
+
+The number of column corresponds to the number of individuals per generations \mbox{\Hypertarget{class_generation_table_model_a7f391a05766aa4c3f696e54b04045b2e}\label{class_generation_table_model_a7f391a05766aa4c3f696e54b04045b2e}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!data@{data}}
+\index{data@{data}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily Q\+Variant Generation\+Table\+Model\+::data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{int}]{role }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_generation_table_model_acbabf3965bbf7c7ce037f62d38a18ada}\label{class_generation_table_model_acbabf3965bbf7c7ce037f62d38a18ada}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Color()}{getColor()}}
+{\footnotesize\ttfamily Q\+Color Generation\+Table\+Model\+::get\+Color (\begin{DoxyParamCaption}\item[{int}]{gen,  }\item[{int}]{ind,  }\item[{int}]{index\+\_\+gen,  }\item[{double}]{score,  }\item[{double}]{number\+Mutations,  }\item[{double}]{number\+Crossover }\end{DoxyParamCaption}) const}
+
+
+
+Get the color of the individual. 
+
+\mbox{\Hypertarget{class_generation_table_model_aaad68ad9dd0a6990bdd3c268ebde67ef}\label{class_generation_table_model_aaad68ad9dd0a6990bdd3c268ebde67ef}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Crossing@{get\+Crossing}}
+\index{get\+Crossing@{get\+Crossing}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Crossing()}{getCrossing()}}
+{\footnotesize\ttfamily bool Generation\+Table\+Model\+::get\+Crossing (\begin{DoxyParamCaption}\item[{int}]{gen,  }\item[{int}]{ind }\end{DoxyParamCaption}) const}
+
+
+
+Get if the individual has crossing over or not. 
+
+\mbox{\Hypertarget{class_generation_table_model_ae0369f444796e2df883528cef9e92b4e}\label{class_generation_table_model_ae0369f444796e2df883528cef9e92b4e}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Distance@{get\+Distance}}
+\index{get\+Distance@{get\+Distance}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Distance()}{getDistance()}}
+{\footnotesize\ttfamily double Generation\+Table\+Model\+::get\+Distance (\begin{DoxyParamCaption}\item[{int}]{gen,  }\item[{int}]{ind }\end{DoxyParamCaption}) const}
+
+
+
+Get the distance of the individual. 
+
+\mbox{\Hypertarget{class_generation_table_model_a9f3637c9c02f8ae5f27084335672cbbf}\label{class_generation_table_model_a9f3637c9c02f8ae5f27084335672cbbf}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Generation@{get\+Generation}}
+\index{get\+Generation@{get\+Generation}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Generation()}{getGeneration()}}
+{\footnotesize\ttfamily int Generation\+Table\+Model\+::get\+Generation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the focused generation. 
+
+\mbox{\Hypertarget{class_generation_table_model_a6f86eb139344f0059ccddc2c44d433aa}\label{class_generation_table_model_a6f86eb139344f0059ccddc2c44d433aa}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Gen\+Number\+Crossover@{get\+Gen\+Number\+Crossover}}
+\index{get\+Gen\+Number\+Crossover@{get\+Gen\+Number\+Crossover}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Gen\+Number\+Crossover()}{getGenNumberCrossover()}}
+{\footnotesize\ttfamily int Generation\+Table\+Model\+::get\+Gen\+Number\+Crossover (\begin{DoxyParamCaption}\item[{int}]{gen }\end{DoxyParamCaption})}
+
+
+
+Get the nb of crossing over of the generation. 
+
+\mbox{\Hypertarget{class_generation_table_model_a71714de38cb532f42e72e6bb7c757243}\label{class_generation_table_model_a71714de38cb532f42e72e6bb7c757243}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Gen\+Number\+Mutations@{get\+Gen\+Number\+Mutations}}
+\index{get\+Gen\+Number\+Mutations@{get\+Gen\+Number\+Mutations}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Gen\+Number\+Mutations()}{getGenNumberMutations()}}
+{\footnotesize\ttfamily int Generation\+Table\+Model\+::get\+Gen\+Number\+Mutations (\begin{DoxyParamCaption}\item[{int}]{gen }\end{DoxyParamCaption})}
+
+
+
+Get the nb of mutations of the generation. 
+
+\mbox{\Hypertarget{class_generation_table_model_ae2feb02d1d61e5a2d199c6b766334613}\label{class_generation_table_model_ae2feb02d1d61e5a2d199c6b766334613}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Mean\+Score@{get\+Mean\+Score}}
+\index{get\+Mean\+Score@{get\+Mean\+Score}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Mean\+Score()}{getMeanScore()}}
+{\footnotesize\ttfamily double Generation\+Table\+Model\+::get\+Mean\+Score (\begin{DoxyParamCaption}\item[{int}]{gen }\end{DoxyParamCaption})}
+
+
+
+Get the mean score of the generation. 
+
+\mbox{\Hypertarget{class_generation_table_model_a967452056ba563c77369bfbec87e8cec}\label{class_generation_table_model_a967452056ba563c77369bfbec87e8cec}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Mutation@{get\+Mutation}}
+\index{get\+Mutation@{get\+Mutation}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Mutation()}{getMutation()}}
+{\footnotesize\ttfamily bool Generation\+Table\+Model\+::get\+Mutation (\begin{DoxyParamCaption}\item[{int}]{gen,  }\item[{int}]{ind }\end{DoxyParamCaption}) const}
+
+
+
+Get if the individual has mutation or not. 
+
+\mbox{\Hypertarget{class_generation_table_model_a8c771dcf22a7d54e77321584e3bbe065}\label{class_generation_table_model_a8c771dcf22a7d54e77321584e3bbe065}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+New@{get\+New}}
+\index{get\+New@{get\+New}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+New()}{getNew()}}
+{\footnotesize\ttfamily bool Generation\+Table\+Model\+::get\+New (\begin{DoxyParamCaption}\item[{int}]{gen,  }\item[{int}]{ind }\end{DoxyParamCaption}) const}
+
+
+
+Get if the individual is new or not. 
+
+\mbox{\Hypertarget{class_generation_table_model_a01e8f13d7dee94267b57b287b67773cb}\label{class_generation_table_model_a01e8f13d7dee94267b57b287b67773cb}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Number\+Buses@{get\+Number\+Buses}}
+\index{get\+Number\+Buses@{get\+Number\+Buses}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Number\+Buses()}{getNumberBuses()}}
+{\footnotesize\ttfamily int Generation\+Table\+Model\+::get\+Number\+Buses (\begin{DoxyParamCaption}\item[{int}]{gen,  }\item[{int}]{ind }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of buses of the individual. 
+
+\mbox{\Hypertarget{class_generation_table_model_ac34258da2589b7cef71d6f8067b3c795}\label{class_generation_table_model_ac34258da2589b7cef71d6f8067b3c795}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Number\+Crossover@{get\+Number\+Crossover}}
+\index{get\+Number\+Crossover@{get\+Number\+Crossover}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Number\+Crossover()}{getNumberCrossover()}}
+{\footnotesize\ttfamily int Generation\+Table\+Model\+::get\+Number\+Crossover (\begin{DoxyParamCaption}\item[{int}]{gen,  }\item[{int}]{ind }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of crossing over of the individual. 
+
+\mbox{\Hypertarget{class_generation_table_model_a501bf9195efc15cd8c9a56c6faa0a985}\label{class_generation_table_model_a501bf9195efc15cd8c9a56c6faa0a985}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Number\+Mutation@{get\+Number\+Mutation}}
+\index{get\+Number\+Mutation@{get\+Number\+Mutation}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Number\+Mutation()}{getNumberMutation()}}
+{\footnotesize\ttfamily int Generation\+Table\+Model\+::get\+Number\+Mutation (\begin{DoxyParamCaption}\item[{int}]{gen,  }\item[{int}]{ind }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of mutation of the individual. 
+
+\mbox{\Hypertarget{class_generation_table_model_a46e66d82198f53e67a5b085908bf33e6}\label{class_generation_table_model_a46e66d82198f53e67a5b085908bf33e6}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Rang@{get\+Rang}}
+\index{get\+Rang@{get\+Rang}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Rang()}{getRang()}}
+{\footnotesize\ttfamily Q\+List$<$ int $>$ Generation\+Table\+Model\+::get\+Rang (\begin{DoxyParamCaption}\item[{int}]{gen,  }\item[{int}]{ind }\end{DoxyParamCaption}) const}
+
+
+
+Get the list of the rank of an individual \{Mean\+Score\+Rank, Buses\+Rank, Distance\+Rank\}. 
+
+\mbox{\Hypertarget{class_generation_table_model_a4a5fc6202b2110ab2cfe69bf482f7c33}\label{class_generation_table_model_a4a5fc6202b2110ab2cfe69bf482f7c33}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Score@{get\+Score}}
+\index{get\+Score@{get\+Score}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Score()}{getScore()}}
+{\footnotesize\ttfamily double Generation\+Table\+Model\+::get\+Score (\begin{DoxyParamCaption}\item[{int}]{gen,  }\item[{int}]{ind }\end{DoxyParamCaption}) const}
+
+
+
+Get the score of the individual. 
+
+\mbox{\Hypertarget{class_generation_table_model_ac6ba8b04c5cdc79b3611090045c82be2}\label{class_generation_table_model_ac6ba8b04c5cdc79b3611090045c82be2}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Score\+Bus@{get\+Score\+Bus}}
+\index{get\+Score\+Bus@{get\+Score\+Bus}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Score\+Bus()}{getScoreBus()}}
+{\footnotesize\ttfamily double Generation\+Table\+Model\+::get\+Score\+Bus (\begin{DoxyParamCaption}\item[{int}]{gen,  }\item[{int}]{ind }\end{DoxyParamCaption}) const}
+
+
+
+Get the score regarding buses of the individual. 
+
+\mbox{\Hypertarget{class_generation_table_model_a4c8dec508fc7f18ea5dcc1d609cd01c8}\label{class_generation_table_model_a4c8dec508fc7f18ea5dcc1d609cd01c8}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Score\+Distance@{get\+Score\+Distance}}
+\index{get\+Score\+Distance@{get\+Score\+Distance}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Score\+Distance()}{getScoreDistance()}}
+{\footnotesize\ttfamily double Generation\+Table\+Model\+::get\+Score\+Distance (\begin{DoxyParamCaption}\item[{int}]{gen,  }\item[{int}]{ind }\end{DoxyParamCaption}) const}
+
+
+
+Get the score regarding distance of the individual. 
+
+\mbox{\Hypertarget{class_generation_table_model_aed119ccb032745029bebd626385b396d}\label{class_generation_table_model_aed119ccb032745029bebd626385b396d}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!get\+Score\+Filter@{get\+Score\+Filter}}
+\index{get\+Score\+Filter@{get\+Score\+Filter}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{get\+Score\+Filter()}{getScoreFilter()}}
+{\footnotesize\ttfamily float Generation\+Table\+Model\+::get\+Score\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the value of score\+Filter. 
+
+\mbox{\Hypertarget{class_generation_table_model_a82ba4ebad44e1b1bea80e9b00e63ce28}\label{class_generation_table_model_a82ba4ebad44e1b1bea80e9b00e63ce28}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!header\+Data@{header\+Data}}
+\index{header\+Data@{header\+Data}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{header\+Data()}{headerData()}}
+{\footnotesize\ttfamily Q\+Variant Generation\+Table\+Model\+::header\+Data (\begin{DoxyParamCaption}\item[{int}]{section,  }\item[{Qt\+::\+Orientation}]{orientation,  }\item[{int}]{role }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_generation_table_model_a7926bafcc1f8aee9c86d6f30011e7299}\label{class_generation_table_model_a7926bafcc1f8aee9c86d6f30011e7299}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!row\+Count@{row\+Count}}
+\index{row\+Count@{row\+Count}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{row\+Count()}{rowCount()}}
+{\footnotesize\ttfamily int Generation\+Table\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const}
+
+
+
+Holds the number of row of the model of the model. 
+
+The number of row corresponds to the number of generations of the population \mbox{\Hypertarget{class_generation_table_model_aa53056b850a7ca6f77deb5bdf312e52e}\label{class_generation_table_model_aa53056b850a7ca6f77deb5bdf312e52e}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!set\+Crossingover\+Filter@{set\+Crossingover\+Filter}}
+\index{set\+Crossingover\+Filter@{set\+Crossingover\+Filter}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{set\+Crossingover\+Filter()}{setCrossingoverFilter()}}
+{\footnotesize\ttfamily void Generation\+Table\+Model\+::set\+Crossingover\+Filter (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the value of crossingover\+Filter. 
+
+\mbox{\Hypertarget{class_generation_table_model_a8e66c46d9427fe327baecdbf107637f8}\label{class_generation_table_model_a8e66c46d9427fe327baecdbf107637f8}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}}
+{\footnotesize\ttfamily bool Generation\+Table\+Model\+::set\+Data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{const Q\+Variant \&}]{value,  }\item[{int}]{role }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_generation_table_model_ad288b648745cacc9c46aee376e0c6dda}\label{class_generation_table_model_ad288b648745cacc9c46aee376e0c6dda}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!set\+Generation@{set\+Generation}}
+\index{set\+Generation@{set\+Generation}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{set\+Generation()}{setGeneration()}}
+{\footnotesize\ttfamily void Generation\+Table\+Model\+::set\+Generation (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the value of the generation focused on. 
+
+\mbox{\Hypertarget{class_generation_table_model_a0f1f2b72d9b75df22bc6c1ac3156be2f}\label{class_generation_table_model_a0f1f2b72d9b75df22bc6c1ac3156be2f}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!set\+Mutation\+Filter@{set\+Mutation\+Filter}}
+\index{set\+Mutation\+Filter@{set\+Mutation\+Filter}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{set\+Mutation\+Filter()}{setMutationFilter()}}
+{\footnotesize\ttfamily void Generation\+Table\+Model\+::set\+Mutation\+Filter (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the value of mutation\+Filter. 
+
+\mbox{\Hypertarget{class_generation_table_model_ad44d26706e15a73874f97308685195f3}\label{class_generation_table_model_ad44d26706e15a73874f97308685195f3}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!set\+Score\+Filter@{set\+Score\+Filter}}
+\index{set\+Score\+Filter@{set\+Score\+Filter}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{set\+Score\+Filter()}{setScoreFilter()}}
+{\footnotesize\ttfamily void Generation\+Table\+Model\+::set\+Score\+Filter (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the value of score\+Filter. 
+
+A pointer to the population 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_generation_table_model_a9afa80382e60fd680d9b6f1fe29f5916}\label{class_generation_table_model_a9afa80382e60fd680d9b6f1fe29f5916}} 
+\index{Generation\+Table\+Model@{Generation\+Table\+Model}!m\+Elements@{m\+Elements}}
+\index{m\+Elements@{m\+Elements}!Generation\+Table\+Model@{Generation\+Table\+Model}}
+\subsubsection{\texorpdfstring{m\+Elements}{mElements}}
+{\footnotesize\ttfamily \hyperlink{class_population__clustered}{Population\+\_\+clustered}$\ast$ Generation\+Table\+Model\+::m\+Elements}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\hyperlink{model__table__generation_8h}{model\+\_\+table\+\_\+generation.\+h}\item 
+model/\hyperlink{model__table__generation_8cpp}{model\+\_\+table\+\_\+generation.\+cpp}\end{DoxyCompactItemize}

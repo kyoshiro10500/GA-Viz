@@ -1,0 +1,320 @@
+\hypertarget{class_population__clustered}{}\section{Population\+\_\+clustered Class Reference}
+\label{class_population__clustered}\index{Population\+\_\+clustered@{Population\+\_\+clustered}}
+
+
+Population class \+: represents a population.  
+
+
+
+
+{\ttfamily \#include $<$population\+\_\+clustered.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_population__clustered_a53e9a4efeb00daff22df130e1db05b2e}{Population\+\_\+clustered} (int number\+\_\+generation=-\/1, int number\+\_\+individual=-\/1, int number\+\_\+cluster=-\/1)
+\begin{DoxyCompactList}\small\item\em Default constructor of a population. The default values of number\+\_\+generation, number\+\_\+individual, number\+\_\+cluster are -\/1. \end{DoxyCompactList}\item 
+\hyperlink{class_population__clustered_a1d814b2036636b91d4c7c6f76a0d139a}{Population\+\_\+clustered} (const \hyperlink{class_population__clustered}{Population\+\_\+clustered} \&)
+\begin{DoxyCompactList}\small\item\em Copy constructor of a population. \end{DoxyCompactList}\item 
+\hyperlink{class_population__clustered_a23654097e2f4f6dad08556996f6434c4}{$\sim$\+Population\+\_\+clustered} ()
+\begin{DoxyCompactList}\small\item\em Destructor of a population. \end{DoxyCompactList}\item 
+\hyperlink{class_generation__clustered}{Generation\+\_\+clustered} \& \hyperlink{class_population__clustered_aa7600f7b8134b9371b593a00a7d67086}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\begin{DoxyCompactList}\small\item\em Vector-\/like operator for the generation. \end{DoxyCompactList}\item 
+\hyperlink{class_generation__clustered}{Generation\+\_\+clustered} \hyperlink{class_population__clustered_a147b765cff555d4c3e779bfc44e1a7f7}{operator\mbox{[}$\,$\mbox{]}} (int i) const
+\begin{DoxyCompactList}\small\item\em Vector-\/like operator for the generation$\ast$/. \end{DoxyCompactList}\item 
+int \hyperlink{class_population__clustered_a91974ba6fab376ce6024ed2d5225104e}{get\+\_\+number\+\_\+generation} () const
+\begin{DoxyCompactList}\small\item\em Get the number of generation inside a population. \end{DoxyCompactList}\item 
+int \hyperlink{class_population__clustered_ad4fcb9b6b9b5c6f35387a7e2cc745daf}{get\+\_\+number\+\_\+individuals} () const
+\begin{DoxyCompactList}\small\item\em Get the number of individuals per cluster inside a population. \end{DoxyCompactList}\item 
+int \hyperlink{class_population__clustered_a04e1cd70504458ab365c756931c1670b}{get\+\_\+number\+\_\+cluster} () const
+\begin{DoxyCompactList}\small\item\em Get the number of clusters per generation inside a population. \end{DoxyCompactList}\item 
+int \hyperlink{class_population__clustered_ae9776425b15b2588d1098de48927925b}{get\+\_\+number\+\_\+crossover} () const
+\begin{DoxyCompactList}\small\item\em Get the number of crossing over inside a population. \end{DoxyCompactList}\item 
+int \hyperlink{class_population__clustered_a0593be0ca86a2cc3497ba26ffecac82c}{get\+\_\+number\+\_\+mutation} () const
+\begin{DoxyCompactList}\small\item\em Get the number of mutations inside a population. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_generation__clustered}{Generation\+\_\+clustered} $>$ \hyperlink{class_population__clustered_ab0c42e75615a2747a11ec999f049eb00}{get\+\_\+generation} () const
+\begin{DoxyCompactList}\small\item\em Get the generations of a population. \end{DoxyCompactList}\item 
+double \hyperlink{class_population__clustered_a8003d1f89c0bda4dec1578168dbca0ae}{get\+\_\+best\+\_\+score} () const
+\begin{DoxyCompactList}\small\item\em Get the best score of a population. \end{DoxyCompactList}\item 
+double \hyperlink{class_population__clustered_a62cf77b998887914248633a29a432e81}{get\+\_\+worst\+\_\+score} () const
+\begin{DoxyCompactList}\small\item\em Get the worst score of a population. \end{DoxyCompactList}\item 
+double \hyperlink{class_population__clustered_a09317877b808df0255f429ba10eacfc9}{get\+\_\+mean\+\_\+score} () const
+\begin{DoxyCompactList}\small\item\em Get the mean score of a population. \end{DoxyCompactList}\item 
+void \hyperlink{class_population__clustered_ac4337d1263af1c208478cfdc20536254}{set\+\_\+number\+\_\+crossover} (int number\+\_\+crossover)
+\begin{DoxyCompactList}\small\item\em Set the number of crossing over of a population. \end{DoxyCompactList}\item 
+void \hyperlink{class_population__clustered_ab9e60e2a8ae0388db9de7ea071687c9e}{set\+\_\+number\+\_\+mutation} (int number\+\_\+mutation)
+\begin{DoxyCompactList}\small\item\em Set the number of mutations over of a population. \end{DoxyCompactList}\item 
+void \hyperlink{class_population__clustered_aad565e8b33c7db54d69a8d59623eea2b}{set\+\_\+best\+\_\+score} (double best\+\_\+score)
+\begin{DoxyCompactList}\small\item\em Set the best score of a population. \end{DoxyCompactList}\item 
+void \hyperlink{class_population__clustered_a30378ce62362cd7ec929af2e66018a98}{set\+\_\+worst\+\_\+score} (double worst\+\_\+score)
+\begin{DoxyCompactList}\small\item\em Set the worst score of a population. \end{DoxyCompactList}\item 
+void \hyperlink{class_population__clustered_a234c028b57507ac9b4c81273a8279b01}{set\+\_\+mean\+\_\+score} (double mean\+\_\+score)
+\begin{DoxyCompactList}\small\item\em Set the global mean score of a population. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Population class \+: represents a population. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_population__clustered_a53e9a4efeb00daff22df130e1db05b2e}\label{class_population__clustered_a53e9a4efeb00daff22df130e1db05b2e}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{Population\+\_\+clustered()}{Population\_clustered()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Population\+\_\+clustered\+::\+Population\+\_\+clustered (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+generation = {\ttfamily -\/1},  }\item[{int}]{number\+\_\+individual = {\ttfamily -\/1},  }\item[{int}]{number\+\_\+cluster = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Default constructor of a population. The default values of number\+\_\+generation, number\+\_\+individual, number\+\_\+cluster are -\/1. 
+
+The mean score in the population
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+generation} & \+: an int representing the number of generations inside the population \\
+\hline
+{\em number\+\_\+individual} & \+: an int representing the number of individuals per cluster \\
+\hline
+{\em number\+\_\+cluster} & \+: an int representing the number of clusters per generation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_population__clustered_a1d814b2036636b91d4c7c6f76a0d139a}\label{class_population__clustered_a1d814b2036636b91d4c7c6f76a0d139a}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{Population\+\_\+clustered()}{Population\_clustered()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Population\+\_\+clustered\+::\+Population\+\_\+clustered (\begin{DoxyParamCaption}\item[{const \hyperlink{class_population__clustered}{Population\+\_\+clustered} \&}]{pop }\end{DoxyParamCaption})}
+
+
+
+Copy constructor of a population. 
+
+Creates a population by copying another one members \mbox{\Hypertarget{class_population__clustered_a23654097e2f4f6dad08556996f6434c4}\label{class_population__clustered_a23654097e2f4f6dad08556996f6434c4}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!````~Population\+\_\+clustered@{$\sim$\+Population\+\_\+clustered}}
+\index{````~Population\+\_\+clustered@{$\sim$\+Population\+\_\+clustered}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{$\sim$\+Population\+\_\+clustered()}{~Population\_clustered()}}
+{\footnotesize\ttfamily Population\+\_\+clustered\+::$\sim$\+Population\+\_\+clustered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor of a population. 
+
+Destroy the population by freeing evrery cluster in it 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_population__clustered_a8003d1f89c0bda4dec1578168dbca0ae}\label{class_population__clustered_a8003d1f89c0bda4dec1578168dbca0ae}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!get\+\_\+best\+\_\+score@{get\+\_\+best\+\_\+score}}
+\index{get\+\_\+best\+\_\+score@{get\+\_\+best\+\_\+score}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{get\+\_\+best\+\_\+score()}{get\_best\_score()}}
+{\footnotesize\ttfamily double Population\+\_\+clustered\+::get\+\_\+best\+\_\+score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the best score of a population. 
+
+\begin{DoxyReturn}{Returns}
+a double representing the best mean score inside a population 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_population__clustered_ab0c42e75615a2747a11ec999f049eb00}\label{class_population__clustered_ab0c42e75615a2747a11ec999f049eb00}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!get\+\_\+generation@{get\+\_\+generation}}
+\index{get\+\_\+generation@{get\+\_\+generation}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{get\+\_\+generation()}{get\_generation()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_generation__clustered}{Generation\+\_\+clustered} $>$ Population\+\_\+clustered\+::get\+\_\+generation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the generations of a population. 
+
+\begin{DoxyReturn}{Returns}
+a vector containing all the generations of the population 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_population__clustered_a09317877b808df0255f429ba10eacfc9}\label{class_population__clustered_a09317877b808df0255f429ba10eacfc9}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!get\+\_\+mean\+\_\+score@{get\+\_\+mean\+\_\+score}}
+\index{get\+\_\+mean\+\_\+score@{get\+\_\+mean\+\_\+score}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{get\+\_\+mean\+\_\+score()}{get\_mean\_score()}}
+{\footnotesize\ttfamily double Population\+\_\+clustered\+::get\+\_\+mean\+\_\+score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the mean score of a population. 
+
+\begin{DoxyReturn}{Returns}
+a double representing the global mean score inside a population 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_population__clustered_a04e1cd70504458ab365c756931c1670b}\label{class_population__clustered_a04e1cd70504458ab365c756931c1670b}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!get\+\_\+number\+\_\+cluster@{get\+\_\+number\+\_\+cluster}}
+\index{get\+\_\+number\+\_\+cluster@{get\+\_\+number\+\_\+cluster}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{get\+\_\+number\+\_\+cluster()}{get\_number\_cluster()}}
+{\footnotesize\ttfamily int Population\+\_\+clustered\+::get\+\_\+number\+\_\+cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of clusters per generation inside a population. 
+
+\begin{DoxyReturn}{Returns}
+an int representing the number of clusters per generation of the population 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_population__clustered_ae9776425b15b2588d1098de48927925b}\label{class_population__clustered_ae9776425b15b2588d1098de48927925b}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!get\+\_\+number\+\_\+crossover@{get\+\_\+number\+\_\+crossover}}
+\index{get\+\_\+number\+\_\+crossover@{get\+\_\+number\+\_\+crossover}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{get\+\_\+number\+\_\+crossover()}{get\_number\_crossover()}}
+{\footnotesize\ttfamily int Population\+\_\+clustered\+::get\+\_\+number\+\_\+crossover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of crossing over inside a population. 
+
+\begin{DoxyReturn}{Returns}
+an int representing the number of crossing over of the population 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_population__clustered_a91974ba6fab376ce6024ed2d5225104e}\label{class_population__clustered_a91974ba6fab376ce6024ed2d5225104e}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!get\+\_\+number\+\_\+generation@{get\+\_\+number\+\_\+generation}}
+\index{get\+\_\+number\+\_\+generation@{get\+\_\+number\+\_\+generation}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{get\+\_\+number\+\_\+generation()}{get\_number\_generation()}}
+{\footnotesize\ttfamily int Population\+\_\+clustered\+::get\+\_\+number\+\_\+generation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of generation inside a population. 
+
+\begin{DoxyReturn}{Returns}
+an int representing the number of generations of the population 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_population__clustered_ad4fcb9b6b9b5c6f35387a7e2cc745daf}\label{class_population__clustered_ad4fcb9b6b9b5c6f35387a7e2cc745daf}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!get\+\_\+number\+\_\+individuals@{get\+\_\+number\+\_\+individuals}}
+\index{get\+\_\+number\+\_\+individuals@{get\+\_\+number\+\_\+individuals}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{get\+\_\+number\+\_\+individuals()}{get\_number\_individuals()}}
+{\footnotesize\ttfamily int Population\+\_\+clustered\+::get\+\_\+number\+\_\+individuals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of individuals per cluster inside a population. 
+
+\begin{DoxyReturn}{Returns}
+an int representing the number of individuals per cluster of the population 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_population__clustered_a0593be0ca86a2cc3497ba26ffecac82c}\label{class_population__clustered_a0593be0ca86a2cc3497ba26ffecac82c}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!get\+\_\+number\+\_\+mutation@{get\+\_\+number\+\_\+mutation}}
+\index{get\+\_\+number\+\_\+mutation@{get\+\_\+number\+\_\+mutation}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{get\+\_\+number\+\_\+mutation()}{get\_number\_mutation()}}
+{\footnotesize\ttfamily int Population\+\_\+clustered\+::get\+\_\+number\+\_\+mutation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of mutations inside a population. 
+
+\begin{DoxyReturn}{Returns}
+an int representing the number of mutations of the population 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_population__clustered_a62cf77b998887914248633a29a432e81}\label{class_population__clustered_a62cf77b998887914248633a29a432e81}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!get\+\_\+worst\+\_\+score@{get\+\_\+worst\+\_\+score}}
+\index{get\+\_\+worst\+\_\+score@{get\+\_\+worst\+\_\+score}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{get\+\_\+worst\+\_\+score()}{get\_worst\_score()}}
+{\footnotesize\ttfamily double Population\+\_\+clustered\+::get\+\_\+worst\+\_\+score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the worst score of a population. 
+
+\begin{DoxyReturn}{Returns}
+a double representing the worst mean score inside a population 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_population__clustered_aa7600f7b8134b9371b593a00a7d67086}\label{class_population__clustered_aa7600f7b8134b9371b593a00a7d67086}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_generation__clustered}{Generation\+\_\+clustered} \& Population\+\_\+clustered\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Vector-\/like operator for the generation. 
+
+\mbox{\Hypertarget{class_population__clustered_a147b765cff555d4c3e779bfc44e1a7f7}\label{class_population__clustered_a147b765cff555d4c3e779bfc44e1a7f7}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_generation__clustered}{Generation\+\_\+clustered} Population\+\_\+clustered\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Vector-\/like operator for the generation$\ast$/. 
+
+\mbox{\Hypertarget{class_population__clustered_aad565e8b33c7db54d69a8d59623eea2b}\label{class_population__clustered_aad565e8b33c7db54d69a8d59623eea2b}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!set\+\_\+best\+\_\+score@{set\+\_\+best\+\_\+score}}
+\index{set\+\_\+best\+\_\+score@{set\+\_\+best\+\_\+score}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{set\+\_\+best\+\_\+score()}{set\_best\_score()}}
+{\footnotesize\ttfamily void Population\+\_\+clustered\+::set\+\_\+best\+\_\+score (\begin{DoxyParamCaption}\item[{double}]{best\+\_\+score }\end{DoxyParamCaption})}
+
+
+
+Set the best score of a population. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em best\+\_\+score} & \+: an fouble representing the best score of a population \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_population__clustered_a234c028b57507ac9b4c81273a8279b01}\label{class_population__clustered_a234c028b57507ac9b4c81273a8279b01}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!set\+\_\+mean\+\_\+score@{set\+\_\+mean\+\_\+score}}
+\index{set\+\_\+mean\+\_\+score@{set\+\_\+mean\+\_\+score}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{set\+\_\+mean\+\_\+score()}{set\_mean\_score()}}
+{\footnotesize\ttfamily void Population\+\_\+clustered\+::set\+\_\+mean\+\_\+score (\begin{DoxyParamCaption}\item[{double}]{mean\+\_\+score }\end{DoxyParamCaption})}
+
+
+
+Set the global mean score of a population. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em worst\+\_\+score} & \+: a double representing the global mean score of a population \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_population__clustered_ac4337d1263af1c208478cfdc20536254}\label{class_population__clustered_ac4337d1263af1c208478cfdc20536254}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!set\+\_\+number\+\_\+crossover@{set\+\_\+number\+\_\+crossover}}
+\index{set\+\_\+number\+\_\+crossover@{set\+\_\+number\+\_\+crossover}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{set\+\_\+number\+\_\+crossover()}{set\_number\_crossover()}}
+{\footnotesize\ttfamily void Population\+\_\+clustered\+::set\+\_\+number\+\_\+crossover (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+crossover }\end{DoxyParamCaption})}
+
+
+
+Set the number of crossing over of a population. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+crossover} & \+: an int representing the number of crossing over of a population \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_population__clustered_ab9e60e2a8ae0388db9de7ea071687c9e}\label{class_population__clustered_ab9e60e2a8ae0388db9de7ea071687c9e}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!set\+\_\+number\+\_\+mutation@{set\+\_\+number\+\_\+mutation}}
+\index{set\+\_\+number\+\_\+mutation@{set\+\_\+number\+\_\+mutation}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{set\+\_\+number\+\_\+mutation()}{set\_number\_mutation()}}
+{\footnotesize\ttfamily void Population\+\_\+clustered\+::set\+\_\+number\+\_\+mutation (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+mutation }\end{DoxyParamCaption})}
+
+
+
+Set the number of mutations over of a population. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+mutation} & \+: an int representing the number of mutations of a population \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_population__clustered_a30378ce62362cd7ec929af2e66018a98}\label{class_population__clustered_a30378ce62362cd7ec929af2e66018a98}} 
+\index{Population\+\_\+clustered@{Population\+\_\+clustered}!set\+\_\+worst\+\_\+score@{set\+\_\+worst\+\_\+score}}
+\index{set\+\_\+worst\+\_\+score@{set\+\_\+worst\+\_\+score}!Population\+\_\+clustered@{Population\+\_\+clustered}}
+\subsubsection{\texorpdfstring{set\+\_\+worst\+\_\+score()}{set\_worst\_score()}}
+{\footnotesize\ttfamily void Population\+\_\+clustered\+::set\+\_\+worst\+\_\+score (\begin{DoxyParamCaption}\item[{double}]{worst\+\_\+score }\end{DoxyParamCaption})}
+
+
+
+Set the worst score of a population. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em worst\+\_\+score} & \+: an double representing the worst score of a population \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+parseur\+\_\+sources/\hyperlink{population__clustered_8h}{population\+\_\+clustered.\+h}\item 
+parseur\+\_\+sources/\hyperlink{population__clustered_8cpp}{population\+\_\+clustered.\+cpp}\end{DoxyCompactItemize}

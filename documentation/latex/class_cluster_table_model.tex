@@ -1,0 +1,124 @@
+\hypertarget{class_cluster_table_model}{}\section{Cluster\+Table\+Model Class Reference}
+\label{class_cluster_table_model}\index{Cluster\+Table\+Model@{Cluster\+Table\+Model}}
+
+
+\hyperlink{class_cluster_table_model}{Cluster\+Table\+Model} class \+: The class representing the model of the cluster\+View.  
+
+
+
+
+{\ttfamily \#include $<$model\+\_\+table\+\_\+cluster.\+h$>$}
+
+
+
+Inheritance diagram for Cluster\+Table\+Model\+:
+% FIG 0
+
+
+Collaboration diagram for Cluster\+Table\+Model\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cluster_table_model_a56b29a3d0efe69d1012b168e795dbbfa}{Cluster\+Table\+Model} (\hyperlink{class_population__clustered}{Population\+\_\+clustered} $\ast$population)
+\begin{DoxyCompactList}\small\item\em Constructor of the model. \end{DoxyCompactList}\item 
+int \hyperlink{class_cluster_table_model_a8df36437da5db2af6767a3df3154ceb4}{row\+Count} (const Q\+Model\+Index \&parent=Q\+Model\+Index()) const
+\begin{DoxyCompactList}\small\item\em Holds the number of row of the model of the model. \end{DoxyCompactList}\item 
+int \hyperlink{class_cluster_table_model_adab3fcef68b1958a4ced17cef8b50eec}{column\+Count} (const Q\+Model\+Index \&parent=Q\+Model\+Index()) const
+\begin{DoxyCompactList}\small\item\em Holds the number of column of the model of the model. \end{DoxyCompactList}\item 
+Q\+Variant \hyperlink{class_cluster_table_model_aa0e82a26bc4abde92659e9972b043cfe}{data} (const Q\+Model\+Index \&index, int role) const
+\item 
+Q\+Variant \hyperlink{class_cluster_table_model_aa05cacdce0f86c131522eef6a902642c}{header\+Data} (int section, Qt\+::\+Orientation orientation, int role) const
+\item 
+bool \hyperlink{class_cluster_table_model_a8b3e1b56923c215e0c36f9116f90df58}{set\+Data} (const Q\+Model\+Index \&index, const Q\+Variant \&value, int role)
+\item 
+void \hyperlink{class_cluster_table_model_a21f97aadd6e751800a92c843e6cfd170}{add\+Element} (const Q\+String \&element, int value)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_population__clustered}{Population\+\_\+clustered} $\ast$ \hyperlink{class_cluster_table_model_a8976691d944b9e33a830cd8f3b8f9c7c}{m\+Elements}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_cluster_table_model}{Cluster\+Table\+Model} class \+: The class representing the model of the cluster\+View. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_cluster_table_model_a56b29a3d0efe69d1012b168e795dbbfa}\label{class_cluster_table_model_a56b29a3d0efe69d1012b168e795dbbfa}} 
+\index{Cluster\+Table\+Model@{Cluster\+Table\+Model}!Cluster\+Table\+Model@{Cluster\+Table\+Model}}
+\index{Cluster\+Table\+Model@{Cluster\+Table\+Model}!Cluster\+Table\+Model@{Cluster\+Table\+Model}}
+\subsubsection{\texorpdfstring{Cluster\+Table\+Model()}{ClusterTableModel()}}
+{\footnotesize\ttfamily Cluster\+Table\+Model\+::\+Cluster\+Table\+Model (\begin{DoxyParamCaption}\item[{\hyperlink{class_population__clustered}{Population\+\_\+clustered} $\ast$}]{population }\end{DoxyParamCaption})}
+
+
+
+Constructor of the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em population} & \+: the population on which the model will rely on \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_cluster_table_model_a21f97aadd6e751800a92c843e6cfd170}\label{class_cluster_table_model_a21f97aadd6e751800a92c843e6cfd170}} 
+\index{Cluster\+Table\+Model@{Cluster\+Table\+Model}!add\+Element@{add\+Element}}
+\index{add\+Element@{add\+Element}!Cluster\+Table\+Model@{Cluster\+Table\+Model}}
+\subsubsection{\texorpdfstring{add\+Element()}{addElement()}}
+{\footnotesize\ttfamily void Cluster\+Table\+Model\+::add\+Element (\begin{DoxyParamCaption}\item[{const Q\+String \&}]{element,  }\item[{int}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_cluster_table_model_adab3fcef68b1958a4ced17cef8b50eec}\label{class_cluster_table_model_adab3fcef68b1958a4ced17cef8b50eec}} 
+\index{Cluster\+Table\+Model@{Cluster\+Table\+Model}!column\+Count@{column\+Count}}
+\index{column\+Count@{column\+Count}!Cluster\+Table\+Model@{Cluster\+Table\+Model}}
+\subsubsection{\texorpdfstring{column\+Count()}{columnCount()}}
+{\footnotesize\ttfamily int Cluster\+Table\+Model\+::column\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const}
+
+
+
+Holds the number of column of the model of the model. 
+
+The number of column corresponds to the number of clusters per generations \mbox{\Hypertarget{class_cluster_table_model_aa0e82a26bc4abde92659e9972b043cfe}\label{class_cluster_table_model_aa0e82a26bc4abde92659e9972b043cfe}} 
+\index{Cluster\+Table\+Model@{Cluster\+Table\+Model}!data@{data}}
+\index{data@{data}!Cluster\+Table\+Model@{Cluster\+Table\+Model}}
+\subsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily Q\+Variant Cluster\+Table\+Model\+::data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{int}]{role }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_cluster_table_model_aa05cacdce0f86c131522eef6a902642c}\label{class_cluster_table_model_aa05cacdce0f86c131522eef6a902642c}} 
+\index{Cluster\+Table\+Model@{Cluster\+Table\+Model}!header\+Data@{header\+Data}}
+\index{header\+Data@{header\+Data}!Cluster\+Table\+Model@{Cluster\+Table\+Model}}
+\subsubsection{\texorpdfstring{header\+Data()}{headerData()}}
+{\footnotesize\ttfamily Q\+Variant Cluster\+Table\+Model\+::header\+Data (\begin{DoxyParamCaption}\item[{int}]{section,  }\item[{Qt\+::\+Orientation}]{orientation,  }\item[{int}]{role }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_cluster_table_model_a8df36437da5db2af6767a3df3154ceb4}\label{class_cluster_table_model_a8df36437da5db2af6767a3df3154ceb4}} 
+\index{Cluster\+Table\+Model@{Cluster\+Table\+Model}!row\+Count@{row\+Count}}
+\index{row\+Count@{row\+Count}!Cluster\+Table\+Model@{Cluster\+Table\+Model}}
+\subsubsection{\texorpdfstring{row\+Count()}{rowCount()}}
+{\footnotesize\ttfamily int Cluster\+Table\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const}
+
+
+
+Holds the number of row of the model of the model. 
+
+The number of row corresponds to the number of generations of the population \mbox{\Hypertarget{class_cluster_table_model_a8b3e1b56923c215e0c36f9116f90df58}\label{class_cluster_table_model_a8b3e1b56923c215e0c36f9116f90df58}} 
+\index{Cluster\+Table\+Model@{Cluster\+Table\+Model}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Cluster\+Table\+Model@{Cluster\+Table\+Model}}
+\subsubsection{\texorpdfstring{set\+Data()}{setData()}}
+{\footnotesize\ttfamily bool Cluster\+Table\+Model\+::set\+Data (\begin{DoxyParamCaption}\item[{const Q\+Model\+Index \&}]{index,  }\item[{const Q\+Variant \&}]{value,  }\item[{int}]{role }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_cluster_table_model_a8976691d944b9e33a830cd8f3b8f9c7c}\label{class_cluster_table_model_a8976691d944b9e33a830cd8f3b8f9c7c}} 
+\index{Cluster\+Table\+Model@{Cluster\+Table\+Model}!m\+Elements@{m\+Elements}}
+\index{m\+Elements@{m\+Elements}!Cluster\+Table\+Model@{Cluster\+Table\+Model}}
+\subsubsection{\texorpdfstring{m\+Elements}{mElements}}
+{\footnotesize\ttfamily \hyperlink{class_population__clustered}{Population\+\_\+clustered}$\ast$ Cluster\+Table\+Model\+::m\+Elements}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\hyperlink{model__table__cluster_8h}{model\+\_\+table\+\_\+cluster.\+h}\item 
+model/\hyperlink{model__table__cluster_8cpp}{model\+\_\+table\+\_\+cluster.\+cpp}\end{DoxyCompactItemize}

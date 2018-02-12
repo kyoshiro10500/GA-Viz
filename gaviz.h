@@ -16,7 +16,7 @@ class GAViz : public QObject {
 public:
     explicit GAViz (QQmlApplicationEngine *engine, QObject* parent = 0) : QObject(parent), mEngine(engine)  {}
 
-    //! Parse the file which is defined by the QUrl. Used by the file selector*/
+    //! Parse the file which is defined by the QUrl. Used by the file selector
     Q_INVOKABLE bool parse(QUrl fileUrl);
 
 public:

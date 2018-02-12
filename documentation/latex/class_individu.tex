@@ -1,0 +1,404 @@
+\hypertarget{class_individu}{}\section{Individu Class Reference}
+\label{class_individu}\index{Individu@{Individu}}
+
+
+\hyperlink{class_individu}{Individu} class \+: represents an individual.  
+
+
+
+
+{\ttfamily \#include $<$individu.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_individu_ac35091404cfbf11946694806aefa9e7e}{Individu} ()
+\begin{DoxyCompactList}\small\item\em The default constructor of an empty individual. \end{DoxyCompactList}\item 
+\hyperlink{class_individu_a73c8148ec030d8b008c4a60a62738198}{Individu} (const \hyperlink{class_individu}{Individu} \&)
+\begin{DoxyCompactList}\small\item\em The copy constructor of an individual. \end{DoxyCompactList}\item 
+\hyperlink{class_individu_a84dcf2842927993d6c9ab833dfb6997a}{$\sim$\+Individu} ()
+\begin{DoxyCompactList}\small\item\em The default destructor of an individual. \end{DoxyCompactList}\item 
+void \hyperlink{class_individu_ae7b6566767a9e1b65207eba6c466e033}{set\+Distance} (double distance)
+\begin{DoxyCompactList}\small\item\em Set the distance of an individual. \end{DoxyCompactList}\item 
+void \hyperlink{class_individu_a85d185d2480ae6c279937bc4334190c6}{set\+Number\+Buses} (int number\+\_\+buses)
+\begin{DoxyCompactList}\small\item\em Set the number of buses of an individual. \end{DoxyCompactList}\item 
+void \hyperlink{class_individu_a1b3a6c4e4387dc538867d0e353601545}{set\+G\+Idx} (int g\+Idx)
+\begin{DoxyCompactList}\small\item\em Set the global index of an individual. \end{DoxyCompactList}\item 
+void \hyperlink{class_individu_a46912d0d2b00a414a37a6091cae891c6}{set\+Parent1} (int parent1)
+\begin{DoxyCompactList}\small\item\em Set the first parent of an individual. \end{DoxyCompactList}\item 
+void \hyperlink{class_individu_a134f7718457e3881bf3d60bfd5b05c08}{set\+Parent2} (int parent2)
+\begin{DoxyCompactList}\small\item\em Set the second parent of an individual. \end{DoxyCompactList}\item 
+void \hyperlink{class_individu_a2daaf6fb00bfe902d31bd30558ec6567}{set\+Number\+Mutation} (int number\+\_\+mutation)
+\begin{DoxyCompactList}\small\item\em Set the number of mutations of an individual. \end{DoxyCompactList}\item 
+void \hyperlink{class_individu_acb83b642ec6c87abd2ca43c7479d79cf}{set\+Number\+Crossover} (int number\+\_\+crossover)
+\begin{DoxyCompactList}\small\item\em Set the number of crossing over of an individual. \end{DoxyCompactList}\item 
+bool \hyperlink{class_individu_afa42bb4d0c582475f4f4a0c506e7bc15}{get\+Mutation} () const
+\begin{DoxyCompactList}\small\item\em Get the boolean describing if an individual is mutated or not. \end{DoxyCompactList}\item 
+bool \hyperlink{class_individu_ad607487c88c83891aea94679030a1998}{get\+Crossing} () const
+\begin{DoxyCompactList}\small\item\em Get the boolean describing if an individual have crossing over or not. \end{DoxyCompactList}\item 
+bool \hyperlink{class_individu_a64b1dae7754d35a424866f2a6fedac6e}{get\+New} () const
+\begin{DoxyCompactList}\small\item\em Get the boolean describing if an individual is new or not. \end{DoxyCompactList}\item 
+int \hyperlink{class_individu_a33a6c22bc7e08d2fe32664be076b3957}{get\+Number\+Buses} () const
+\begin{DoxyCompactList}\small\item\em Get the number of buses of an individual. \end{DoxyCompactList}\item 
+double \hyperlink{class_individu_a658da48a9ad9a057f5c05176c1bf4049}{get\+Distance} () const
+\begin{DoxyCompactList}\small\item\em Get the distance of an individual. \end{DoxyCompactList}\item 
+double \hyperlink{class_individu_acbbbfb9528094739f13041dbbe82c989}{get\+Score} () const
+\begin{DoxyCompactList}\small\item\em Get the global score of an individual. \end{DoxyCompactList}\item 
+int \hyperlink{class_individu_acb09f4a7219773933b9261be41e6e0e7}{get\+G\+Idx} () const
+\begin{DoxyCompactList}\small\item\em Get the global index of an individual. \end{DoxyCompactList}\item 
+int \hyperlink{class_individu_aa20d31fdd48f0672fcc5bbc831b96fd3}{get\+Parent1} () const
+\begin{DoxyCompactList}\small\item\em Get the first parent of an individual. \end{DoxyCompactList}\item 
+int \hyperlink{class_individu_a194ba789e23ae0b59491681e91115609}{get\+Parent2} () const
+\begin{DoxyCompactList}\small\item\em Get the second parent of an individual. \end{DoxyCompactList}\item 
+double \hyperlink{class_individu_a2ff6f8c293a8794bce32391f5ed3c470}{get\+Score\+Buses} () const
+\begin{DoxyCompactList}\small\item\em Get the score regarding buses of an individual. \end{DoxyCompactList}\item 
+double \hyperlink{class_individu_a5c6d2ec03c1a493a870ab1340c410e82}{get\+Score\+Distance} () const
+\begin{DoxyCompactList}\small\item\em Get the score regarding distance of an individual. \end{DoxyCompactList}\item 
+int \hyperlink{class_individu_ab45051503bc347df2977cded53e89bb8}{get\+Number\+Mutation} () const
+\begin{DoxyCompactList}\small\item\em Get the number of mutation of an individual. \end{DoxyCompactList}\item 
+int \hyperlink{class_individu_ac2b0760ade1996c858f847ce9c176c20}{get\+Number\+Crossover} () const
+\begin{DoxyCompactList}\small\item\em Get the number of crossing over of an individual. \end{DoxyCompactList}\item 
+void \hyperlink{class_individu_aaf98484035ad3c9d41cf12013a5c65fd}{calculate\+Score} (double min\+\_\+distance, int min\+\_\+number\+\_\+buses, int max\+\_\+distance, int max\+\_\+buses)
+\begin{DoxyCompactList}\small\item\em Calculate the score regarding buses and distance of an individual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_individu}{Individu} class \+: represents an individual. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_individu_ac35091404cfbf11946694806aefa9e7e}\label{class_individu_ac35091404cfbf11946694806aefa9e7e}} 
+\index{Individu@{Individu}!Individu@{Individu}}
+\index{Individu@{Individu}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{Individu()}{Individu()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Individu\+::\+Individu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The default constructor of an empty individual. 
+
+The global index of the second parent of an individual (-\/1 means no parent)
+
+Initialize the individual with empty variable \mbox{\Hypertarget{class_individu_a73c8148ec030d8b008c4a60a62738198}\label{class_individu_a73c8148ec030d8b008c4a60a62738198}} 
+\index{Individu@{Individu}!Individu@{Individu}}
+\index{Individu@{Individu}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{Individu()}{Individu()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Individu\+::\+Individu (\begin{DoxyParamCaption}\item[{const \hyperlink{class_individu}{Individu} \&}]{ind }\end{DoxyParamCaption})}
+
+
+
+The copy constructor of an individual. 
+
+Creates an individual and copy every members of another individual \mbox{\Hypertarget{class_individu_a84dcf2842927993d6c9ab833dfb6997a}\label{class_individu_a84dcf2842927993d6c9ab833dfb6997a}} 
+\index{Individu@{Individu}!````~Individu@{$\sim$\+Individu}}
+\index{````~Individu@{$\sim$\+Individu}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{$\sim$\+Individu()}{~Individu()}}
+{\footnotesize\ttfamily Individu\+::$\sim$\+Individu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The default destructor of an individual. 
+
+Destroy an individual by freeing every members of an individual 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_individu_aaf98484035ad3c9d41cf12013a5c65fd}\label{class_individu_aaf98484035ad3c9d41cf12013a5c65fd}} 
+\index{Individu@{Individu}!calculate\+Score@{calculate\+Score}}
+\index{calculate\+Score@{calculate\+Score}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{calculate\+Score()}{calculateScore()}}
+{\footnotesize\ttfamily void Individu\+::calculate\+Score (\begin{DoxyParamCaption}\item[{double}]{min\+\_\+distance,  }\item[{int}]{min\+\_\+number\+\_\+buses,  }\item[{int}]{max\+\_\+distance,  }\item[{int}]{max\+\_\+buses }\end{DoxyParamCaption})}
+
+
+
+Calculate the score regarding buses and distance of an individual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+\_\+distance} & \+: a double representing the minimal distance of a population \\
+\hline
+{\em min\+\_\+number\+\_\+buses} & \+: an int representing the minimal number of buses of a population \\
+\hline
+{\em max\+\_\+distance} & \+: a double representing the maximal distance of a population \\
+\hline
+{\em max\+\_\+buses} & \+: an int representing the maximal number of buses of a population \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_individu_ad607487c88c83891aea94679030a1998}\label{class_individu_ad607487c88c83891aea94679030a1998}} 
+\index{Individu@{Individu}!get\+Crossing@{get\+Crossing}}
+\index{get\+Crossing@{get\+Crossing}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+Crossing()}{getCrossing()}}
+{\footnotesize\ttfamily bool Individu\+::get\+Crossing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the boolean describing if an individual have crossing over or not. 
+
+\begin{DoxyReturn}{Returns}
+A bool which value is true if the individual has crossing over 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_a658da48a9ad9a057f5c05176c1bf4049}\label{class_individu_a658da48a9ad9a057f5c05176c1bf4049}} 
+\index{Individu@{Individu}!get\+Distance@{get\+Distance}}
+\index{get\+Distance@{get\+Distance}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+Distance()}{getDistance()}}
+{\footnotesize\ttfamily double Individu\+::get\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the distance of an individual. 
+
+\begin{DoxyReturn}{Returns}
+A double representing the distance of an individual 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_acb09f4a7219773933b9261be41e6e0e7}\label{class_individu_acb09f4a7219773933b9261be41e6e0e7}} 
+\index{Individu@{Individu}!get\+G\+Idx@{get\+G\+Idx}}
+\index{get\+G\+Idx@{get\+G\+Idx}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+G\+Idx()}{getGIdx()}}
+{\footnotesize\ttfamily int Individu\+::get\+G\+Idx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the global index of an individual. 
+
+\begin{DoxyReturn}{Returns}
+An int representing the global index of an individual 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_afa42bb4d0c582475f4f4a0c506e7bc15}\label{class_individu_afa42bb4d0c582475f4f4a0c506e7bc15}} 
+\index{Individu@{Individu}!get\+Mutation@{get\+Mutation}}
+\index{get\+Mutation@{get\+Mutation}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+Mutation()}{getMutation()}}
+{\footnotesize\ttfamily bool Individu\+::get\+Mutation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the boolean describing if an individual is mutated or not. 
+
+\begin{DoxyReturn}{Returns}
+A bool which value is true if the individual is mutated 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_a64b1dae7754d35a424866f2a6fedac6e}\label{class_individu_a64b1dae7754d35a424866f2a6fedac6e}} 
+\index{Individu@{Individu}!get\+New@{get\+New}}
+\index{get\+New@{get\+New}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+New()}{getNew()}}
+{\footnotesize\ttfamily bool Individu\+::get\+New (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the boolean describing if an individual is new or not. 
+
+\begin{DoxyReturn}{Returns}
+A bool which value is true if the individual is nue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_a33a6c22bc7e08d2fe32664be076b3957}\label{class_individu_a33a6c22bc7e08d2fe32664be076b3957}} 
+\index{Individu@{Individu}!get\+Number\+Buses@{get\+Number\+Buses}}
+\index{get\+Number\+Buses@{get\+Number\+Buses}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+Number\+Buses()}{getNumberBuses()}}
+{\footnotesize\ttfamily int Individu\+::get\+Number\+Buses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of buses of an individual. 
+
+\begin{DoxyReturn}{Returns}
+An int representing the number of buses of an individual 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_ac2b0760ade1996c858f847ce9c176c20}\label{class_individu_ac2b0760ade1996c858f847ce9c176c20}} 
+\index{Individu@{Individu}!get\+Number\+Crossover@{get\+Number\+Crossover}}
+\index{get\+Number\+Crossover@{get\+Number\+Crossover}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+Number\+Crossover()}{getNumberCrossover()}}
+{\footnotesize\ttfamily int Individu\+::get\+Number\+Crossover (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of crossing over of an individual. 
+
+\begin{DoxyReturn}{Returns}
+An int representing the number of crossing over of an individual 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_ab45051503bc347df2977cded53e89bb8}\label{class_individu_ab45051503bc347df2977cded53e89bb8}} 
+\index{Individu@{Individu}!get\+Number\+Mutation@{get\+Number\+Mutation}}
+\index{get\+Number\+Mutation@{get\+Number\+Mutation}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+Number\+Mutation()}{getNumberMutation()}}
+{\footnotesize\ttfamily int Individu\+::get\+Number\+Mutation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of mutation of an individual. 
+
+\begin{DoxyReturn}{Returns}
+An int representing the number of mutations of an individual 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_aa20d31fdd48f0672fcc5bbc831b96fd3}\label{class_individu_aa20d31fdd48f0672fcc5bbc831b96fd3}} 
+\index{Individu@{Individu}!get\+Parent1@{get\+Parent1}}
+\index{get\+Parent1@{get\+Parent1}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+Parent1()}{getParent1()}}
+{\footnotesize\ttfamily int Individu\+::get\+Parent1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the first parent of an individual. 
+
+\begin{DoxyReturn}{Returns}
+An int representing the first parent of an individual (-\/1 if no parent) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_a194ba789e23ae0b59491681e91115609}\label{class_individu_a194ba789e23ae0b59491681e91115609}} 
+\index{Individu@{Individu}!get\+Parent2@{get\+Parent2}}
+\index{get\+Parent2@{get\+Parent2}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+Parent2()}{getParent2()}}
+{\footnotesize\ttfamily int Individu\+::get\+Parent2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the second parent of an individual. 
+
+\begin{DoxyReturn}{Returns}
+An int representing the second parent of an individual (-\/1 if no parent) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_acbbbfb9528094739f13041dbbe82c989}\label{class_individu_acbbbfb9528094739f13041dbbe82c989}} 
+\index{Individu@{Individu}!get\+Score@{get\+Score}}
+\index{get\+Score@{get\+Score}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+Score()}{getScore()}}
+{\footnotesize\ttfamily double Individu\+::get\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the global score of an individual. 
+
+\begin{DoxyReturn}{Returns}
+A double representing the global score of an individual (mean value between the two sorts of score) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_a2ff6f8c293a8794bce32391f5ed3c470}\label{class_individu_a2ff6f8c293a8794bce32391f5ed3c470}} 
+\index{Individu@{Individu}!get\+Score\+Buses@{get\+Score\+Buses}}
+\index{get\+Score\+Buses@{get\+Score\+Buses}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+Score\+Buses()}{getScoreBuses()}}
+{\footnotesize\ttfamily double Individu\+::get\+Score\+Buses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the score regarding buses of an individual. 
+
+\begin{DoxyReturn}{Returns}
+A double representing the score regarding buses of an individual (between 0 and 1) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_a5c6d2ec03c1a493a870ab1340c410e82}\label{class_individu_a5c6d2ec03c1a493a870ab1340c410e82}} 
+\index{Individu@{Individu}!get\+Score\+Distance@{get\+Score\+Distance}}
+\index{get\+Score\+Distance@{get\+Score\+Distance}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{get\+Score\+Distance()}{getScoreDistance()}}
+{\footnotesize\ttfamily double Individu\+::get\+Score\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the score regarding distance of an individual. 
+
+\begin{DoxyReturn}{Returns}
+A double representing the score regarding distance of an individual (between 0 and 1) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_individu_ae7b6566767a9e1b65207eba6c466e033}\label{class_individu_ae7b6566767a9e1b65207eba6c466e033}} 
+\index{Individu@{Individu}!set\+Distance@{set\+Distance}}
+\index{set\+Distance@{set\+Distance}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{set\+Distance()}{setDistance()}}
+{\footnotesize\ttfamily void Individu\+::set\+Distance (\begin{DoxyParamCaption}\item[{double}]{distance }\end{DoxyParamCaption})}
+
+
+
+Set the distance of an individual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em distance} & \+: the double corresponding to the value of the distance value of an individual \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_individu_a1b3a6c4e4387dc538867d0e353601545}\label{class_individu_a1b3a6c4e4387dc538867d0e353601545}} 
+\index{Individu@{Individu}!set\+G\+Idx@{set\+G\+Idx}}
+\index{set\+G\+Idx@{set\+G\+Idx}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{set\+G\+Idx()}{setGIdx()}}
+{\footnotesize\ttfamily void Individu\+::set\+G\+Idx (\begin{DoxyParamCaption}\item[{int}]{g\+Idx }\end{DoxyParamCaption})}
+
+
+
+Set the global index of an individual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g\+Idx} & \+: the int corresponding to the value of the global index of an individual \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_individu_a85d185d2480ae6c279937bc4334190c6}\label{class_individu_a85d185d2480ae6c279937bc4334190c6}} 
+\index{Individu@{Individu}!set\+Number\+Buses@{set\+Number\+Buses}}
+\index{set\+Number\+Buses@{set\+Number\+Buses}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{set\+Number\+Buses()}{setNumberBuses()}}
+{\footnotesize\ttfamily void Individu\+::set\+Number\+Buses (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+buses }\end{DoxyParamCaption})}
+
+
+
+Set the number of buses of an individual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+buses} & \+: the int corresponding to the value of the number of buses of an individual \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_individu_acb83b642ec6c87abd2ca43c7479d79cf}\label{class_individu_acb83b642ec6c87abd2ca43c7479d79cf}} 
+\index{Individu@{Individu}!set\+Number\+Crossover@{set\+Number\+Crossover}}
+\index{set\+Number\+Crossover@{set\+Number\+Crossover}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{set\+Number\+Crossover()}{setNumberCrossover()}}
+{\footnotesize\ttfamily void Individu\+::set\+Number\+Crossover (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+crossover }\end{DoxyParamCaption})}
+
+
+
+Set the number of crossing over of an individual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+crossover} & \+: the int corresponding to the value of the number of crossing over of an individual \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_individu_a2daaf6fb00bfe902d31bd30558ec6567}\label{class_individu_a2daaf6fb00bfe902d31bd30558ec6567}} 
+\index{Individu@{Individu}!set\+Number\+Mutation@{set\+Number\+Mutation}}
+\index{set\+Number\+Mutation@{set\+Number\+Mutation}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{set\+Number\+Mutation()}{setNumberMutation()}}
+{\footnotesize\ttfamily void Individu\+::set\+Number\+Mutation (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+mutation }\end{DoxyParamCaption})}
+
+
+
+Set the number of mutations of an individual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+mutation} & \+: the int corresponding to the value of the number of mutations of an individual \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_individu_a46912d0d2b00a414a37a6091cae891c6}\label{class_individu_a46912d0d2b00a414a37a6091cae891c6}} 
+\index{Individu@{Individu}!set\+Parent1@{set\+Parent1}}
+\index{set\+Parent1@{set\+Parent1}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{set\+Parent1()}{setParent1()}}
+{\footnotesize\ttfamily void Individu\+::set\+Parent1 (\begin{DoxyParamCaption}\item[{int}]{parent1 }\end{DoxyParamCaption})}
+
+
+
+Set the first parent of an individual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent1} & \+: the int corresponding to the value of the first parent of an individual \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_individu_a134f7718457e3881bf3d60bfd5b05c08}\label{class_individu_a134f7718457e3881bf3d60bfd5b05c08}} 
+\index{Individu@{Individu}!set\+Parent2@{set\+Parent2}}
+\index{set\+Parent2@{set\+Parent2}!Individu@{Individu}}
+\subsubsection{\texorpdfstring{set\+Parent2()}{setParent2()}}
+{\footnotesize\ttfamily void Individu\+::set\+Parent2 (\begin{DoxyParamCaption}\item[{int}]{parent2 }\end{DoxyParamCaption})}
+
+
+
+Set the second parent of an individual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent2} & \+: the int corresponding to the value of the second parent of an individual \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+parseur\+\_\+sources/\hyperlink{individu_8h}{individu.\+h}\item 
+parseur\+\_\+sources/\hyperlink{individu_8cpp}{individu.\+cpp}\end{DoxyCompactItemize}

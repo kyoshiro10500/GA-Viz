@@ -1,0 +1,113 @@
+\hypertarget{class_generation__clustered}{}\section{Generation\+\_\+clustered Class Reference}
+\label{class_generation__clustered}\index{Generation\+\_\+clustered@{Generation\+\_\+clustered}}
+
+
+Generation class \+: represents a generation.  
+
+
+
+
+{\ttfamily \#include $<$generation\+\_\+clustered.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_generation__clustered_a823bc0f5f9997d846386f9032455909b}{Generation\+\_\+clustered} (int number\+\_\+individual=-\/1, int number\+\_\+cluster=-\/1)
+\begin{DoxyCompactList}\small\item\em Default constructor of a generation. Set the number of individual and number\+\_\+cluster to -\/1. \end{DoxyCompactList}\item 
+\hyperlink{class_generation__clustered_aaa729c31844ef335a192656e58f2337c}{Generation\+\_\+clustered} (const \hyperlink{class_generation__clustered}{Generation\+\_\+clustered} \&)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_generation__clustered_aeb063106dd0dbfd237108e26f3439101}{$\sim$\+Generation\+\_\+clustered} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\hyperlink{class_cluster}{Cluster} \& \hyperlink{class_generation__clustered_a7b02e7aaaba6cb2d171642044833d485}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\begin{DoxyCompactList}\small\item\em Vector-\/like operator for the generation. \end{DoxyCompactList}\item 
+\hyperlink{class_cluster}{Cluster} \hyperlink{class_generation__clustered_a91d8016a9ce56103000902be5c1acd1c}{operator\mbox{[}$\,$\mbox{]}} (int i) const
+\begin{DoxyCompactList}\small\item\em Vector-\/like operator for the generation. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_cluster}{Cluster} $>$ \hyperlink{class_generation__clustered_ab45fdeb57a0d04cda57a5f023e132859}{get\+Cluster} () const
+\begin{DoxyCompactList}\small\item\em Get the vector of cluster of the generation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generation class \+: represents a generation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_generation__clustered_a823bc0f5f9997d846386f9032455909b}\label{class_generation__clustered_a823bc0f5f9997d846386f9032455909b}} 
+\index{Generation\+\_\+clustered@{Generation\+\_\+clustered}!Generation\+\_\+clustered@{Generation\+\_\+clustered}}
+\index{Generation\+\_\+clustered@{Generation\+\_\+clustered}!Generation\+\_\+clustered@{Generation\+\_\+clustered}}
+\subsubsection{\texorpdfstring{Generation\+\_\+clustered()}{Generation\_clustered()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Generation\+\_\+clustered\+::\+Generation\+\_\+clustered (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+individual = {\ttfamily -\/1},  }\item[{int}]{number\+\_\+cluster = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Default constructor of a generation. Set the number of individual and number\+\_\+cluster to -\/1. 
+
+A vector representing all clusters inside the generation
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+individual} & \+: an int representing the number of individual inside a generation \\
+\hline
+{\em number\+\_\+cluster} & \+: an int representing the number of cluster inside a generation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_generation__clustered_aaa729c31844ef335a192656e58f2337c}\label{class_generation__clustered_aaa729c31844ef335a192656e58f2337c}} 
+\index{Generation\+\_\+clustered@{Generation\+\_\+clustered}!Generation\+\_\+clustered@{Generation\+\_\+clustered}}
+\index{Generation\+\_\+clustered@{Generation\+\_\+clustered}!Generation\+\_\+clustered@{Generation\+\_\+clustered}}
+\subsubsection{\texorpdfstring{Generation\+\_\+clustered()}{Generation\_clustered()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Generation\+\_\+clustered\+::\+Generation\+\_\+clustered (\begin{DoxyParamCaption}\item[{const \hyperlink{class_generation__clustered}{Generation\+\_\+clustered} \&}]{gen }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+Creates a new generation and copy every members of the old one \mbox{\Hypertarget{class_generation__clustered_aeb063106dd0dbfd237108e26f3439101}\label{class_generation__clustered_aeb063106dd0dbfd237108e26f3439101}} 
+\index{Generation\+\_\+clustered@{Generation\+\_\+clustered}!````~Generation\+\_\+clustered@{$\sim$\+Generation\+\_\+clustered}}
+\index{````~Generation\+\_\+clustered@{$\sim$\+Generation\+\_\+clustered}!Generation\+\_\+clustered@{Generation\+\_\+clustered}}
+\subsubsection{\texorpdfstring{$\sim$\+Generation\+\_\+clustered()}{~Generation\_clustered()}}
+{\footnotesize\ttfamily Generation\+\_\+clustered\+::$\sim$\+Generation\+\_\+clustered (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default destructor. 
+
+Destroy the generation and free every cluster inside it 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_generation__clustered_ab45fdeb57a0d04cda57a5f023e132859}\label{class_generation__clustered_ab45fdeb57a0d04cda57a5f023e132859}} 
+\index{Generation\+\_\+clustered@{Generation\+\_\+clustered}!get\+Cluster@{get\+Cluster}}
+\index{get\+Cluster@{get\+Cluster}!Generation\+\_\+clustered@{Generation\+\_\+clustered}}
+\subsubsection{\texorpdfstring{get\+Cluster()}{getCluster()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_cluster}{Cluster} $>$ Generation\+\_\+clustered\+::get\+Cluster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the vector of cluster of the generation. 
+
+\begin{DoxyReturn}{Returns}
+the vector of all cluster inside the generation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_generation__clustered_a7b02e7aaaba6cb2d171642044833d485}\label{class_generation__clustered_a7b02e7aaaba6cb2d171642044833d485}} 
+\index{Generation\+\_\+clustered@{Generation\+\_\+clustered}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Generation\+\_\+clustered@{Generation\+\_\+clustered}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_cluster}{Cluster} \& Generation\+\_\+clustered\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Vector-\/like operator for the generation. 
+
+\mbox{\Hypertarget{class_generation__clustered_a91d8016a9ce56103000902be5c1acd1c}\label{class_generation__clustered_a91d8016a9ce56103000902be5c1acd1c}} 
+\index{Generation\+\_\+clustered@{Generation\+\_\+clustered}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Generation\+\_\+clustered@{Generation\+\_\+clustered}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_cluster}{Cluster} Generation\+\_\+clustered\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Vector-\/like operator for the generation. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+parseur\+\_\+sources/\hyperlink{generation__clustered_8h}{generation\+\_\+clustered.\+h}\item 
+parseur\+\_\+sources/\hyperlink{generation__clustered_8cpp}{generation\+\_\+clustered.\+cpp}\end{DoxyCompactItemize}

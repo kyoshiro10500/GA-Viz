@@ -1,0 +1,100 @@
+\hypertarget{class_parseur}{}\section{Parseur Class Reference}
+\label{class_parseur}\index{Parseur@{Parseur}}
+
+
+\hyperlink{class_parseur}{Parseur} class \+: represents the paser used to parse all the information.  
+
+
+
+
+{\ttfamily \#include $<$parseur.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_parseur_a32b67fd70e20c4c05f9a7587ffb1c99e}{Parseur} (std\+::string file\+Name\+Population, std\+::string file\+Name\+Points)
+\begin{DoxyCompactList}\small\item\em Constructor for the parseur. \end{DoxyCompactList}\item 
+\hyperlink{class_population__clustered}{Population\+\_\+clustered} \hyperlink{class_parseur_ab99d3dc36de4089ab266c1e69196fa55}{parse\+File} ()
+\begin{DoxyCompactList}\small\item\em Parse the file of individuals. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_points}{Points} $>$ \hyperlink{class_parseur_a67a68af11c904e1e7edd96db89517172}{parse\+File\+Points} ()
+\begin{DoxyCompactList}\small\item\em Parse the file of routes. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \hyperlink{class_parseur_adc549ca4704a806fd3837091845fc24a}{parse\+Routes} (int g\+Idx)
+\begin{DoxyCompactList}\small\item\em Parse the routes of an individual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_parseur}{Parseur} class \+: represents the paser used to parse all the information. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_parseur_a32b67fd70e20c4c05f9a7587ffb1c99e}\label{class_parseur_a32b67fd70e20c4c05f9a7587ffb1c99e}} 
+\index{Parseur@{Parseur}!Parseur@{Parseur}}
+\index{Parseur@{Parseur}!Parseur@{Parseur}}
+\subsubsection{\texorpdfstring{Parseur()}{Parseur()}}
+{\footnotesize\ttfamily Parseur\+::\+Parseur (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name\+Population,  }\item[{std\+::string}]{file\+Name\+Points }\end{DoxyParamCaption})}
+
+
+
+Constructor for the parseur. 
+
+The filename where all infos are stored regarding routes
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name\+Population} & \+: a string representing the path to the file \\
+\hline
+{\em file\+Name\+Points} & \+: a string representing the path to the file \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_parseur_ab99d3dc36de4089ab266c1e69196fa55}\label{class_parseur_ab99d3dc36de4089ab266c1e69196fa55}} 
+\index{Parseur@{Parseur}!parse\+File@{parse\+File}}
+\index{parse\+File@{parse\+File}!Parseur@{Parseur}}
+\subsubsection{\texorpdfstring{parse\+File()}{parseFile()}}
+{\footnotesize\ttfamily \hyperlink{class_population__clustered}{Population\+\_\+clustered} Parseur\+::parse\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parse the file of individuals. 
+
+\begin{DoxyReturn}{Returns}
+The population representing all the individuals 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_parseur_a67a68af11c904e1e7edd96db89517172}\label{class_parseur_a67a68af11c904e1e7edd96db89517172}} 
+\index{Parseur@{Parseur}!parse\+File\+Points@{parse\+File\+Points}}
+\index{parse\+File\+Points@{parse\+File\+Points}!Parseur@{Parseur}}
+\subsubsection{\texorpdfstring{parse\+File\+Points()}{parseFilePoints()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_points}{Points} $>$ Parseur\+::parse\+File\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parse the file of routes. 
+
+\begin{DoxyReturn}{Returns}
+The points of the routes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_parseur_adc549ca4704a806fd3837091845fc24a}\label{class_parseur_adc549ca4704a806fd3837091845fc24a}} 
+\index{Parseur@{Parseur}!parse\+Routes@{parse\+Routes}}
+\index{parse\+Routes@{parse\+Routes}!Parseur@{Parseur}}
+\subsubsection{\texorpdfstring{parse\+Routes()}{parseRoutes()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ int $>$ $>$ Parseur\+::parse\+Routes (\begin{DoxyParamCaption}\item[{int}]{g\+Idx }\end{DoxyParamCaption})}
+
+
+
+Parse the routes of an individual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g\+Idx} & \+: an int representing the global index of an individual \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a matrix representing all the routes of an individual 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+parseur\+\_\+sources/\hyperlink{parseur_8h}{parseur.\+h}\item 
+parseur\+\_\+sources/\hyperlink{parseur_8cpp}{parseur.\+cpp}\end{DoxyCompactItemize}

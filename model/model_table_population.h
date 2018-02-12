@@ -12,19 +12,19 @@ class PopulationTableModel : public QAbstractTableModel
 {
     Q_OBJECT
     public:
-        //! Constructor of the model*/
+        //! Constructor of the model
         /*!
         * \param population : the population on which the model will rely on
         */
         PopulationTableModel(Population_clustered * population) ;
 
-        //! Holds the number of row of the model of the model*/
+        //! Holds the number of row of the model of the model
         /*!
          * The number of row corresponds to the number of generations of the population
          */
         int rowCount(const QModelIndex &parent = QModelIndex()) const;
 
-        //! Holds the number of column of the model of the model*/
+        //! Holds the number of column of the model of the model
         /*!
          * The number of column corresponds to the number of individuals per generations
          */
@@ -37,64 +37,64 @@ class PopulationTableModel : public QAbstractTableModel
         void addElement(const QString &element, int value);
         Population_clustered * mElements; /*! A pointer to the population*/
 
-        //! Set the value of scoreFilter*/
+        //! Set the value of scoreFilter
         Q_INVOKABLE void setScoreFilter(float value) ;
 
-        //! Set the value of mutationFilter*/
+        //! Set the value of mutationFilter
         Q_INVOKABLE void setMutationFilter(bool value) ;
 
-        //! Set the value of crossingoverFilter */
+        //! Set the value of crossingoverFilter
         Q_INVOKABLE void setCrossingoverFilter(bool value) ;
 
-        //! Set the value of showGenealogy */
+        //! Set the value of showGenealogy
         Q_INVOKABLE void setGenealogy(bool value) ;
 
-        //! Get the value of showGenealogy */
+        //! Get the value of showGenealogy
         Q_INVOKABLE bool getGenealogy() const;
 
-        //! Get if the individual is new or not*/
+        //! Get if the individual is new or not
         Q_INVOKABLE bool getNew(int gen,int ind) const ;
 
-        //! Get if the individual is issued from a crossing over or not*/
+        //! Get if the individual is issued from a crossing over or not
         Q_INVOKABLE bool getCrossing(int gen,int ind) const ;
 
-        //! Get if the individual is issued from a mutation or not*/
+        //! Get if the individual is issued from a mutation or not
         Q_INVOKABLE bool getMutation(int gen,int ind) const ;
 
-        //! Get the value of parent1 of the individual*/
+        //! Get the value of parent1 of the individual
         Q_INVOKABLE int getParent1(int gen,int ind) const ;
 
-        //! Get the value of parent2 of the individual*/
+        //! Get the value of parent2 of the individual
         Q_INVOKABLE int getParent2(int gen,int ind) const ;
 
-        //! Get the value of scoreFilter*/
+        //! Get the value of scoreFilter
         Q_INVOKABLE float getScoreFilter() const;
 
-        //! Get the value of the color of the individual*/
+        //! Get the value of the color of the individual
         Q_INVOKABLE QColor getColor(int gen, int ind, double score,double numberMutations, double numberCrossover) const;
 
-        //! Get the value of the number of individuals per cluster*/
+        //! Get the value of the number of individuals per cluster
         Q_INVOKABLE int get_number_individuals() const;
 
-        //! Get the value of the number of clusters per generation*/
+        //! Get the value of the number of clusters per generation
         Q_INVOKABLE int get_number_cluster() const ;
 
-        //! Get the value of the number of generation*/
+        //! Get the value of the number of generation
         Q_INVOKABLE int get_number_generation() const;
 
-        //! Get the value of crossing over of an individual*/
+        //! Get the value of crossing over of an individual
         Q_INVOKABLE int get_number_crossover() const ;
 
-        //! Get the value of mutations of an individual*/
+        //! Get the value of mutations of an individual
         Q_INVOKABLE int get_number_mutation() const ;
 
-        //! Get the value of the best score of the population */
+        //! Get the value of the best score of the population
         Q_INVOKABLE double get_best_score() const ;
 
-        //! Get the value of the worst score of the population*/
+        //! Get the value of the worst score of the population
         Q_INVOKABLE double get_worst_score() const ;
 
-        //! Get the value of the mean score of the population*/
+        //! Get the value of the mean score of the population
         Q_INVOKABLE double get_mean_score() const ;
 
     private:
