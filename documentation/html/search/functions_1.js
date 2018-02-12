@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['calculatecellsize',['calculateCellSize',['../class_cluster_view.html#a123a487097e7146e7b0fb60bca7e2cd7',1,'ClusterView::calculateCellSize()'],['../class_generation_view.html#abd80b9783934a10769cfdd193494afcf',1,'GenerationView::calculateCellSize()'],['../class_population_view.html#ae2224014c990c0270eef8d3e58371a43',1,'PopulationView::calculateCellSize()']]],
   ['calculatescore',['calculateScore',['../class_individu.html#aaf98484035ad3c9d41cf12013a5c65fd',1,'Individu']]],
   ['cluster',['Cluster',['../class_cluster.html#a6222a2684fffeb2ece34f556283e1299',1,'Cluster::Cluster(int number_individual=-1)'],['../class_cluster.html#a9f8b93e2cd87180f6518571c654a6a0a',1,'Cluster::Cluster(const Cluster &amp;)']]],
   ['clustertablemodel',['ClusterTableModel',['../class_cluster_table_model.html#a56b29a3d0efe69d1012b168e795dbbfa',1,'ClusterTableModel']]],

@@ -1,9 +1,23 @@
 var searchData=
 [
-  ['individu',['Individu',['../class_individu.html',1,'Individu'],['../class_individu.html#ac35091404cfbf11946694806aefa9e7e',1,'Individu::Individu()'],['../class_individu.html#a73c8148ec030d8b008c4a60a62738198',1,'Individu::Individu(const Individu &amp;)']]],
-  ['individu_2ecpp',['individu.cpp',['../individu_8cpp.html',1,'']]],
-  ['individu_2eh',['individu.h',['../individu_8h.html',1,'']]],
-  ['insidepanelcluster',['insidePanelCluster',['../class_ui___g_a___viz.html#abfb28a97dfc8983c76ef865655cb510c',1,'Ui_GA_Viz']]],
-  ['insidepanelgeneration',['insidePanelGeneration',['../class_ui___g_a___viz.html#a4cb16b41c5de783dc45f682dcfbb19ca',1,'Ui_GA_Viz']]],
-  ['insidepanelpopulation',['insidePanelPopulation',['../class_ui___g_a___viz.html#ad4d0f203ecfd9f8866bfc16eab7c4757',1,'Ui_GA_Viz']]]
+  ['headerdata',['headerData',['../class_cluster_table_model.html#aa05cacdce0f86c131522eef6a902642c',1,'ClusterTableModel::headerData()'],['../class_generation_table_model.html#a82ba4ebad44e1b1bea80e9b00e63ce28',1,'GenerationTableModel::headerData()'],['../class_population_table_model.html#a00fbcad901121f0635146227a96b1356',1,'PopulationTableModel::headerData()']]],
+  ['hidepanelcluster',['hidePanelCluster',['../class_ui___g_a___viz.html#afce80db360229b362cf690d38ca20ef9',1,'Ui_GA_Viz']]],
+  ['hidepanelgeneration',['hidePanelGeneration',['../class_ui___g_a___viz.html#ab5cb64ecb156c1755339cea9d4c5fd4e',1,'Ui_GA_Viz']]],
+  ['hidepanelpopulation',['hidePanelPopulation',['../class_ui___g_a___viz.html#abbadebd50c242f75db43fc2b17b79734',1,'Ui_GA_Viz']]],
+  ['horizontallayout',['horizontalLayout',['../class_ui___g_a___viz.html#aff191189ef3eecf222f6d74b69c2bcbc',1,'Ui_GA_Viz']]],
+  ['horizontalspacer',['horizontalSpacer',['../class_ui___g_a___viz.html#a9dd875a311dbfad852db421981f5218a',1,'Ui_GA_Viz']]],
+  ['horizontalspacer_5f10',['horizontalSpacer_10',['../class_ui___g_a___viz.html#a53178c16eea3431bc28f5e222effdb6e',1,'Ui_GA_Viz']]],
+  ['horizontalspacer_5f11',['horizontalSpacer_11',['../class_ui___g_a___viz.html#ae6bb65cd75ee527647bde1b7ce35bf61',1,'Ui_GA_Viz']]],
+  ['horizontalspacer_5f12',['horizontalSpacer_12',['../class_ui___g_a___viz.html#ac1187c96eb6e995f8b56e9ca9763ac2e',1,'Ui_GA_Viz']]],
+  ['horizontalspacer_5f2',['horizontalSpacer_2',['../class_ui___g_a___viz.html#a49653e5dc87c4fa5c0442ada283b7a60',1,'Ui_GA_Viz']]],
+  ['horizontalspacer_5f3',['horizontalSpacer_3',['../class_ui___g_a___viz.html#a0bbc764c0411b91defb16cca2bf2b53f',1,'Ui_GA_Viz']]],
+  ['horizontalspacer_5f4',['horizontalSpacer_4',['../class_ui___g_a___viz.html#a326250a37cbde96b8f6db24e5232ba33',1,'Ui_GA_Viz']]],
+  ['horizontalspacer_5f5',['horizontalSpacer_5',['../class_ui___g_a___viz.html#a309487aa4f6bc552952db3feb20aac2c',1,'Ui_GA_Viz']]],
+  ['horizontalspacer_5f6',['horizontalSpacer_6',['../class_ui___g_a___viz.html#a15cc127d197dbdc5ba275a27e4a713cf',1,'Ui_GA_Viz']]],
+  ['horizontalspacer_5f7',['horizontalSpacer_7',['../class_ui___g_a___viz.html#aa8ba6cd3f77c50bc4a751332f6cda340',1,'Ui_GA_Viz']]],
+  ['horizontalspacer_5f8',['horizontalSpacer_8',['../class_ui___g_a___viz.html#a5e5a5960815024c7be78c8b9d8e9a255',1,'Ui_GA_Viz']]],
+  ['horizontalspacer_5f9',['horizontalSpacer_9',['../class_ui___g_a___viz.html#a8ea44a0bcdc90f421bae6b1938a15c64',1,'Ui_GA_Viz']]],
+  ['horizontalspacing',['horizontalSpacing',['../class_cluster_view.html#a05d3648344da5a01277e2e82cfcb879d',1,'ClusterView::horizontalSpacing()'],['../class_generation_view.html#a07e1e99c5e0fd85ced01ced765ae051d',1,'GenerationView::horizontalSpacing()'],['../class_loading_screen.html#a7764e6e7ad13a3e845dd725ce09f668f',1,'LoadingScreen::horizontalSpacing()'],['../class_population_view.html#ab474777ee7d05874f0454ba4a2dbb715',1,'PopulationView::horizontalSpacing()']]],
+  ['horizontalvisibleitemcount',['horizontalVisibleItemCount',['../class_cluster_view.html#a5edf5578114434ca59b2981df262a7e4',1,'ClusterView::horizontalVisibleItemCount()'],['../class_generation_view.html#ae21948d40b492b27833b2cff15ec8258',1,'GenerationView::horizontalVisibleItemCount()'],['../class_population_view.html#a4fa7612ac84c844411e316609b566181',1,'PopulationView::horizontalVisibleItemCount()']]],
+  ['hscrollbar',['hScrollBar',['../class_cluster_view.html#a8e8ef03db3807524639b4b9674b3e4e3',1,'ClusterView::hScrollBar()'],['../class_generation_view.html#ab409dade06a659dec9865ceea71ce911',1,'GenerationView::hScrollBar()'],['../class_population_view.html#a5a94c9d7afc5b9ae98fba25d0951f4c0',1,'PopulationView::hScrollBar()']]]
 ];

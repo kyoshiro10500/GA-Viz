@@ -3,6 +3,7 @@ var searchData=
   ['gaviz',['GAViz',['../class_g_a_viz.html#a25d7842507cad8f54ae2ff2b5104efff',1,'GAViz']]],
   ['generation_5fclustered',['Generation_clustered',['../class_generation__clustered.html#a823bc0f5f9997d846386f9032455909b',1,'Generation_clustered::Generation_clustered(int number_individual=-1, int number_cluster=-1)'],['../class_generation__clustered.html#aaa729c31844ef335a192656e58f2337c',1,'Generation_clustered::Generation_clustered(const Generation_clustered &amp;)']]],
   ['generationtablemodel',['GenerationTableModel',['../class_generation_table_model.html#a98fd1b28c293d4d92cf4fb9930598283',1,'GenerationTableModel']]],
+  ['generationtoindividualtransition',['generationToIndividualTransition',['../class_generation_view.html#a866d1e3d016ea4ffc63da28791670171',1,'GenerationView']]],
   ['get_5fbest_5fscore',['get_best_score',['../class_population_table_model.html#abdfe03036ec57576de96f5b95893d147',1,'PopulationTableModel::get_best_score()'],['../class_population__clustered.html#a8003d1f89c0bda4dec1578168dbca0ae',1,'Population_clustered::get_best_score()']]],
   ['get_5fgeneration',['get_generation',['../class_population__clustered.html#ab0c42e75615a2747a11ec999f049eb00',1,'Population_clustered']]],
   ['get_5fmean_5fscore',['get_mean_score',['../class_population_table_model.html#a754817f10ac37e0a7d6fc5c216908603',1,'PopulationTableModel::get_mean_score()'],['../class_population__clustered.html#a09317877b808df0255f429ba10eacfc9',1,'Population_clustered::get_mean_score()']]],
