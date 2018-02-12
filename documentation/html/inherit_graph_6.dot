@@ -5,7 +5,7 @@ digraph "Graphical Class Hierarchy"
   rankdir="LR";
   Node33 [label="Drawer",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node33 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node0 [label="GenerationDrawer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_generation_drawer.html"];
+  Node0 [label="GenerationDrawer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_generation_drawer.html",tooltip="QML instance : GenerationDrawer The drawer corresponding to the generation view. "];
   Node33 -> Node35 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node35 [label="IndividualDrawer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_individual_drawer.html"];
   Node33 -> Node36 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
