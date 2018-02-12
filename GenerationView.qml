@@ -177,11 +177,6 @@ Frame {
             color: Qt.darker("#ffffff", 2.0)
         }
 
-        //each scrollbar is linked to the others
-        onPositionChanged: {
-            if (generationView.visible)
-                populationView.vScrollBar.position = position
-        }
     }
 
     //The horizontal scrollbar itself
@@ -211,11 +206,6 @@ Frame {
             color: Qt.darker("#ffffff", 2.0)
         }
 
-        //each scrollbar is linked to the others
-        onPositionChanged: {
-            if (generationView.visible)
-                populationView.hScrollBar.position = position
-        }
     }
 
     //Name of the listview displaying the number of generation

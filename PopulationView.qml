@@ -159,12 +159,6 @@ Frame {
             height: vScrollBar.height - 10
             color: Qt.darker("#ffffff", 2.0)
         }
-
-        //Scrollbars are linked
-        onPositionChanged: {
-            if (populationView.visible)
-                generationView.vScrollBar.position = position
-        }
     }
 
     //the horizontal scrollbar
@@ -193,11 +187,6 @@ Frame {
             color: Qt.darker("#ffffff", 2.0)
         }
 
-        //The scrollbar are linked
-        onPositionChanged: {
-            if (populationView.visible)
-                generationView.hScrollBar.position = position
-        }
     }
 
     //Display the name of the listview to disply number of row/column
