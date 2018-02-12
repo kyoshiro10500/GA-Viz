@@ -40,7 +40,7 @@ Frame {
         id: populationListView
         model: populationModel.rowCount() //The number of row inside the model
         orientation: ListView.Vertical
-        contentWidth: 100 * (cellSize + horizontalSpacing) //The width of the content of the listview
+        contentWidth: populationModel.columnCount() * (cellSize + horizontalSpacing) //The width of the content of the listview
         flickableDirection: Flickable.HorizontalAndVerticalFlick
         ScrollBar.vertical: vScrollBar
         ScrollBar.horizontal: hScrollBar
@@ -128,7 +128,6 @@ Frame {
                         rotation: 45
                         color: "black"
                     }
-
                 }
             }
         }
