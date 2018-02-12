@@ -245,6 +245,7 @@ Frame {
     }
 
     Label {
+        id: rowHeader
         width: rowIndicator.width
         anchors.bottom: rowIndicator.top
         anchors.left: rowIndicator.left
@@ -258,6 +259,7 @@ Frame {
     }
 
     Label {
+        id: columnHeader
         height: columnIndicator.height
         anchors.top: rowIndicator.bottom
         anchors.right: rowIndicator.right
@@ -438,6 +440,8 @@ Frame {
             hScrollBar.visible = true
             rowIndicator.visible = true
             columnIndicator.visible = true
+            rowHeader.visible = true
+            columnHeader.visible = true
         }
     }
 
@@ -454,6 +458,8 @@ Frame {
         hScrollBar.visible = true
         rowIndicator.visible = true
         columnIndicator.visible = true
+        rowHeader.visible = true ;
+        columnHeader.visible = true ;
         generationView.x = 0
         generationView.y = title.height + viewLayout.spacing + filters.height + viewLayout.spacing
 
@@ -465,6 +471,8 @@ Frame {
         hScrollBar.visible = false
         rowIndicator.visible = false
         columnIndicator.visible = false
+        rowHeader.visible = false ;
+        columnHeader.visible = false ;
         zoomX = vizPage.width/2 - vizPage.padding - item.mapToItem(generationView, 0, 0).x - (item.mapToItem(generationView, 0, 0).x) * (zoomScale-1) - zoomScale * item.width/2
         zoomY = vizPage.height/2 - vizPage.padding - item.mapToItem(generationView, 0, 0).y - (item.mapToItem(generationView, 0, 0).y) * (zoomScale-1) - zoomScale * item.height/2 - filters.height
         zoomIn.start()
