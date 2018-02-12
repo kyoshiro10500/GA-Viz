@@ -488,6 +488,11 @@ Frame {
         zoomOut.start()
     }
 
+    /**
+      * calculate the size depending of where the cluster is
+      * @param rowIndex : the row of the cluster
+      * @param columnIndex : the column of the cluster
+      */
     function calculateCellSize(rowIndex, columnIndex) {
         return Math.min(cellSize - (cellSize * (Math.abs(columnIndex - hScrollBar.position*generationModel.columnCount() - horizontalVisibleItemCount/2) - horizontalVisibleItemCount/2)), cellSize);
     }

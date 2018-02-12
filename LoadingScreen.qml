@@ -3,6 +3,10 @@ import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
 
+/**
+  * \brief QML instance :LoadingScreen
+  * Create random simili individual on the main page
+  */
 Frame {
     id: loadingScreen
 
