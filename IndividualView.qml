@@ -169,7 +169,7 @@ Frame {
                         ctx.lineCap = "square"
                         ctx.lineWidth = height*0.02
 
-                        ctx.strokeStyle = populationModel.getColor(generationNumber, individualNumber, 0)
+                        ctx.strokeStyle = populationModel.getColor(generationNumber, individualNumber, 0,0,0)
                         ctx.beginPath()
                         ctx.moveTo(width/2 - 0.43*parent.height, rankingColumn.y + averageText.y + 35)
                         ctx.lineTo(right, rankingColumn.y + averageText.y + 35)
@@ -217,7 +217,7 @@ Frame {
                     ctx.reset();
                     ctx.beginPath();
                     ctx.lineWidth= lineWidth;
-                    ctx.strokeStyle = populationModel.getColor(generationNumber, individualNumber, 0);
+                    ctx.strokeStyle = populationModel.getColor(generationNumber, individualNumber, 0,0,0);
                     ctx.arc(width/2, height/2, radius, 1.5*Math.PI, 1.5*Math.PI-2*Math.PI*animationProgress*individualAverageScore, true);
                     ctx.stroke();
                     ctx.beginPath();

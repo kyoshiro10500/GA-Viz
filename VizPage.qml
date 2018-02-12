@@ -164,6 +164,15 @@ Page {
                             from: 1
                             to: 10
                         }
+
+                        /*Text
+                        {
+                            text : showSlider.valueAt(showSlider.position)
+                            color: "yellow"
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 15
+                            anchors.bottom: parent
+                        }*/
                     }
 
                     Filter {
@@ -203,6 +212,15 @@ Page {
 
                             }
                         }
+
+                        /*Text
+                        {
+                            text : perfSlider.valueAt(perfSlider.position)
+                            color: "yellow"
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 15
+                            anchors.bottom: parent
+                        }*/
                     }
 
                     Filter {
@@ -216,6 +234,15 @@ Page {
                             from: 0
                             to: 30
                         }
+
+                        /*Text
+                        {
+                            text : mutationSlider.valueAt(mutationSlider.position)
+                            color: "yellow"
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 15
+                            anchors.bottom: parent
+                        }*/
                     }
 
                     Filter {
@@ -229,6 +256,15 @@ Page {
                             from: 0
                             to: 30
                         }
+
+                        /*Text
+                        {
+                            text : crossingSlider.valueAt(crossingSlider.position)
+                            color: "yellow"
+                            Layout.fillWidth: true
+                            Layout.preferredHeight: 15
+                            anchors.bottom: parent
+                        }*/
                     }
 
                 }
