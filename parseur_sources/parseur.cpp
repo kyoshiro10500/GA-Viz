@@ -213,6 +213,7 @@ Population_clustered Parseur::parseFile()
             int number_crossover = 0 ;
             double worst_score = 1.0 ;
             double best_score = 0.0 ;
+            double population_mean_score = 0.0 ;
             for (int i = 0; i < number_generation; i++)
             {
                 for (int j = 0; j < number_cluster; j++)
@@ -242,6 +243,7 @@ Population_clustered Parseur::parseFile()
                         meanBuses += population[i][j][k].getNumberBuses() ;
                         meanDistance += population[i][j][k].getDistance() ;
                         meanScore += population[i][j][k].getScore() ;
+                        population_mean_score += population[i][j][k].getScore() ;
                     }
                     population[i][j].setMeanBuses((double) meanBuses/(double) number_individual);
                     population[i][j].setMeanDistance((double) meanDistance/(double) number_individual);
@@ -252,6 +254,7 @@ Population_clustered Parseur::parseFile()
             population.set_number_mutation(number_mutation);
             population.set_worst_score(worst_score);
             population.set_best_score(best_score);
+            population.set_mean_score((double)population_mean_score/(double)(number_generation*number_cluster*number_individual)) ;
             return population;
         }
         else

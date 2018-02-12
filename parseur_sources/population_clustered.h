@@ -20,6 +20,7 @@ class Population_clustered
         int _number_mutation ; /*! The number of mutations in the population*/
         double _best_score ; /*! The best score in the population */
         double _worst_score ; /*! The worst score in the population */
+        double _mean_score ; /*! The mean score in the population*/
 
     public :
         //Constructor
@@ -99,6 +100,12 @@ class Population_clustered
          */
         double get_worst_score() const ;
 
+        //! Get the mean score of a population*/
+        /*!
+         * \return a double representing the global mean score inside a population
+         */
+        double get_mean_score() const ;
+
         //Setter
         //! Set the number of crossing over of a population
         /*!
@@ -114,15 +121,21 @@ class Population_clustered
 
         //! Set the best score of a population
         /*!
-         * \param best_score : an int representing the best score of a population
+         * \param best_score : an fouble representing the best score of a population
          */
         void set_best_score(double best_score) ;
 
         //! Set the worst score of a population
         /*!
-         * \param worst_score : an int representing the worst score of a population
+         * \param worst_score : an double representing the worst score of a population
          */
         void set_worst_score(double worst_score) ;
+
+        //! Set the global mean score of a population
+        /*!
+         * \param worst_score : a double representing the global mean score of a population
+         */
+        void set_mean_score(double mean_score) ;
 
 };
 

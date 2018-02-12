@@ -165,3 +165,8 @@ double PopulationTableModel::get_worst_score() const
 {
     return mElements->get_worst_score();
 }
+
+double PopulationTableModel::get_mean_score() const
+{
+    return mElements->get_mean_score() ;
+}

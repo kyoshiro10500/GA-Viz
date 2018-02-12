@@ -6,7 +6,7 @@ import QtQuick.Window 2.2
 Drawer {
     id: populationInfoDrawer
 
-    property int globalPerformance: 0
+    property double globalPerformance: 0
     property int nbIndividuals: 0
     property int nbMutations: 0
     property int nbCrossovers: 0

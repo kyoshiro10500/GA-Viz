@@ -247,6 +247,7 @@ Frame {
                 populationDrawer.nbMutations = populationModel.get_number_mutation()
                 populationDrawer.nbCrossovers = populationModel.get_number_crossover()
                 populationDrawer.nbClusters = populationModel.get_number_cluster()
+                populationDrawer.globalPerformance = populationModel.get_mean_score()
                 populationDrawer.open()
             }
         }

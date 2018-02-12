@@ -19,6 +19,9 @@ Population_clustered::Population_clustered(const Population_clustered& pop)
     _number_cluster = pop.get_number_cluster() ;
     _number_crossover = pop.get_number_crossover() ;
     _number_mutation = pop.get_number_mutation() ;
+    _best_score = pop.get_best_score();
+    _worst_score = pop.get_worst_score() ;
+    _mean_score = pop.get_mean_score() ;
 }
 
 //Destructor
@@ -68,6 +71,11 @@ double Population_clustered::get_worst_score() const
     return _worst_score ;
 }
 
+double Population_clustered::get_mean_score() const
+{
+    return _mean_score ;
+}
+
 //Setter
 void Population_clustered::set_number_crossover(int number_crossover)
 {
@@ -88,6 +96,11 @@ void Population_clustered::set_best_score(double best_score)
 void Population_clustered::set_worst_score(double worst_score)
 {
     _worst_score = worst_score ;
+}
+
+void Population_clustered::set_mean_score(double mean_score)
+{
+    _mean_score = mean_score ;
 }
 
 //Operator

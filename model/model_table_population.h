@@ -94,6 +94,9 @@ class PopulationTableModel : public QAbstractTableModel
         //! Get the value of the worst score of the population*/
         Q_INVOKABLE double get_worst_score() const ;
 
+        //! Get the value of the mean score of the population*/
+        Q_INVOKABLE double get_mean_score() const ;
+
     private:
         float scoreFilter = 0 ; /*! represents the value of the scoreFilter*/
         bool mutationFilter = false ; /*! represents the value of the mutationFilter*/
