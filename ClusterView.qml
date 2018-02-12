@@ -39,6 +39,7 @@ Frame {
         orientation: ListView.Vertical
         contentWidth: clusterModel.columnCount() * (cellSize + horizontalSpacing) /**contentWidth : the width of all elements in the generation*/
         flickableDirection: Flickable.HorizontalAndVerticalFlick
+        interactive: clusterView.visible
         ScrollBar.vertical: vScrollBar
         ScrollBar.horizontal: hScrollBar
         clip: true
@@ -50,7 +51,7 @@ Frame {
             id: rowDelegate
             model:  clusterModel.columnCount() /** model : set to the number of cluster inside clusterModel*/
             orientation: ListView.Horizontal
-            width:  (index >= (vScrollBar.position)*clusterModel.rowCount() - 1 && index <= (vScrollBar.position)*clusterModel.rowCount() +verticalVisibleItemCount+ 1) ? parent.width : 0 /** width : display elements that are on screen*/
+            width:  parent.width /** width : display elements that are on screen*/
             height : cellSize + verticalSpacing /** height : the height of the cell*/
             property int rowIndex: index /** rowIndex : the index of the row inside clusterModel */
 
@@ -65,7 +66,7 @@ Frame {
                 /** cell : the rectangle we will draw inside*/
                 Rectangle {
                     id: cell
-                    width: calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex) /** width : adapted wether the cluster is on the border of the screen */
+                    width: cellSize /** width : adapted wether the cluster is on the border of the screen */
                     /** The text of the cluster. Displayed depending of the size of the cluster*/
                     Text {
                             text: (parent.width <= 150) ? clusterModel.data(clusterModel.index(rowDelegate.rowIndex, columnDelegate.columnIndex), 0) : ""

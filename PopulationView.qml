@@ -42,7 +42,7 @@ Frame {
         orientation: ListView.Vertical
         contentWidth: populationModel.columnCount() * (cellSize + horizontalSpacing) //The width of the content of the listview
         flickableDirection: Flickable.HorizontalAndVerticalFlick
-        interactive: false
+        interactive: populationView.visible
         ScrollBar.vertical: vScrollBar
         ScrollBar.horizontal: hScrollBar
         clip: true
@@ -55,7 +55,7 @@ Frame {
             interactive: false ;
             model:  populationModel.columnCount()
             orientation: ListView.Horizontal
-            width:  populationView.visible && (index >= (vScrollBar.position)*populationModel.rowCount() - 1 && index <= (vScrollBar.position)*populationModel.rowCount() +verticalVisibleItemCount+ 1) ? parent.width : 0 //render only visible item
+            width:  parent.width //render only visible item
             height : cellSize + verticalSpacing
             property int rowIndex: index //the index of the generation
 
@@ -70,8 +70,7 @@ Frame {
                 Rectangle {
                     id: cell
 
-                    width: populationView.visible && (index >= (hScrollBar.position)*populationModel.columnCount() - 1 && index <= (hScrollBar.position)*populationModel.columnCount() +horizontalVisibleItemCount+ 1) ? calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex) : 0 //Render only what is visible
-                    visible : populationView.visible && (index >= (hScrollBar.position)*populationModel.columnCount() - 1 && index <= (hScrollBar.position)*populationModel.columnCount() +horizontalVisibleItemCount+ 1) //Render only what is visible
+                    width:cellSize
                     height: width
                     radius: 0.5 * width
                     anchors.centerIn: parent

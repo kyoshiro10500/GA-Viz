@@ -56,7 +56,7 @@ Frame {
         orientation: ListView.Vertical
         contentWidth: generationModel.columnCount() * (cellSize + horizontalSpacing) // the size of the content of the listview
         flickableDirection: Flickable.HorizontalAndVerticalFlick
-        interactive: false
+        interactive: generationView.visible
         ScrollBar.vertical: vScrollBar
         ScrollBar.horizontal: hScrollBar
         clip: true
@@ -69,8 +69,7 @@ Frame {
             model: generationModel.columnCount() //Number of individuals per generation according to generationModel
             orientation: ListView.Horizontal
 
-            width: generationView.visible && (index >= (vScrollBar.position)*generationModel.rowCount() - 1 && index <= (vScrollBar.position)*generationModel.rowCount() +verticalVisibleItemCount+ 1) ? parent.width : 0 //Only render what is on screen
-            visible : generationView.visible && (index >= (vScrollBar.position)*generationModel.rowCount() - 1 && index <= (vScrollBar.position)*generationModel.rowCount() +verticalVisibleItemCount+ 1) //Only render what is on screen
+            width: parent.width //Only render what is on screen
             height: cellSize + verticalSpacing
 
             property int rowIndex: index /**rowIndex : The index of the generation*/
@@ -88,7 +87,7 @@ Frame {
                 Rectangle {
                     id: cell
 
-                    width: generationView.visible && (index >= (hScrollBar.position)*generationModel.columnCount() - 1 && index <= (hScrollBar.position)*generationModel.columnCount() +horizontalVisibleItemCount+ 1) ? calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex) : 0
+                    width: cellSize
                     height: width
                     radius: 0.5 * width
                     anchors.centerIn: parent
@@ -307,13 +306,27 @@ Frame {
         onClicked: {
             if (mouse.button == Qt.RightButton) {
                 //We access to all the infos needed for the individualView and send them to the next view
-                generationDrawer.currentGeneration = index_gen
-                generationDrawer.globalPerformance = generationModel.getMeanScore(index_gen) ;
-                generationDrawer.nbIndividuals = populationModel.columnCount()
-                generationDrawer.nbMutations = generationModel.getGenNumberMutations(index_gen) ;
-                generationDrawer.nbCrossovers = generationModel.getGenNumberCrossover(index_gen) ;
-                generationDrawer.nbClusters = populationModel.get_number_cluster()
-                generationDrawer.open()
+                if(index_gen != -1)
+                {
+                    generationDrawer.currentGeneration = index_gen
+                    generationDrawer.globalPerformance = generationModel.getMeanScore(index_gen) ;
+                    generationDrawer.nbIndividuals = populationModel.columnCount()
+                    generationDrawer.nbMutations = generationModel.getGenNumberMutations(index_gen) ;
+                    generationDrawer.nbCrossovers = generationModel.getGenNumberCrossover(index_gen) ;
+                    generationDrawer.nbClusters = populationModel.get_number_cluster()
+                    generationDrawer.open()
+                }
+                else
+                {
+                    generationDrawer.currentGeneration = -1
+                    generationDrawer.globalPerformance = -1
+                    generationDrawer.nbIndividuals = -1
+                    generationDrawer.nbMutations = -1
+                    generationDrawer.nbCrossovers = -1
+                    generationDrawer.nbClusters = -1
+                    generationDrawer.open()
+                }
+
             }
         }
     }
