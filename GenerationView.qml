@@ -264,7 +264,7 @@ Frame {
             font.pixelSize: Math.min(10 + showSlider.value, 20)
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            color: "yellow"
+            color: "white"
         }
     }
 
@@ -289,7 +289,7 @@ Frame {
             font.pixelSize: Math.min(10 + showSlider.value, 20)
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            color: "yellow"
+            color: "white"
         }
     }
 

@@ -157,11 +157,65 @@ Frame {
         }
     }
 
+    ListView {
+        id: rowIndicator
+
+        anchors.right: vScrollBar.left
+        width: 40
+        height: vScrollBar.height
+
+        model: clusterModel.rowCount()
+        orientation: ListView.Vertical
+        interactive: false
+        ScrollBar.vertical: vScrollBar
+        clip: true
+
+        delegate: Label {
+            width: parent.width
+            height: cellSize + verticalSpacing
+            text: index
+            font.pixelSize: Math.min(10 + showSlider.value, 20)
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: "white"
+        }
+    }
+
+    ListView {
+        id: columnIndicator
+
+        anchors.top: hScrollBar.bottom
+        anchors.topMargin: 10
+        width: hScrollBar.width
+        height: 20
+
+        model: clusterModel.columnCount()
+        orientation: ListView.Horizontal
+        interactive: false
+        ScrollBar.horizontal: hScrollBar
+        clip: true
+
+        delegate: Label {
+            width: cellSize + horizontalSpacing
+            height: parent.height
+            text: index
+            font.pixelSize: Math.min(10 + showSlider.value, 20)
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            color: "white"
+        }
+    }
+
     MouseArea {
         anchors.fill: parent
         acceptedButtons: Qt.RightButton
         onClicked: {
             if (mouse.button == Qt.RightButton) {
+                populationDrawer.nbIndividuals = populationModel.get_number_generation()*populationModel.get_number_cluster()*populationModel.get_number_individuals()
+                populationDrawer.nbMutations = populationModel.get_number_mutation()
+                populationDrawer.nbCrossovers = populationModel.get_number_crossover()
+                populationDrawer.nbClusters = populationModel.get_number_cluster()
+                populationDrawer.globalPerformance = populationModel.get_mean_score()
                 populationDrawer.open()
             }
         }

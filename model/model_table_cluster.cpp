@@ -33,7 +33,7 @@ QVariant ClusterTableModel::data(const QModelIndex &index, int role) const
             return QColor(140,140,140) ;
             break ;
         case Qt::DisplayRole:
-            return QStringLiteral("C%1").arg(index.column()+1);
+            return QStringLiteral("C%1").arg(index.column());
             break ;
         case Qt::EditRole:
             break;

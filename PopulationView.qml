@@ -210,7 +210,7 @@ Frame {
             font.pixelSize: Math.min(10 + showSlider.value, 20)
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            color: "yellow"
+            color: "white"
         }
     }
 
@@ -235,7 +235,7 @@ Frame {
             font.pixelSize: Math.min(10 + showSlider.value, 20)
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            color: "yellow"
+            color: "white"
         }
     }
 
@@ -244,7 +244,6 @@ Frame {
         acceptedButtons: Qt.RightButton
         onClicked: {
             if (mouse.button == Qt.RightButton) {
-                populationDrawer.globalPerformance = 0
                 populationDrawer.nbIndividuals = populationModel.get_number_generation()*populationModel.get_number_cluster()*populationModel.get_number_individuals()
                 populationDrawer.nbMutations = populationModel.get_number_mutation()
                 populationDrawer.nbCrossovers = populationModel.get_number_crossover()
