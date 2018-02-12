@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadingscreen',['LoadingScreen',['../class_loading_screen.html',1,'']]]
+  ['ui_5fga_5fviz',['Ui_GA_Viz',['../class_ui___g_a___viz.html',1,'']]]
 ];

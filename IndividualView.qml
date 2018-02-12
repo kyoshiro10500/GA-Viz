@@ -4,26 +4,22 @@ import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 import QtQuick.Controls.Styles 1.4
 
-/**
-  * \brief QML instance : IndividualView
-  * Display all the information of a given individuam
-  */
 Frame {
 
-    property int generationNumber: 0 /**generationNumber : the current selected generation*/
-    property int individualNumber: 0 /**individualNumber : the current selected individual*/
-    property double individualAverageScore: generationModel.getScore(generationNumber, individualNumber) /** individualAverageScore : the mean score of the individual */
-    property double individualDistanceScore : generationModel.getScoreDistance(generationNumber, individualNumber) /**individualDistanceScore : the score on the distance*/
-    property double individualBusesScore : generationModel.getScoreBus(generationNumber, individualNumber) /**individualBusesScore : the score on the buses*/
-    property double totalDistance : generationModel.getDistance(generationNumber, individualNumber) /** totalDistance : get the distance of the individual*/
-    property int numberBuses : generationModel.getNumberBuses(generationNumber, individualNumber) /** numberBuses : get the number of buses of the individual */
-    property int numberMutation : generationModel.getNumberMutation(generationNumber, individualNumber) /** numberMutation : get the number of mutation of an individual */
-    property int numberCrossover : generationModel.getNumberCrossover(generationNumber, individualNumber) /** numberCrossover : get the number of crossing over of an individual */
-    property int numberTotalIndividuals : populationModel.get_number_generation()*populationModel.get_number_cluster()*populationModel.get_number_individuals() /** numberTotalIndividuals : get the total number of individuals in the population */
-    property double bestScore : populationModel.get_best_score() /** bestScore : the best score in the population*/
-    property double worstScore : populationModel.get_worst_score() /**worstScore : the worst score in the population */
-    property int individualCluster: individualNumber/populationModel.get_number_individuals() /** individualCluster : the cluster the individual is in */
-    property var rang : generationModel.getRang(generationNumber,individualNumber) /** rang : get the rank (score,buses,distance) of the individual in the population */
+    property int generationNumber: 0
+    property int individualNumber: 0
+    property double individualAverageScore: generationModel.getScore(generationNumber, individualNumber)
+    property double individualDistanceScore : generationModel.getScoreDistance(generationNumber, individualNumber)
+    property double individualBusesScore : generationModel.getScoreBus(generationNumber, individualNumber)
+    property double totalDistance : generationModel.getDistance(generationNumber, individualNumber)
+    property int numberBuses : generationModel.getNumberBuses(generationNumber, individualNumber)
+    property int numberMutation : generationModel.getNumberMutation(generationNumber, individualNumber)
+    property int numberCrossover : generationModel.getNumberCrossover(generationNumber, individualNumber)
+    property int numberTotalIndividuals : populationModel.get_number_generation()*populationModel.get_number_cluster()*populationModel.get_number_individuals()
+    property double bestScore : populationModel.get_best_score()
+    property double worstScore : populationModel.get_worst_score()
+    property int individualCluster: individualNumber/populationModel.get_number_individuals()
+    property var rang : generationModel.getRang(generationNumber,individualNumber)
 
     property int averageRank: rang[0]
     property int distanceRank: rang[2]
@@ -39,12 +35,12 @@ Frame {
 
 
 
+
     background: Rectangle {
         color: "black"
         border.color: "black"
     }
 
-    //We draw the circle according to the score and print info to the screen
     ColumnLayout {
         anchors.fill: parent
 

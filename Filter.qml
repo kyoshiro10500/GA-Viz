@@ -2,12 +2,8 @@ import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 
-/**
-  * \brief QML instance : Filter
-  * Basic information of the filter
-  */
 Frame {
-    property string filterName: "" /** filterName : the name of the filter */
+    property string filterName: ""
     property alias filterLayout: layout
 
     Layout.preferredWidth: 200

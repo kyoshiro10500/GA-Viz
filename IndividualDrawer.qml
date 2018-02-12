@@ -3,20 +3,16 @@ import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
 
-/**
-  * \brief QML instance : individualDrawer
-  * Create the drawer for the individualView
-  */
 Drawer {
     id: individualDrawer
 
-    property int currentGeneration: 0 /** currentGeneration : the current generation of the selected individual*/
-    property int currentIndividual: 0 /** currentIndividual : the current individual inside the generation*/
-    property int lifetime: 0 /** lifetime : the lifetime of the individual. TODO implement lifetime*/
-    property double performance: 0 /** performance : the global performance of the individual */
-    property int nbMutations: 0 /** nbMutations : the number of mutations of the individuam */
-    property int nbCrossovers: 0 /** nbCrossovers : the number of crossing over of the individual */
-    property int cluster: 0 /** cluster : the cluster in which the individual is*/
+    property int currentGeneration: 0
+    property int currentIndividual: 0
+    property int lifetime: 0
+    property double performance: 0
+    property int nbMutations: 0
+    property int nbCrossovers: 0
+    property int cluster: 0
 
     edge: Qt.RightEdge
     width: 400
@@ -25,57 +21,10 @@ Drawer {
     interactive: true
     modal: false
 
-<<<<<<< HEAD
     background: Rectangle {
         anchors.fill: parent
         color: "black"
         border.color: "black"
-=======
-    //Draw the individual like in any other view
-    Rectangle{
-        anchors.centerIn: parent
-        anchors.verticalCenterOffset: 400
-        width: 100
-        height: 90
-        z:100
-        color: "white"
-
-        Label {
-            anchors.centerIn: parent
-            id:textNumberCluster
-            text: cluster
-            color: "black"
-            font.pixelSize: 20
-        }
-
-
-        Canvas{
-            id: clusterDrawer
-            width: parent.width
-            height: parent.height
-            onPaint: {
-                var ctx = getContext("2d");
-                ctx.fillStyle = "black";
-                ctx.beginPath();
-                ctx.moveTo(0, 0);
-                ctx.lineTo(width/4, 0);
-                ctx.lineTo(0, height/2);
-
-                ctx.moveTo(width, 0);
-                ctx.lineTo(3*width/4, 0);
-                ctx.lineTo(width, height/2);
-
-                ctx.moveTo(width, height);
-                ctx.lineTo(3*width/4, height);
-                ctx.lineTo(width, height/2);
-
-                ctx.moveTo(0, height);
-                ctx.lineTo(width/4, height);
-                ctx.lineTo(0, height/2);
-                ctx.fill();
-            }
-        }
->>>>>>> 6a7be71ca35c3ebc883dbe466b7d892b0ceb4027
     }
 
     Rectangle {
@@ -97,26 +46,9 @@ Drawer {
 
             spacing: 15
 
-<<<<<<< HEAD
             Frame {
                 Layout.topMargin: 15
                 Layout.leftMargin: 20
-=======
-    //We print all the details of the individual
-    Label {
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.leftMargin: 250
-        anchors.topMargin: 150
-        z:100
-
-        text: "G" + "\nI"
-        color: "yellow"
-        font.pixelSize: 30
-        font.underline: true
-        horizontalAlignment: Text.AlignHCenter
-    }
->>>>>>> 6a7be71ca35c3ebc883dbe466b7d892b0ceb4027
 
                 padding: 8
                 z: 5

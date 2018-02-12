@@ -3,5 +3,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="Points",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_points.html",tooltip="Poit class : represent the coordinate of a city. "];
+  Node0 [label="qt_meta_stringdata\l_PopulationTableModel_t",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structqt__meta__stringdata___population_table_model__t.html"];
 }

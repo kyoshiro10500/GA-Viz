@@ -3,33 +3,29 @@ import QtQuick.Controls 1.0
 import QtQuick.Controls 2.0
 import QtQuick.Layouts 1.3
 
-/**
-  * \brief QML instance : GenerationView
-  * Create the generation view according to generationModel
-  */
 Frame {
-    id: generationView /** generationView : the id of the view in the hierarchy */
+    id: generationView
 
     Layout.fillWidth: true
     Layout.fillHeight: true
 
-    property int cellSize : 20 * showSlider.valueAt(showSlider.position) /** cellSize : the size of an individual */
-    property int verticalSpacing : 10 * showSlider.valueAt(showSlider.position) /** verticalSpacing : the space between rows */
-    property int horizontalSpacing : 5 * showSlider.valueAt(showSlider.position) /** horizontalSpacing : the space between individuals in a row */
-    property int verticalVisibleItemCount : Math.ceil(height / (cellSize + verticalSpacing)) - 1 /** verticalVisibleItemCount : number of individual on screen vertically*/
-    property int horizontalVisibleItemCount : Math.ceil(width / (cellSize + horizontalSpacing)) - 1 /** horizontalVisibleItemCount : number of generatiosn on screen */
+    property int cellSize : 20 * showSlider.valueAt(showSlider.position)
+    property int verticalSpacing : 10 * showSlider.valueAt(showSlider.position)
+    property int horizontalSpacing : 5 * showSlider.valueAt(showSlider.position)
+    property int verticalVisibleItemCount : Math.ceil(height / (cellSize + verticalSpacing)) - 1
+    property int horizontalVisibleItemCount : Math.ceil(width / (cellSize + horizontalSpacing)) - 1
 
-    property double scoreFilter: perfSlider.valueAt(perfSlider.position) /** scoreFilter : the value of the filter on the global score */
-    property double mutationFilter: mutationSlider.valueAt(mutationSlider.position); /** mutationFilter : the value of the filter on the number of mutations */
-    property double crossingFilter: crossingSlider.valueAt(crossingSlider.position); /** crossingFilter : the value of the filter on the number of crossing over*/
-    property int index_gen: -1 /** index_gen : the value of the selected generation */
+    property double scoreFilter: perfSlider.valueAt(perfSlider.position)
+    property double mutationFilter: mutationSlider.valueAt(mutationSlider.position);
+    property double crossingFilter: crossingSlider.valueAt(crossingSlider.position);
+    property int index_gen: -1
 
-    property alias vScrollBar: vScrollBar /** vscrollBar : the vertical ScrollBar*/
-    property alias hScrollBar: hScrollBar /** hScrollBar : the horizontal ScrollBar*/
+    property alias vScrollBar: vScrollBar
+    property alias hScrollBar: hScrollBar
 
-    property double zoomScale: 0.8 * 0.8 * parent.height / cellSize /** zoomScale :  the value of the zoom */
-    property double zoomX: 0 /** zoomX : the coordinate where the zoom will happen*/
-    property double zoomY: 0 /** zoomX : the coordinate where the zoom will happen*/
+    property double zoomScale: 0.8 * 0.8 * parent.height / cellSize
+    property double zoomX: 0
+    property double zoomY: 0
 
     padding: 10
     leftPadding: 70
@@ -40,19 +36,17 @@ Frame {
         border.color: "black"
     }
 
-    //The scale of the view
     transform: Scale {
         id: viewScale
         xScale: 1.0
         yScale: 1.0
     }
 
-    //The first listview corresponding of the generations
     ListView {
         id: generationListView
-        model: generationModel.rowCount() //Number of generations from generationModel
+        model: generationModel.rowCount()
         orientation: ListView.Vertical
-        contentWidth: generationModel.columnCount() * (cellSize + horizontalSpacing) // the size of the content of the listview
+        contentWidth: generationModel.columnCount() * (cellSize + horizontalSpacing)
         flickableDirection: Flickable.HorizontalAndVerticalFlick
         ScrollBar.vertical: vScrollBar
         ScrollBar.horizontal: hScrollBar
@@ -60,28 +54,25 @@ Frame {
 
         anchors.fill: parent
 
-        //The second listview corresponding to the individuals inside a generation
         delegate: ListView {
             id: rowDelegate
-            model: generationModel.columnCount() //Number of individuals per generation according to generationModel
+            model: generationModel.columnCount()
             orientation: ListView.Horizontal
 
-            width: generationView.visible && (index >= (vScrollBar.position)*generationModel.rowCount() - 1 && index <= (vScrollBar.position)*generationModel.rowCount() +verticalVisibleItemCount+ 1) ? parent.width : 0 //Only render what is on screen
-            visible : generationView.visible && (index >= (vScrollBar.position)*generationModel.rowCount() - 1 && index <= (vScrollBar.position)*generationModel.rowCount() +verticalVisibleItemCount+ 1) //Only render what is on screen
+            width: generationView.visible && (index >= (vScrollBar.position)*generationModel.rowCount() - 1 && index <= (vScrollBar.position)*generationModel.rowCount() +verticalVisibleItemCount+ 1) ? parent.width : 0
+            visible : generationView.visible && (index >= (vScrollBar.position)*generationModel.rowCount() - 1 && index <= (vScrollBar.position)*generationModel.rowCount() +verticalVisibleItemCount+ 1)
             height: cellSize + verticalSpacing
 
-            property int rowIndex: index /**rowIndex : The index of the generation*/
+            property int rowIndex: index
 
-            //The individual itself
             delegate: Item {
                 id: columnDelegate
 
                 width: cellSize + horizontalSpacing
                 height: cellSize + verticalSpacing
 
-                property int columnIndex: index /**columnIndex : The index of the individual inside a generation*/
+                property int columnIndex: index
 
-                //Used to draw on the circle of the individual
                 Rectangle {
                     id: cell
 
@@ -142,12 +133,52 @@ Frame {
                         rotation: 45
                         color: "black"
                     }
+
+                    /*Canvas {
+                        id: generationCanvas
+                        width: calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                        height: calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                        property bool isNew: generationModel.getNew(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                        property bool isMutated: generationModel.getMutation(rowDelegate.rowIndex, columnDelegate.columnIndex)
+                        property bool isCrossing: generationModel.getCrossing(rowDelegate.rowIndex, columnDelegate.columnIndex)
+
+                        onPaint: {
+                                var ctx = generationCanvas.getContext("2d");
+                                ctx.fillStyle = Qt.rgba(0, 0, 0, 1);
+                                //New Individual
+                                if(isNew && 0.1 * width >= 0.001)
+                                {
+                                    ctx.beginPath() ;
+                                    ctx.arc(width/2.0, height/2.0, 0.1*width, 0, 2 * Math.PI, false);
+                                    ctx.fill();
+                                }
+
+                                //Mutation
+                                if(isMutated)
+                                {
+                                    ctx.beginPath();
+                                    ctx.moveTo(width, 0);
+                                    ctx.lineTo(width, height/2.0);
+                                    ctx.lineTo(width/2.0, 0);
+                                    ctx.fill();
+                                }
+
+                                //Crossing over
+                                if(isCrossing)
+                                {
+                                    ctx.beginPath();
+                                    ctx.moveTo(width, height);
+                                    ctx.lineTo(width/2.0, height);
+                                    ctx.lineTo(width, height/2.0);
+                                    ctx.fill();
+                                }
+                        }
+                    }*/
                 }
             }
         }
     }
 
-    //The vertical scrollbar itself
     ScrollBar {
         id: vScrollBar
 
@@ -175,14 +206,12 @@ Frame {
             color: Qt.darker("#ffffff", 2.0)
         }
 
-        //each scrollbar is linked to the others
         onPositionChanged: {
             if (generationView.visible)
                 populationView.vScrollBar.position = position
         }
     }
 
-    //The horizontal scrollbar itself
     ScrollBar {
         id: hScrollBar
 
@@ -209,14 +238,12 @@ Frame {
             color: Qt.darker("#ffffff", 2.0)
         }
 
-        //each scrollbar is linked to the others
         onPositionChanged: {
             if (generationView.visible)
                 populationView.hScrollBar.position = position
         }
     }
 
-    //Name of the listview displaying the number of generation
     Label {
         id: rowHeader
         width: rowIndicator.width
@@ -231,7 +258,6 @@ Frame {
         color: "yellow"
     }
 
-    //Name of the listview displaying the number of individual
     Label {
         id: columnHeader
         height: columnIndicator.height
@@ -246,7 +272,6 @@ Frame {
         color: "yellow"
     }
 
-    //Display the name of the row
     ListView {
         id: rowIndicator
 
@@ -271,7 +296,6 @@ Frame {
         }
     }
 
-    //Display the name of the column
     ListView {
         id: columnIndicator
 
@@ -297,13 +321,11 @@ Frame {
         }
     }
 
-    //MouseArea used to open the drawer corresponding to the view
     MouseArea {
         anchors.fill: parent
         acceptedButtons: Qt.RightButton
         onClicked: {
             if (mouse.button == Qt.RightButton) {
-                //We access to all the infos needed for the individualView and send them to the next view
                 generationDrawer.currentGeneration = index_gen
                 generationDrawer.globalPerformance = generationModel.getMeanScore(index_gen) ;
                 generationDrawer.nbIndividuals = populationModel.columnCount()
@@ -315,7 +337,6 @@ Frame {
         }
     }
 
-    //All the animation to go to the individualView
     ParallelAnimation {
         id: zoomIn
         NumberAnimation {

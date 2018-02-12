@@ -1,11 +1,24 @@
 var searchData=
 [
-  ['nbclusters',['nbClusters',['../class_generation_drawer.html#a93d3ef7769f775cdc79233e051a002cb',1,'GenerationDrawer::nbClusters()'],['../class_population_drawer.html#ab4a61ab4b7eec14ea88057d1673ec424',1,'PopulationDrawer::nbClusters()']]],
-  ['nbcrossovers',['nbCrossovers',['../class_generation_drawer.html#ab952aef839481b9e5c7403cd30a7b02a',1,'GenerationDrawer::nbCrossovers()'],['../class_individual_drawer.html#a9b33f984de4074a35771b8a90ada230e',1,'IndividualDrawer::nbCrossovers()'],['../class_population_drawer.html#acb640608b088ecc9fe64fb31bc00f91e',1,'PopulationDrawer::nbCrossovers()']]],
-  ['nbindividuals',['nbIndividuals',['../class_generation_drawer.html#a16a03661e49be8af2816b60dd06d70be',1,'GenerationDrawer::nbIndividuals()'],['../class_population_drawer.html#af20bdfe73e9bda7aba2257a101771071',1,'PopulationDrawer::nbIndividuals()']]],
-  ['nbmutations',['nbMutations',['../class_generation_drawer.html#a34ebc0a04244dd38adfc754d84cb2155',1,'GenerationDrawer::nbMutations()'],['../class_individual_drawer.html#ac2d3ea0b17000b0c1e23b6a3859bdf4e',1,'IndividualDrawer::nbMutations()'],['../class_population_drawer.html#ae31d2743689e0cca64420d05fa120bda',1,'PopulationDrawer::nbMutations()']]],
-  ['numberbuses',['numberBuses',['../class_individual_view.html#a41ba574a572f72e2b60b5d006ce43f65',1,'IndividualView']]],
-  ['numbercrossover',['numberCrossover',['../class_individual_view.html#a7cc766a22d5df8779757fdf48a8a6f74',1,'IndividualView']]],
-  ['numbermutation',['numberMutation',['../class_individual_view.html#a0a21901dcf937da97c5ce6fbf6063277',1,'IndividualView']]],
-  ['numbertotalindividuals',['numberTotalIndividuals',['../class_individual_view.html#a7134bec775eee637bd2c782b1a5dc2ef',1,'IndividualView']]]
+  ['panelcluster',['panelCluster',['../class_ui___g_a___viz.html#a5a30d0686344a323fa962fda999b3eb0',1,'Ui_GA_Viz']]],
+  ['panelgeneration',['panelGeneration',['../class_ui___g_a___viz.html#a1118e4066fb80d07e1d18c3ae0784510',1,'Ui_GA_Viz']]],
+  ['panelpopulation',['panelPopulation',['../class_ui___g_a___viz.html#a653e6afad49ffca60978c90c1fa68a1b',1,'Ui_GA_Viz']]],
+  ['parse',['parse',['../class_g_a_viz.html#aa8c0e575e4948bb03627275b5049ddc9',1,'GAViz']]],
+  ['parsefile',['parseFile',['../class_parseur.html#ab99d3dc36de4089ab266c1e69196fa55',1,'Parseur']]],
+  ['parsefilepoints',['parseFilePoints',['../class_parseur.html#a67a68af11c904e1e7edd96db89517172',1,'Parseur']]],
+  ['parseroutes',['parseRoutes',['../class_parseur.html#adc549ca4704a806fd3837091845fc24a',1,'Parseur']]],
+  ['parseur',['Parseur',['../class_parseur.html',1,'Parseur'],['../class_parseur.html#a32b67fd70e20c4c05f9a7587ffb1c99e',1,'Parseur::Parseur()']]],
+  ['parseur_2ecpp',['parseur.cpp',['../parseur_8cpp.html',1,'']]],
+  ['parseur_2eh',['parseur.h',['../parseur_8h.html',1,'']]],
+  ['performancegenerationslider',['performanceGenerationSlider',['../class_ui___g_a___viz.html#a89d04597d8044ff5bb7d0347a0d5a7a2',1,'Ui_GA_Viz']]],
+  ['performancepopulationslider',['performancePopulationSlider',['../class_ui___g_a___viz.html#ab074ddaab151754ef3d2c6dd3a56a90d',1,'Ui_GA_Viz']]],
+  ['points',['Points',['../class_points.html',1,'Points'],['../class_points.html#a8465a6ce33ac38614004d8554a63cb25',1,'Points::Points(int x, int y)'],['../class_points.html#aa4e68083d98bd04233c9753dfe1e46ab',1,'Points::Points()']]],
+  ['points_2ecpp',['points.cpp',['../points_8cpp.html',1,'']]],
+  ['points_2eh',['points.h',['../points_8h.html',1,'']]],
+  ['population',['population',['../class_g_a_viz.html#a9b5057af4e3badc544bbab1efa0bdb39',1,'GAViz']]],
+  ['population_5fclustered',['Population_clustered',['../class_population__clustered.html',1,'Population_clustered'],['../class_population__clustered.html#a53e9a4efeb00daff22df130e1db05b2e',1,'Population_clustered::Population_clustered(int number_generation=-1, int number_individual=-1, int number_cluster=-1)'],['../class_population__clustered.html#a1d814b2036636b91d4c7c6f76a0d139a',1,'Population_clustered::Population_clustered(const Population_clustered &amp;)']]],
+  ['population_5fclustered_2ecpp',['population_clustered.cpp',['../population__clustered_8cpp.html',1,'']]],
+  ['population_5fclustered_2eh',['population_clustered.h',['../population__clustered_8h.html',1,'']]],
+  ['populationmodel',['populationModel',['../class_g_a_viz.html#adc930d20d092eeab1badfab22bbc8b6d',1,'GAViz']]],
+  ['populationtablemodel',['PopulationTableModel',['../class_population_table_model.html',1,'PopulationTableModel'],['../class_population_table_model.html#adccce4753330371cd2d3ed12090f2709',1,'PopulationTableModel::PopulationTableModel()']]]
 ];

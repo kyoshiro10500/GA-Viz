@@ -1,8 +1,8 @@
-digraph "/home/vicor/Bureau/GA-Viz-master/parseur_sources/points.cpp"
+digraph "parseur_sources/points.cpp"
 {
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node0 [label="/home/vicor/Bureau\l/GA-Viz-master/parseur\l_sources/points.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 [label="parseur_sources/points.cpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
   Node1 [label="points.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$points_8h.html"];
 }
