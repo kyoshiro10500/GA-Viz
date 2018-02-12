@@ -149,7 +149,6 @@ Page {
 
                     Label {
                         Layout.preferredWidth: 100
-                        Layout.fillHeight: true
 
                         text: "FILTERS"
                         font.pixelSize: 20
@@ -163,20 +162,12 @@ Page {
                         FilterSlider {
                             id: showSlider
                             parent: showFilter.filterLayout
-
+                            stepSize: 0.1
                             from: 1
                             to: 10
                         }
-
-                        /*Text
-                        {
-                            text : showSlider.valueAt(showSlider.position)
-                            color: "yellow"
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: 15
-                            anchors.bottom: parent
-                        }*/
                     }
+
 
                     Filter {
                         id: perfFilter
@@ -185,7 +176,6 @@ Page {
                         FilterSlider {
                             id: perfSlider
                             parent: perfFilter.filterLayout
-
                             from: 0
                             to: 1
 
@@ -215,15 +205,6 @@ Page {
 
                             }
                         }
-
-                        /*Text
-                        {
-                            text : perfSlider.valueAt(perfSlider.position)
-                            color: "yellow"
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: 15
-                            anchors.bottom: parent
-                        }*/
                     }
 
                     Filter {
@@ -233,19 +214,10 @@ Page {
                         FilterSlider {
                             id: mutationSlider
                             parent: mutationFilter.filterLayout
-
+                            stepSize : 1
                             from: 0
-                            to: 30
+                            to: 50
                         }
-
-                        /*Text
-                        {
-                            text : mutationSlider.valueAt(mutationSlider.position)
-                            color: "yellow"
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: 15
-                            anchors.bottom: parent
-                        }*/
                     }
 
                     Filter {
@@ -255,19 +227,10 @@ Page {
                         FilterSlider {
                             id: crossingSlider
                             parent: crossingFilter.filterLayout
-
+                            stepSize : 1
                             from: 0
-                            to: 30
+                            to: 50
                         }
-
-                        /*Text
-                        {
-                            text : crossingSlider.valueAt(crossingSlider.position)
-                            color: "yellow"
-                            Layout.fillWidth: true
-                            Layout.preferredHeight: 15
-                            anchors.bottom: parent
-                        }*/
                     }
 
                 }

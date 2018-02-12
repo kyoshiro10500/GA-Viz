@@ -8,7 +8,6 @@ import QtQuick.Layouts 1.3
   */
 Slider {
     id: slider
-
     Layout.fillWidth: true
     Layout.preferredHeight: 50
 
@@ -21,4 +20,16 @@ Slider {
         color: slider.pressed ? "#f0f0f0" : "#f6f6f6"
         border.color: "#bdbebf"
     }
+
+    Label
+    {
+        width : parent.width
+        text : slider.valueAt(slider.position)
+        color: "yellow"
+        anchors.top : handle.bottom
+        anchors.left: slider.left
+        Layout.fillHeight: true
+        horizontalAlignment : Text.AlignHCenter
+    }
+
 }
