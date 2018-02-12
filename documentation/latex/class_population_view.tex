@@ -1,0 +1,130 @@
+\hypertarget{class_population_view}{}\section{Population\+View Class Reference}
+\label{class_population_view}\index{Population\+View@{Population\+View}}
+
+
+Q\+ML instance \+: population\+View Create the population view according to population\+Model.  
+
+
+
+
+Inheritance diagram for Population\+View\+:
+% FIG 0
+
+
+Collaboration diagram for Population\+View\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_population_view_ae2224014c990c0270eef8d3e58371a43}{calculate\+Cell\+Size} (row\+Index, column\+Index)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_population_view_ac51944cd0ca1aa11638354eb2bd97634}{cell\+Size}
+\item 
+int \hyperlink{class_population_view_a2ed2b9db4c8e806fc77c2af6fb9fa164}{vertical\+Spacing}
+\item 
+int \hyperlink{class_population_view_ab474777ee7d05874f0454ba4a2dbb715}{horizontal\+Spacing}
+\item 
+int \hyperlink{class_population_view_ac7ecf41c43f3636ca4c155beea54b580}{vertical\+Visible\+Item\+Count}
+\item 
+int \hyperlink{class_population_view_a4fa7612ac84c844411e316609b566181}{horizontal\+Visible\+Item\+Count}
+\item 
+double \hyperlink{class_population_view_a4153a853e704b553c0e8dcd7ca9dbd2e}{score\+Filter}
+\item 
+double \hyperlink{class_population_view_a3a173e593c94e3aa1b04b7e60c914c58}{mutation\+Filter}
+\item 
+double \hyperlink{class_population_view_a92ef25d9785e89ae586e0e574526faa9}{crossing\+Filter}
+\item 
+alias \hyperlink{class_population_view_a861743ff60207556fdb76b7cb8f9f8fe}{v\+Scroll\+Bar}
+\item 
+alias \hyperlink{class_population_view_a5a94c9d7afc5b9ae98fba25d0951f4c0}{h\+Scroll\+Bar}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Q\+ML instance \+: population\+View Create the population view according to population\+Model. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_population_view_ae2224014c990c0270eef8d3e58371a43}\label{class_population_view_ae2224014c990c0270eef8d3e58371a43}} 
+\index{Population\+View@{Population\+View}!calculate\+Cell\+Size@{calculate\+Cell\+Size}}
+\index{calculate\+Cell\+Size@{calculate\+Cell\+Size}!Population\+View@{Population\+View}}
+\subsubsection{\texorpdfstring{calculate\+Cell\+Size()}{calculateCellSize()}}
+{\footnotesize\ttfamily void Population\+View\+::calculate\+Cell\+Size (\begin{DoxyParamCaption}\item[{row\+Index}]{,  }\item[{column\+Index}]{ }\end{DoxyParamCaption})}
+
+h\+Scroll\+Bar \+: the horizontal scrollbar calculate the size depending of where the cluster is 
+\begin{DoxyParams}{Parameters}
+{\em row\+Index} & \+: the row of the cluster \\
+\hline
+{\em column\+Index} & \+: the column of the cluster \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_population_view_ac51944cd0ca1aa11638354eb2bd97634}\label{class_population_view_ac51944cd0ca1aa11638354eb2bd97634}} 
+\index{Population\+View@{Population\+View}!cell\+Size@{cell\+Size}}
+\index{cell\+Size@{cell\+Size}!Population\+View@{Population\+View}}
+\subsubsection{\texorpdfstring{cell\+Size}{cellSize}}
+{\footnotesize\ttfamily int Population\+View\+::cell\+Size}
+
+\mbox{\Hypertarget{class_population_view_a92ef25d9785e89ae586e0e574526faa9}\label{class_population_view_a92ef25d9785e89ae586e0e574526faa9}} 
+\index{Population\+View@{Population\+View}!crossing\+Filter@{crossing\+Filter}}
+\index{crossing\+Filter@{crossing\+Filter}!Population\+View@{Population\+View}}
+\subsubsection{\texorpdfstring{crossing\+Filter}{crossingFilter}}
+{\footnotesize\ttfamily double Population\+View\+::crossing\+Filter}
+
+mutation\+Filter \+: the value of the mutation filter \mbox{\Hypertarget{class_population_view_ab474777ee7d05874f0454ba4a2dbb715}\label{class_population_view_ab474777ee7d05874f0454ba4a2dbb715}} 
+\index{Population\+View@{Population\+View}!horizontal\+Spacing@{horizontal\+Spacing}}
+\index{horizontal\+Spacing@{horizontal\+Spacing}!Population\+View@{Population\+View}}
+\subsubsection{\texorpdfstring{horizontal\+Spacing}{horizontalSpacing}}
+{\footnotesize\ttfamily int Population\+View\+::horizontal\+Spacing}
+
+vertical\+Spacing \+: the space between generations \mbox{\Hypertarget{class_population_view_a4fa7612ac84c844411e316609b566181}\label{class_population_view_a4fa7612ac84c844411e316609b566181}} 
+\index{Population\+View@{Population\+View}!horizontal\+Visible\+Item\+Count@{horizontal\+Visible\+Item\+Count}}
+\index{horizontal\+Visible\+Item\+Count@{horizontal\+Visible\+Item\+Count}!Population\+View@{Population\+View}}
+\subsubsection{\texorpdfstring{horizontal\+Visible\+Item\+Count}{horizontalVisibleItemCount}}
+{\footnotesize\ttfamily int Population\+View\+::horizontal\+Visible\+Item\+Count}
+
+vertical\+Visible\+Item\+Count \+: the number of row visible on screen \mbox{\Hypertarget{class_population_view_a5a94c9d7afc5b9ae98fba25d0951f4c0}\label{class_population_view_a5a94c9d7afc5b9ae98fba25d0951f4c0}} 
+\index{Population\+View@{Population\+View}!h\+Scroll\+Bar@{h\+Scroll\+Bar}}
+\index{h\+Scroll\+Bar@{h\+Scroll\+Bar}!Population\+View@{Population\+View}}
+\subsubsection{\texorpdfstring{h\+Scroll\+Bar}{hScrollBar}}
+{\footnotesize\ttfamily alias Population\+View\+::h\+Scroll\+Bar}
+
+v\+Scroll\+Bar \+: the vertical scrollbar \mbox{\Hypertarget{class_population_view_a3a173e593c94e3aa1b04b7e60c914c58}\label{class_population_view_a3a173e593c94e3aa1b04b7e60c914c58}} 
+\index{Population\+View@{Population\+View}!mutation\+Filter@{mutation\+Filter}}
+\index{mutation\+Filter@{mutation\+Filter}!Population\+View@{Population\+View}}
+\subsubsection{\texorpdfstring{mutation\+Filter}{mutationFilter}}
+{\footnotesize\ttfamily double Population\+View\+::mutation\+Filter}
+
+score\+Filter \+: the value of the score filter \mbox{\Hypertarget{class_population_view_a4153a853e704b553c0e8dcd7ca9dbd2e}\label{class_population_view_a4153a853e704b553c0e8dcd7ca9dbd2e}} 
+\index{Population\+View@{Population\+View}!score\+Filter@{score\+Filter}}
+\index{score\+Filter@{score\+Filter}!Population\+View@{Population\+View}}
+\subsubsection{\texorpdfstring{score\+Filter}{scoreFilter}}
+{\footnotesize\ttfamily double Population\+View\+::score\+Filter}
+
+horizontal\+Visible\+Item\+Count \+: the number of column visible on screen \mbox{\Hypertarget{class_population_view_a2ed2b9db4c8e806fc77c2af6fb9fa164}\label{class_population_view_a2ed2b9db4c8e806fc77c2af6fb9fa164}} 
+\index{Population\+View@{Population\+View}!vertical\+Spacing@{vertical\+Spacing}}
+\index{vertical\+Spacing@{vertical\+Spacing}!Population\+View@{Population\+View}}
+\subsubsection{\texorpdfstring{vertical\+Spacing}{verticalSpacing}}
+{\footnotesize\ttfamily int Population\+View\+::vertical\+Spacing}
+
+cell\+Size \+: the size of individual in the view \mbox{\Hypertarget{class_population_view_ac7ecf41c43f3636ca4c155beea54b580}\label{class_population_view_ac7ecf41c43f3636ca4c155beea54b580}} 
+\index{Population\+View@{Population\+View}!vertical\+Visible\+Item\+Count@{vertical\+Visible\+Item\+Count}}
+\index{vertical\+Visible\+Item\+Count@{vertical\+Visible\+Item\+Count}!Population\+View@{Population\+View}}
+\subsubsection{\texorpdfstring{vertical\+Visible\+Item\+Count}{verticalVisibleItemCount}}
+{\footnotesize\ttfamily int Population\+View\+::vertical\+Visible\+Item\+Count}
+
+horizontal\+Spacing \+: the space between individuals inside a generation \mbox{\Hypertarget{class_population_view_a861743ff60207556fdb76b7cb8f9f8fe}\label{class_population_view_a861743ff60207556fdb76b7cb8f9f8fe}} 
+\index{Population\+View@{Population\+View}!v\+Scroll\+Bar@{v\+Scroll\+Bar}}
+\index{v\+Scroll\+Bar@{v\+Scroll\+Bar}!Population\+View@{Population\+View}}
+\subsubsection{\texorpdfstring{v\+Scroll\+Bar}{vScrollBar}}
+{\footnotesize\ttfamily alias Population\+View\+::v\+Scroll\+Bar}
+
+crossing\+Filter\+: the value of the crossing over filter 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/vicor/\+Bureau/\+G\+A-\/\+Viz-\/master/\hyperlink{_population_view_8qml}{Population\+View.\+qml}\end{DoxyCompactItemize}

@@ -3,7 +3,19 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node6 [label="QObject",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
-  Node6 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node0 [label="GAViz",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_g_a_viz.html",tooltip="GAViz class : main class of the application. Holds the models which are used. "];
+  Node18 [label="Frame",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node18 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="ClusterView",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_cluster_view.html",tooltip="QML instance : ClusterView Create the cluster view according to clusterModel. "];
+  Node18 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="DrawerInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_drawer_info.html",tooltip="QML instance : DrawerInfo Basic information inside a drawer. "];
+  Node18 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="Filter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_filter.html",tooltip="QML instance : Filter Basic information of the filter. "];
+  Node18 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="GenerationView",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_generation_view.html",tooltip="QML instance : GenerationView Create the generation view according to generationModel. "];
+  Node18 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="IndividualView",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_individual_view.html",tooltip="QML instance : IndividualView Display all the information of a given individuam. "];
+  Node18 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="LoadingScreen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_loading_screen.html",tooltip="QML instance :LoadingScreen Create random simili individual on the main page. "];
+  Node18 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="PopulationView",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_population_view.html",tooltip="QML instance : populationView Create the population view according to populationModel. "];
 }

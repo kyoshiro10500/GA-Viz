@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['qcleanupresources_5fqml',['qCleanupResources_qml',['../qrc__qml_8cpp.html#a83e03aa6ea6d409abf7c8ccfc5746ef0',1,'qrc_qml.cpp']]],
-  ['qinitresources_5fqml',['qInitResources_qml',['../qrc__qml_8cpp.html#a68995df47257e443e5ab606848a493fc',1,'qrc_qml.cpp']]],
-  ['qregisterresourcedata',['qRegisterResourceData',['../qrc__qml_8cpp.html#a2ce5a6cde5b318dc75442940471e05f7',1,'qrc_qml.cpp']]],
-  ['qunregisterresourcedata',['qUnregisterResourceData',['../qrc__qml_8cpp.html#a54b96c9f44d004fc0ea13bb581f97a71',1,'qrc_qml.cpp']]]
+  ['resetgenerationview',['resetGenerationView',['../class_generation_view.html#a3d76cb7eb28d72ae202474c0a991ae36',1,'GenerationView']]],
+  ['rowcount',['rowCount',['../class_cluster_table_model.html#a8df36437da5db2af6767a3df3154ceb4',1,'ClusterTableModel::rowCount()'],['../class_generation_table_model.html#a7926bafcc1f8aee9c86d6f30011e7299',1,'GenerationTableModel::rowCount()'],['../class_population_table_model.html#adfbc59704ecc571dd6c79173c075a2f2',1,'PopulationTableModel::rowCount()']]]
 ];

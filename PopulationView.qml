@@ -40,7 +40,7 @@ Frame {
         id: populationListView
         model: populationModel.rowCount() //The number of row inside the model
         orientation: ListView.Vertical
-        contentWidth: populationModel.columnCount() * (cellSize + horizontalSpacing) //The width of the content of the listview
+        contentWidth: 100 * (cellSize + horizontalSpacing) //The width of the content of the listview
         flickableDirection: Flickable.HorizontalAndVerticalFlick
         ScrollBar.vertical: vScrollBar
         ScrollBar.horizontal: hScrollBar
@@ -51,6 +51,7 @@ Frame {
         //The second listview containing the individuals of a generation
         delegate: ListView {
             id: rowDelegate
+            interactive: false ;
             model:  populationModel.columnCount()
             orientation: ListView.Horizontal
             width:  populationView.visible && (index >= (vScrollBar.position)*populationModel.rowCount() - 1 && index <= (vScrollBar.position)*populationModel.rowCount() +verticalVisibleItemCount+ 1) ? parent.width : 0 //render only visible item

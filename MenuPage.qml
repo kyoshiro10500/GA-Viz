@@ -4,6 +4,10 @@ import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
 import QtQuick.Dialogs 1.0
 
+/**
+  * \brief QML instance : MenuPage
+  * The menu of the application
+  */
 Page {
     background: Rectangle {
         color: "black"
@@ -12,6 +16,7 @@ Page {
 
     FontLoader { id: titleFont; source: "/Mont-HeavyDEMO.otf" }
 
+    //We create the two button and call the loader behing and print ga viz to screen
     ColumnLayout {
         anchors.fill: parent
 
@@ -55,6 +60,7 @@ Page {
         Item { Layout.preferredHeight: 30 }
     }
 
+    //The fileDialog to select the file which will be used
     FileDialog {
         id: fileDialog
         title: "Please choose a file"
