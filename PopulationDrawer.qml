@@ -3,14 +3,18 @@ import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
 
+/**
+  * \brief QML instance : populationDrawer
+  * The drawer corresponding to the populationView
+  */
 Drawer {
     id: populationInfoDrawer
 
-    property double globalPerformance: 0
-    property int nbIndividuals: 0
-    property int nbMutations: 0
-    property int nbCrossovers: 0
-    property int nbClusters: 0
+    property double globalPerformance: 0 /** globalPerformance : the global performance of the population */
+    property int nbIndividuals: 0 /** nbIndividuals : the number of individuals inside the populaton */
+    property int nbMutations: 0 /** nbMutations : the number of mutation inside the population */
+    property int nbCrossovers: 0 /** nbCrossovers : the number of crossing over inside the population */
+    property int nbClusters: 0 /** nbClusters : the number of clusters inside the population */
 
     edge: Qt.RightEdge
     width: 400
@@ -33,6 +37,7 @@ Drawer {
     }
 
 
+    //Display all the information in the drawer
     ColumnLayout {
         anchors.fill: parent
 

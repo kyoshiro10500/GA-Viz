@@ -3,16 +3,20 @@ import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
 
+/**
+  * \brief QML instance : individualDrawer
+  * Create the drawer for the individualView
+  */
 Drawer {
     id: individualDrawer
 
-    property int currentGeneration: 0
-    property int currentIndividual: 0
-    property int lifetime: 0
-    property double performance: 0
-    property int nbMutations: 0
-    property int nbCrossovers: 0
-    property int cluster: 0
+    property int currentGeneration: 0 /** currentGeneration : the current generation of the selected individual*/
+    property int currentIndividual: 0 /** currentIndividual : the current individual inside the generation*/
+    property int lifetime: 0 /** lifetime : the lifetime of the individual. TODO implement lifetime*/
+    property double performance: 0 /** performance : the global performance of the individual */
+    property int nbMutations: 0 /** nbMutations : the number of mutations of the individuam */
+    property int nbCrossovers: 0 /** nbCrossovers : the number of crossing over of the individual */
+    property int cluster: 0 /** cluster : the cluster in which the individual is*/
 
     edge: Qt.RightEdge
     width: 400
@@ -21,6 +25,7 @@ Drawer {
     interactive: true
     modal: false
 
+    //Draw the individual like in any other view
     Rectangle{
         anchors.centerIn: parent
         anchors.verticalCenterOffset: 400
@@ -100,6 +105,7 @@ Drawer {
         }
     }
 
+    //We print all the details of the individual
     Label {
         anchors.top: parent.top
         anchors.left: parent.left
