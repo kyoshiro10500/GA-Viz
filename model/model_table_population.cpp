@@ -117,11 +117,11 @@ int PopulationTableModel::getParent2(int gen, int ind) const
     return (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getParent2() ;
 }
 
-QColor PopulationTableModel::getColor(int gen, int ind, double score) const
+QColor PopulationTableModel::getColor(int gen, int ind, double score, double numberMutations, double numberCrossover) const
 {
     if((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore() >= score &&
-       ((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getMutation() == mutationFilter || !mutationFilter )&&
-       ((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getCrossing() == crossingoverFilter || !crossingoverFilter))
+            ((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getNumberMutation() >= numberMutations)&&
+            ((*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getNumberCrossover() >= numberCrossover))
     {
         return QColor(0,(*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore()*255,(*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore()*255) ;
     }

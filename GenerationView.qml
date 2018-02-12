@@ -16,6 +16,8 @@ Frame {
     property int horizontalVisibleItemCount : Math.ceil(width / (cellSize + horizontalSpacing)) - 1
 
     property double scoreFilter: perfSlider.valueAt(perfSlider.position)
+    property double mutationFilter: mutationSlider.valueAt(mutationSlider.position);
+    property double crossingFilter: crossingSlider.valueAt(crossingSlider.position);
     property int index_gen: -1
 
     property alias vScrollBar: vScrollBar
@@ -78,7 +80,7 @@ Frame {
                     height: width
                     radius: 0.5 * width
                     anchors.centerIn: parent
-                    color: generationModel.getColor(rowDelegate.rowIndex, columnDelegate.columnIndex, index_gen, scoreFilter)
+                    color: generationModel.getColor(rowDelegate.rowIndex, columnDelegate.columnIndex, index_gen, scoreFilter, mutationFilter, crossingFilter)
 
                     MouseArea {
                         anchors.fill: parent

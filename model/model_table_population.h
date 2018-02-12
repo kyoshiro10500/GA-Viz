@@ -71,7 +71,7 @@ class PopulationTableModel : public QAbstractTableModel
         Q_INVOKABLE float getScoreFilter() const;
 
         //! Get the value of the color of the individual*/
-        Q_INVOKABLE QColor getColor(int gen, int ind, double score) const ;
+        Q_INVOKABLE QColor getColor(int gen, int ind, double score,double numberMutations, double numberCrossover) const;
 
         //! Get the value of the number of individuals per cluster*/
         Q_INVOKABLE int get_number_individuals() const;

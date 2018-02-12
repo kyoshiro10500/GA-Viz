@@ -50,7 +50,7 @@ class GenerationTableModel : public QAbstractTableModel
         Q_INVOKABLE void setGeneration(int value) ;
 
         //! Get the color of the individual*/
-        Q_INVOKABLE QColor getColor(int gen, int ind, int index_gen, double score) const;
+        Q_INVOKABLE QColor getColor(int gen, int ind, int index_gen, double score, double numberMutations, double numberCrossover) const;
 
         //! Get the score of the individual*/
         Q_INVOKABLE double getScore(int gen, int ind) const;

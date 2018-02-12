@@ -37,6 +37,19 @@ Page {
             }
 
             ToolBarButton {
+                id: clusterButton
+                buttonText: "Cluster"
+                onClicked:
+                {
+                    populationView.visible = false ;
+                    generationView.visible = false ;
+                    clusterView.visible = true ;
+                    individualView.visible = false;
+                    filters.visible = true;
+                }
+            }
+
+            ToolBarButton {
                 id: popButton
                 buttonText: "Population"
                 selected: true
@@ -60,19 +73,6 @@ Page {
                     else {
                         generationView.resetGenerationView()
                     }
-                }
-            }
-
-            ToolBarButton {
-                id: clusterButton
-                buttonText: "Cluster"
-                onClicked:
-                {
-                    populationView.visible = false ;
-                    generationView.visible = false ;
-                    clusterView.visible = true ;
-                    individualView.visible = false;
-                    filters.visible = true;
                 }
             }
 
@@ -206,8 +206,31 @@ Page {
                     }
 
                     Filter {
-                        filterName: "Lifetime"
+                        id: mutationFilter
+                        filterName: "Mutations"
+
+                        FilterSlider {
+                            id: mutationSlider
+                            parent: mutationFilter.filterLayout
+
+                            from: 0
+                            to: 30
+                        }
                     }
+
+                    Filter {
+                        id: crossingFilter
+                        filterName: "Crossing-overs"
+
+                        FilterSlider {
+                            id: crossingSlider
+                            parent: crossingFilter.filterLayout
+
+                            from: 0
+                            to: 30
+                        }
+                    }
+
                 }
             }
 

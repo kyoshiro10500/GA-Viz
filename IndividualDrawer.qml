@@ -138,7 +138,7 @@ Drawer {
         anchors.topMargin: 120
         anchors.left: parent.left
         anchors.leftMargin: 50
-        color: populationModel.getColor(currentGeneration, currentIndividual, 0)
+        color: populationModel.getColor(currentGeneration, currentIndividual, 0,0,0)
 
         property bool isNew: populationModel.getNew(currentGeneration, currentIndividual)
         property bool isMutated: populationModel.getMutation(currentGeneration, currentIndividual)
