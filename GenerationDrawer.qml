@@ -7,7 +7,7 @@ Drawer {
     id: generationDrawer
 
     property int currentGeneration: 0
-    property int globalPerformance: 0
+    property double globalPerformance: 0
     property int nbIndividuals: 0
     property int nbMutations: 0
     property int nbCrossovers: 0

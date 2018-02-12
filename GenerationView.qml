@@ -297,11 +297,11 @@ Frame {
         onClicked: {
             if (mouse.button == Qt.RightButton) {
                 generationDrawer.currentGeneration = index_gen
-                generationDrawer.globalPerformance = 0
+                generationDrawer.globalPerformance = generationModel.getMeanScore(index_gen) ;
                 generationDrawer.nbIndividuals = populationModel.columnCount()
-                generationDrawer.nbMutations = 0
-                generationDrawer.nbCrossovers = 0
-                generationDrawer.nbClusters = 0
+                generationDrawer.nbMutations = generationModel.getGenNumberMutations(index_gen) ;
+                generationDrawer.nbCrossovers = generationModel.getGenNumberCrossover(index_gen) ;
+                generationDrawer.nbClusters = populationModel.get_number_cluster()
                 generationDrawer.open()
             }
         }

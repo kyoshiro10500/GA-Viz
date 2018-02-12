@@ -12,6 +12,7 @@ class Generation_clustered
 {
     private :
         std::vector<Cluster> _cluster; /*! A vector representing all clusters inside the generation*/
+
     public :
         //Constructor
         //! Default constructor of a generation. Set the number of individual and number_cluster to -1*/

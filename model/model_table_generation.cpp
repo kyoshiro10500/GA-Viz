@@ -162,6 +162,36 @@ double GenerationTableModel::getScore(int gen, int ind) const
     return  (*mElements)[gen][ind/mElements->get_number_individuals()][ind%mElements->get_number_individuals()].getScore();
 }
 
+double GenerationTableModel::getMeanScore(int gen)
+{
+    double meanScore = 0.0 ;
+    for(int i= 0; i<columnCount();i++)
+    {
+        meanScore += (*mElements)[gen][i/mElements->get_number_individuals()][i%mElements->get_number_individuals()].getScore();
+    }
+    return ((double) meanScore/(double)columnCount()) ;
+}
+
+int GenerationTableModel::getGenNumberMutations(int gen)
+{
+    int mutations = 0 ;
+    for(int i= 0; i<columnCount();i++)
+    {
+        mutations += (*mElements)[gen][i/mElements->get_number_individuals()][i%mElements->get_number_individuals()].getNumberMutation() ;
+    }
+    return mutations ;
+}
+
+int GenerationTableModel::getGenNumberCrossover(int gen)
+{
+    int crossover = 0 ;
+    for(int i= 0; i<columnCount();i++)
+    {
+        crossover += (*mElements)[gen][i/mElements->get_number_individuals()][i%mElements->get_number_individuals()].getNumberCrossover() ;
+    }
+    return crossover ;
+}
+
 QList<int> GenerationTableModel::getRang(int gen, int ind) const
 {
     int rangBus = 1 ;

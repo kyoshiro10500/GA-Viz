@@ -88,6 +88,16 @@ class GenerationTableModel : public QAbstractTableModel
         //! Get the focused generation*/
         Q_INVOKABLE int getGeneration() const ;
 
+        //! Get the mean score of the generation*/
+        Q_INVOKABLE double getMeanScore(int gen) ;
+
+        //! Get the nb of mutations of the generation*/
+        Q_INVOKABLE int getGenNumberMutations(int gen) ;
+
+        //! Get the nb of crossing over of the generation*/
+        Q_INVOKABLE int getGenNumberCrossover(int gen) ;
+
+
         //! Get the list of the rank of an individual {MeanScoreRank, BusesRank, DistanceRank} */
         Q_INVOKABLE QList<int> getRang(int gen, int ind) const ;
     private:
