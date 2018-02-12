@@ -10,6 +10,8 @@ ToolButton {
     Layout.preferredWidth: 150
     Layout.fillHeight: true
 
+    z: 50
+
     background: Rectangle {
         id: backgroundRect
         anchors.fill: parent

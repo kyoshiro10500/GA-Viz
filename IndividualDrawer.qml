@@ -21,49 +21,10 @@ Drawer {
     interactive: true
     modal: false
 
-    Rectangle{
-        anchors.centerIn: parent
-        anchors.verticalCenterOffset: 400
-        width: 100
-        height: 90
-        z:100
-        color: "white"
-
-        Label {
-            anchors.centerIn: parent
-            id:textNumberCluster
-            text: cluster
-            color: "black"
-            font.pixelSize: 20
-        }
-
-
-        Canvas{
-            id: clusterDrawer
-            width: parent.width
-            height: parent.height
-            onPaint: {
-                var ctx = getContext("2d");
-                ctx.fillStyle = "black";
-                ctx.beginPath();
-                ctx.moveTo(0, 0);
-                ctx.lineTo(width/4, 0);
-                ctx.lineTo(0, height/2);
-
-                ctx.moveTo(width, 0);
-                ctx.lineTo(3*width/4, 0);
-                ctx.lineTo(width, height/2);
-
-                ctx.moveTo(width, height);
-                ctx.lineTo(3*width/4, height);
-                ctx.lineTo(width, height/2);
-
-                ctx.moveTo(0, height);
-                ctx.lineTo(width/4, height);
-                ctx.lineTo(0, height/2);
-                ctx.fill();
-            }
-        }
+    background: Rectangle {
+        anchors.fill: parent
+        color: "black"
+        border.color: "black"
     }
 
     Rectangle {
@@ -73,140 +34,194 @@ Drawer {
         color: "grey"
     }
 
-    background: Rectangle {
+    Flickable {
         anchors.fill: parent
-        color: "black"
-        border.color: "black"
-    }
+        contentHeight: infos.implicitHeight
 
-    Frame {
-        anchors.left: parent.left
-        anchors.leftMargin: 20
-        anchors.top: parent.top
-        anchors.topMargin: 30
-        padding: 8
-        z: 100
+        clip:true
 
-        background: Rectangle {
+        ColumnLayout {
+            id: infos
             anchors.fill: parent
-            color: "black"
-            border.color: "white"
-        }
 
-        Label {
-            text: "DETAILS"
-            color: "white"
-            font.pixelSize: 30
+            spacing: 15
+
+            Frame {
+                Layout.topMargin: 15
+                Layout.leftMargin: 20
+
+                padding: 8
+                z: 5
+
+                background: Rectangle {
+                    anchors.fill: parent
+                    color: "black"
+                    border.color: "white"
+                }
+
+                Label {
+                    text: "DETAILS"
+                    color: "white"
+                    font.pixelSize: 30
+                }
+            }
+
+            RowLayout {
+                Layout.fillWidth: true
+                Layout.minimumHeight: 100
+
+                Layout.topMargin: 10
+                Layout.bottomMargin: 10
+
+                Rectangle {
+                    id: cell
+
+                    width: 150
+                    visible : true
+                    height: width
+                    radius: 0.5 * width
+                    anchors.top: parent.top
+                    anchors.left: parent.left
+                    anchors.leftMargin: 50
+                    color: populationModel.getColor(currentGeneration, currentIndividual, 0,0,0)
+
+                    property bool isNew: populationModel.getNew(currentGeneration, currentIndividual)
+                    property bool isMutated: populationModel.getMutation(currentGeneration, currentIndividual)
+                    property bool isCrossing: populationModel.getCrossing(currentGeneration, currentIndividual)
+
+                    Rectangle {
+                        id: newRectangle
+                        visible: cell.isNew || currentGeneration == 0
+                        anchors.centerIn: parent
+                        width: parent.width * 0.2
+                        height: width
+                        radius: width
+                        color: "black"
+                    }
+
+                    Rectangle {
+                        id: mutationRectangle
+                        visible: cell.isMutated
+                        x: width/2 * (1/Math.sqrt(2) + 0.5)
+                        y: -x
+                        width: parent.width
+                        height: width
+                        rotation: 45
+                        color: "black"
+                    }
+
+                    Rectangle {
+                        id: crossingOverRectangle
+                        visible: cell.isCrossing
+                        x: width/2 * (1/Math.sqrt(2) + 0.5)
+                        y: x
+                        width: parent.width
+                        height: width
+                        rotation: 45
+                        color: "black"
+                    }
+
+                }
+
+                Label {
+                    anchors.top: parent.top
+                    anchors.left: parent.left
+                    anchors.leftMargin: 250
+                    anchors.topMargin: 30
+                    z:2
+
+                    text: "G" + "\nI"
+                    color: "yellow"
+                    font.pixelSize: 30
+                    font.underline: true
+                    horizontalAlignment: Text.AlignHCenter
+                }
+
+                Label {
+                    anchors.top: parent.top
+                    anchors.left: parent.left
+                    anchors.leftMargin: 300
+                    anchors.topMargin: 30
+                    z:2
+
+                    text: currentGeneration + "\n" + currentIndividual
+                    color: "white"
+                    font.pixelSize: 30
+                    horizontalAlignment: Text.AlignHCenter
+                }
+            }
+
+            DrawerInfo {
+                infoTitle: "Lifetime"
+                value: lifetime
+            }
+
+            DrawerInfo {
+                infoTitle: "Performance"
+                value: performance
+            }
+
+            DrawerInfo {
+                infoTitle: "Mutations"
+                value: nbMutations
+            }
+
+            DrawerInfo {
+                infoTitle: "Crossovers"
+                value: nbCrossovers
+            }
+
+            DrawerInfo {
+                infoTitle: "Cluster"
+
+                Rectangle{
+                    anchors.centerIn: parent
+                    anchors.topMargin: 50
+                    width: 100
+                    height: 90
+                    z:2
+                    color: "white"
+
+                    Label {
+                        anchors.centerIn: parent
+                        id:textNumberCluster
+                        text: cluster
+                        color: "black"
+                        font.pixelSize: 20
+                    }
+
+
+                    Canvas{
+                        id: clusterDrawer
+                        width: parent.width
+                        height: parent.height
+                        onPaint: {
+                            var ctx = getContext("2d");
+                            ctx.fillStyle = "black";
+                            ctx.beginPath();
+                            ctx.moveTo(0, 0);
+                            ctx.lineTo(width/4, 0);
+                            ctx.lineTo(0, height/2);
+
+                            ctx.moveTo(width, 0);
+                            ctx.lineTo(3*width/4, 0);
+                            ctx.lineTo(width, height/2);
+
+                            ctx.moveTo(width, height);
+                            ctx.lineTo(3*width/4, height);
+                            ctx.lineTo(width, height/2);
+
+                            ctx.moveTo(0, height);
+                            ctx.lineTo(width/4, height);
+                            ctx.lineTo(0, height/2);
+                            ctx.fill();
+                        }
+                    }
+                }
+            }
+
+            Item { Layout.fillHeight: true }
         }
     }
 
-    Label {
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.leftMargin: 250
-        anchors.topMargin: 150
-        z:100
-
-        text: "G" + "\nI"
-        color: "yellow"
-        font.pixelSize: 30
-        font.underline: true
-        horizontalAlignment: Text.AlignHCenter
-    }
-
-    Label {
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.leftMargin: 300
-        anchors.topMargin: 150
-        z:100
-
-        text: currentGeneration + "\n" + currentIndividual
-        color: "white"
-        font.pixelSize: 30
-        horizontalAlignment: Text.AlignHCenter
-    }
-
-    Rectangle {
-        id: cell
-
-        width: 150
-        visible : true
-        height: width
-        radius: 0.5 * width
-        anchors.top: parent.top
-        anchors.topMargin: 120
-        anchors.left: parent.left
-        anchors.leftMargin: 50
-        color: populationModel.getColor(currentGeneration, currentIndividual, 0,0,0)
-
-        property bool isNew: populationModel.getNew(currentGeneration, currentIndividual)
-        property bool isMutated: populationModel.getMutation(currentGeneration, currentIndividual)
-        property bool isCrossing: populationModel.getCrossing(currentGeneration, currentIndividual)
-
-        Rectangle {
-            id: newRectangle
-            visible: cell.isNew || currentGeneration == 0
-            anchors.centerIn: parent
-            width: parent.width * 0.2
-            height: width
-            radius: width
-            color: "black"
-        }
-
-        Rectangle {
-            id: mutationRectangle
-            visible: cell.isMutated
-            x: width/2 * (1/Math.sqrt(2) + 0.5)
-            y: -x
-            width: parent.width
-            height: width
-            rotation: 45
-            color: "black"
-        }
-
-        Rectangle {
-            id: crossingOverRectangle
-            visible: cell.isCrossing
-            x: width/2 * (1/Math.sqrt(2) + 0.5)
-            y: x
-            width: parent.width
-            height: width
-            rotation: 45
-            color: "black"
-        }
-
-    }
-
-
-    ColumnLayout {
-        anchors.fill: parent
-        anchors.topMargin: 300
-
-        DrawerInfo {
-            infoTitle: "Lifetime"
-            value: lifetime
-        }
-
-        DrawerInfo {
-            infoTitle: "Performance"
-            value: performance
-        }
-
-        DrawerInfo {
-            infoTitle: "Mutations"
-            value: nbMutations
-        }
-
-        DrawerInfo {
-            infoTitle: "Crossovers"
-            value: nbCrossovers
-        }
-
-        DrawerInfo {
-            infoTitle: "Cluster"
-        }
-
-        Item { Layout.fillHeight: true }
-    }
 }

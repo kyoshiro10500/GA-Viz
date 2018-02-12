@@ -9,7 +9,6 @@ Frame {
     Layout.fillWidth: true
     Layout.minimumHeight: 100
     Layout.leftMargin: 20
-    Layout.topMargin: 15
 
     padding: 2
 
