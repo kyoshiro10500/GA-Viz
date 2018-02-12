@@ -14,9 +14,13 @@ The project runs with Qt 5.8+ and needs at least Glibc 2.17, Zlib 1.2.3.4 and gc
 
 Go to the app directory and run the make command or run the bundled appimage.
 
+### Exemples
+
+There are two exemples : GA_Out_Clustered and xaa (inside xaa.zip). The first is a rather small file and the second is a 100Mo file to test.
+
 ## Deployment
 
-To deploy the application, the easiest way is to directly use linuxdeployqt ( https://github.com/probonopd/linuxdeployqt ) to create an appimage which can run on all up-to-date unix systems.
+To deploy the application, the easiest way is to directly use linuxdeployqt ( https://github.com/probonopd/linuxdeployqt ) to create an appimage which can run on all up-to-date unix systems. You can also download appimage from the release section
 
 ## Built With
 
