@@ -42,6 +42,7 @@ Frame {
         orientation: ListView.Vertical
         contentWidth: populationModel.columnCount() * (cellSize + horizontalSpacing) //The width of the content of the listview
         flickableDirection: Flickable.HorizontalAndVerticalFlick
+        interactive: false
         ScrollBar.vertical: vScrollBar
         ScrollBar.horizontal: hScrollBar
         clip: true

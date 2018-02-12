@@ -27,6 +27,8 @@ Frame {
     property alias vScrollBar: vScrollBar /** vscrollBar : the vertical ScrollBar*/
     property alias hScrollBar: hScrollBar /** hScrollBar : the horizontal ScrollBar*/
 
+    property alias generationListView: generationListView
+
     property double zoomScale: 0.8 * 0.8 * parent.height / cellSize /** zoomScale :  the value of the zoom */
     property double zoomX: 0 /** zoomX : the coordinate where the zoom will happen*/
     property double zoomY: 0 /** zoomX : the coordinate where the zoom will happen*/
@@ -54,6 +56,7 @@ Frame {
         orientation: ListView.Vertical
         contentWidth: generationModel.columnCount() * (cellSize + horizontalSpacing) // the size of the content of the listview
         flickableDirection: Flickable.HorizontalAndVerticalFlick
+        interactive: false
         ScrollBar.vertical: vScrollBar
         ScrollBar.horizontal: hScrollBar
         clip: true
