@@ -4,6 +4,11 @@ import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
 import QtQuick.Dialogs 1.0
 
+/**
+  * \brief QML instance : main
+  * The main view of the app.
+  * Begin on the selection menu then go to the visualization
+  */
 ApplicationWindow {
     id: window
     visible: true
@@ -17,7 +22,7 @@ ApplicationWindow {
         id: stackView
         anchors.fill: parent
 
-        initialItem: menuPage
+        initialItem: menuPage //We begin on the menu
 
         Component {
             id: menuPage

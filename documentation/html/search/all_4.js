@@ -1,26 +1,7 @@
 var searchData=
 [
-  ['filtercrossingoverlayout',['filterCrossingoverLayout',['../class_ui___g_a___viz.html#a2571e4ae714849236659982bdcc92c25',1,'Ui_GA_Viz']]],
-  ['filtergenerationtext',['filterGenerationText',['../class_ui___g_a___viz.html#ad1f6bc732cbba3cd2ec77116ebfc3c7c',1,'Ui_GA_Viz']]],
-  ['filtergenerationtextcrossingover',['filterGenerationTextCrossingover',['../class_ui___g_a___viz.html#a61e93020cd32ea87e66861ac58c413e5',1,'Ui_GA_Viz']]],
-  ['filtergenerationtextmutation',['filterGenerationTextMutation',['../class_ui___g_a___viz.html#adc4f9dc71d114d03336891f037a0c87c',1,'Ui_GA_Viz']]],
-  ['filtergenerationtextperformance',['filterGenerationTextPerformance',['../class_ui___g_a___viz.html#a9fd6975f3ab4333a09970a5fb8d72533',1,'Ui_GA_Viz']]],
-  ['filtergenerationtextshow',['filterGenerationTextShow',['../class_ui___g_a___viz.html#a25d2b975d22df9cc8b2ae5601a628837',1,'Ui_GA_Viz']]],
-  ['filtermutationlayout',['filterMutationLayout',['../class_ui___g_a___viz.html#a02c115236ac8f7a137c0b1235334c8b2',1,'Ui_GA_Viz']]],
-  ['filterperformancegenerationlayout',['filterPerformanceGenerationLayout',['../class_ui___g_a___viz.html#aa6c8f6f98133f1e12fee1b089dd5e97e',1,'Ui_GA_Viz']]],
-  ['filterpopulationcrossoverlayout',['filterPopulationCrossoverLayout',['../class_ui___g_a___viz.html#a13af0f5ecdd13742fe0d2f2b96656cba',1,'Ui_GA_Viz']]],
-  ['filterpopulationgenealogylayout',['filterPopulationGenealogyLayout',['../class_ui___g_a___viz.html#a77021ea7e8e0bf72a422257e829b50ba',1,'Ui_GA_Viz']]],
-  ['filterpopulationlayout',['filterPopulationLayout',['../class_ui___g_a___viz.html#af62ea06a1c8635c28e505cc63da1807f',1,'Ui_GA_Viz']]],
-  ['filterpopulationlifetimelayout',['filterPopulationLifetimeLayout',['../class_ui___g_a___viz.html#aed15c85eb64b50f519c0fb8bbd66399a',1,'Ui_GA_Viz']]],
-  ['filterpopulationmutationlayout',['filterPopulationMutationLayout',['../class_ui___g_a___viz.html#a42bcab75208e2e079390971736698322',1,'Ui_GA_Viz']]],
-  ['filterpopulationperformancelayout',['filterPopulationPerformanceLayout',['../class_ui___g_a___viz.html#ab8bc350694df007b6c32c45a3fcdc14d',1,'Ui_GA_Viz']]],
-  ['filterpopulationshowlayout',['filterPopulationShowLayout',['../class_ui___g_a___viz.html#ac9fbceffe5a00ca6bf127a2d888c4b5f',1,'Ui_GA_Viz']]],
-  ['filterpopulationtext',['filterPopulationText',['../class_ui___g_a___viz.html#ad0f15befab8ff451b22ef4d71463f91b',1,'Ui_GA_Viz']]],
-  ['filterpopulationtextcrosover',['filterPopulationTextCrosover',['../class_ui___g_a___viz.html#a25842c389ceb4c3d496533031fbf2f15',1,'Ui_GA_Viz']]],
-  ['filterpopulationtextgenealogy',['filterPopulationTextGenealogy',['../class_ui___g_a___viz.html#a4d18e2b03705b7ad9815959c0e70377c',1,'Ui_GA_Viz']]],
-  ['filterpopulationtextlifetime',['filterPopulationTextLifetime',['../class_ui___g_a___viz.html#a22a5174ded613cfd54dd49205cebb541',1,'Ui_GA_Viz']]],
-  ['filterpopulationtextmutation',['filterPopulationTextMutation',['../class_ui___g_a___viz.html#aef6b033660a7b44af5054dd0de50c902',1,'Ui_GA_Viz']]],
-  ['filterpopulationtextperformance',['filterPopulationTextPerformance',['../class_ui___g_a___viz.html#a564b07a9e51fee9ef8959436509a9bc7',1,'Ui_GA_Viz']]],
-  ['filterpopulationtextshow',['filterPopulationTextShow',['../class_ui___g_a___viz.html#ab733e86e6e1f04629fb5d7cfd0143691',1,'Ui_GA_Viz']]],
-  ['filtershowgenerationlayout',['filterShowGenerationLayout',['../class_ui___g_a___viz.html#a1e024753d2cf95c92c55113cfa06606b',1,'Ui_GA_Viz']]]
+  ['data',['data',['../structqt__meta__stringdata___g_a_viz__t.html#a0e3f8170f5c1dc9372bf369ac979f0b8',1,'qt_meta_stringdata_GAViz_t::data()'],['../structqt__meta__stringdata___cluster_table_model__t.html#a4bade2c8325810db293b89ed900d4d16',1,'qt_meta_stringdata_ClusterTableModel_t::data()'],['../structqt__meta__stringdata___generation_table_model__t.html#a44fc059f1b474586f3ecabd7cda1234e',1,'qt_meta_stringdata_GenerationTableModel_t::data()'],['../structqt__meta__stringdata___population_table_model__t.html#a0c6318cb9094dcdfe267aa94d82b2e54',1,'qt_meta_stringdata_PopulationTableModel_t::data()'],['../class_cluster_table_model.html#aa0e82a26bc4abde92659e9972b043cfe',1,'ClusterTableModel::data()'],['../class_generation_table_model.html#a7f391a05766aa4c3f696e54b04045b2e',1,'GenerationTableModel::data()'],['../class_population_table_model.html#ac76f82c4f4db0d3af2bff37b0e5700b7',1,'PopulationTableModel::data()']]],
+  ['distancerank',['distanceRank',['../class_individual_view.html#ad4abf982f3f07a65007ea3b79dcb037a',1,'IndividualView']]],
+  ['drawerinfo',['DrawerInfo',['../class_drawer_info.html',1,'']]],
+  ['drawerinfo_2eqml',['DrawerInfo.qml',['../_drawer_info_8qml.html',1,'']]]
 ];

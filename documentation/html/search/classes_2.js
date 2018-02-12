@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['individu',['Individu',['../class_individu.html',1,'']]]
+  ['filter',['Filter',['../class_filter.html',1,'']]],
+  ['filterslider',['FilterSlider',['../class_filter_slider.html',1,'']]]
 ];

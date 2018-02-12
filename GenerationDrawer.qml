@@ -3,15 +3,19 @@ import QtQuick.Controls 2.1
 import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
 
+/**
+  * \brief QML instance : GenerationDrawer
+  * The drawer corresponding to the generation view
+  */
 Drawer {
-    id: generationDrawer
+    id: generationDrawer /** generationDrawer : the id of the drawer in the hierarchy */
 
-    property int currentGeneration: 0
-    property double globalPerformance: 0
-    property int nbIndividuals: 0
-    property int nbMutations: 0
-    property int nbCrossovers: 0
-    property int nbClusters: 0
+    property int currentGeneration: 0 /** currentGeneration : the current generation selected in the view */
+    property double globalPerformance: 0 /** globalPerformance : the mean score of the generation */
+    property int nbIndividuals: 0 /** nbIndividuals : the number of individuals inside the generation */
+    property int nbMutations: 0 /** nbMutations : the number of mutations inside the generation */
+    property int nbCrossovers: 0 /** nbCrossovers : the number of crossing over inside the generation */
+    property int nbClusters: 0 /** nbClusters : the number of clusters inside the generation*/
 
     edge: Qt.RightEdge
     width: 400
