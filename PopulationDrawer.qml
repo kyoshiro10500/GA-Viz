@@ -39,6 +39,7 @@ Drawer {
         Frame {
             Layout.leftMargin: 20
             Layout.topMargin: 30
+            Layout.bottomMargin: 20
             padding: 8
 
             background: Rectangle {

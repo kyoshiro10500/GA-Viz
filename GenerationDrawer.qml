@@ -40,6 +40,7 @@ Drawer {
         Frame {
             Layout.leftMargin: 20
             Layout.topMargin: 30
+
             padding: 8
 
             background: Rectangle {
@@ -59,6 +60,7 @@ Drawer {
             Layout.fillWidth: true
             Layout.leftMargin: 20
             Layout.topMargin: 30
+            Layout.bottomMargin: 20
 
             text: currentGeneration == -1 ? "NO GENERATION SELECTED" : "GENERATION " + currentGeneration
             color: "white"
