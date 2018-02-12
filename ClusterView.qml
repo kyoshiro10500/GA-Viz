@@ -157,6 +157,32 @@ Frame {
         }
     }
 
+    Label {
+        width: rowIndicator.width
+        anchors.bottom: rowIndicator.top
+        anchors.left: rowIndicator.left
+        anchors.bottomMargin: 10
+        text: "G"
+        font.pixelSize: Math.min(20 + showSlider.value, 30)
+        font.underline: true
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        color: "yellow"
+    }
+
+    Label {
+        height: columnIndicator.height
+        anchors.top: rowIndicator.bottom
+        anchors.right: rowIndicator.right
+        text: "I"
+        anchors.topMargin: 10
+        font.pixelSize: Math.min(20 + showSlider.value, 30)
+        font.underline: true
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        color: "yellow"
+    }
+
     ListView {
         id: rowIndicator
 
@@ -223,7 +249,6 @@ Frame {
 
     function calculateCellSize(rowIndex, columnIndex) {
         return Math.min(cellSize - (cellSize * (Math.abs(columnIndex - hScrollBar.position*populationModel.columnCount() - horizontalVisibleItemCount/2) - horizontalVisibleItemCount/2)), cellSize);
-        //return Math.min(cellSize - (cellSize * (Math.abs(rowIndex - vScrollIndicator.position*generationModel.rowCount() - verticalVisibleItemCount/2) - verticalVisibleItemCount/2)), cellSize);
     }
 }
 

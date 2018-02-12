@@ -59,8 +59,8 @@ Frame {
             model: generationModel.columnCount()
             orientation: ListView.Horizontal
 
-            width: (index >= (vScrollBar.position)*generationModel.rowCount() - 1 && index <= (vScrollBar.position)*generationModel.rowCount() +verticalVisibleItemCount+ 1) ? parent.width : 0
-            visible : (index >= (vScrollBar.position)*generationModel.rowCount() - 1 && index <= (vScrollBar.position)*generationModel.rowCount() +verticalVisibleItemCount+ 1)
+            width: generationView.visible && (index >= (vScrollBar.position)*generationModel.rowCount() - 1 && index <= (vScrollBar.position)*generationModel.rowCount() +verticalVisibleItemCount+ 1) ? parent.width : 0
+            visible : generationView.visible && (index >= (vScrollBar.position)*generationModel.rowCount() - 1 && index <= (vScrollBar.position)*generationModel.rowCount() +verticalVisibleItemCount+ 1)
             height: cellSize + verticalSpacing
 
             property int rowIndex: index
@@ -76,7 +76,7 @@ Frame {
                 Rectangle {
                     id: cell
 
-                    width: (index >= (hScrollBar.position)*generationModel.columnCount() - 1 && index <= (hScrollBar.position)*generationModel.columnCount() +horizontalVisibleItemCount+ 1) ? calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex) : 0
+                    width: generationView.visible && (index >= (hScrollBar.position)*generationModel.columnCount() - 1 && index <= (hScrollBar.position)*generationModel.columnCount() +horizontalVisibleItemCount+ 1) ? calculateCellSize(rowDelegate.rowIndex, columnDelegate.columnIndex) : 0
                     height: width
                     radius: 0.5 * width
                     anchors.centerIn: parent
@@ -242,6 +242,32 @@ Frame {
             if (generationView.visible)
                 populationView.hScrollBar.position = position
         }
+    }
+
+    Label {
+        width: rowIndicator.width
+        anchors.bottom: rowIndicator.top
+        anchors.left: rowIndicator.left
+        anchors.bottomMargin: 10
+        text: "G"
+        font.pixelSize: Math.min(20 + showSlider.value, 30)
+        font.underline: true
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        color: "yellow"
+    }
+
+    Label {
+        height: columnIndicator.height
+        anchors.top: rowIndicator.bottom
+        anchors.right: rowIndicator.right
+        text: "I"
+        anchors.topMargin: 10
+        font.pixelSize: Math.min(20 + showSlider.value, 30)
+        font.underline: true
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        color: "yellow"
     }
 
     ListView {
@@ -456,6 +482,5 @@ Frame {
 
     function calculateCellSize(rowIndex, columnIndex) {
         return Math.min(cellSize - (cellSize * (Math.abs(columnIndex - hScrollBar.position*generationModel.columnCount() - horizontalVisibleItemCount/2) - horizontalVisibleItemCount/2)), cellSize);
-        //return Math.min(cellSize - (cellSize * (Math.abs(rowIndex - vScrollIndicator.position*generationModel.rowCount() - verticalVisibleItemCount/2) - verticalVisibleItemCount/2)), cellSize);
     }
 }
