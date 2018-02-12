@@ -57,18 +57,11 @@ Page {
                 buttonText: "Population"
                 selected: true
                 onClicked: {
-                    if(generationView.visible)
-                    {
-                        populationView.vScrollBar.position = generationView.vScrollBar.position
-                        populationView.hScrollBar.position = generationView.hScrollBar.position
-                    }
-
                     populationView.visible = true ;
                     generationView.visible = false ;
                     clusterView.visible = false ;
                     individualView.visible = false;
                     filters.visible = true;
-
                 }
             }
 
@@ -81,13 +74,7 @@ Page {
                         generationView.individualToGenerationTransition()
                     }
                     else {
-                        if(populationView.visible)
-                        {
-                            generationView.vScrollBar.position = populationView.vScrollBar.position
-                            generationView.hScrollBar.position = populationView.hScrollBar.position
-                        }
                         generationView.resetGenerationView()
-
                     }
                 }
             }
