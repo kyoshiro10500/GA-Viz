@@ -146,7 +146,7 @@ Drawer {
 
         Rectangle {
             id: newRectangle
-            visible: cell.isNew
+            visible: cell.isNew || currentGeneration == 0
             anchors.centerIn: parent
             width: parent.width * 0.2
             height: width
