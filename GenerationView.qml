@@ -88,7 +88,7 @@ Frame {
                         onClicked: {
                             if (mouse.button == Qt.LeftButton)
                             {
-                                if(index_gen == rowDelegate.rowIndex)
+                                if((cell.color.r != 0 || cell.color.g != 0 || cell.color.b != 0) && index_gen == rowDelegate.rowIndex)
                                 {
                                     generationToIndividualTransition(columnDelegate)
                                     individualView.generationNumber = rowDelegate.rowIndex
