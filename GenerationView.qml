@@ -68,7 +68,7 @@ Frame {
             id: rowDelegate
             model: generationModel.columnCount() //Number of individuals per generation according to generationModel
             orientation: ListView.Horizontal
-
+            interactive: false
             width: parent.width //Only render what is on screen
             height: cellSize + verticalSpacing
 

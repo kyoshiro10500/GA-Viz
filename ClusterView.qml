@@ -54,7 +54,7 @@ Frame {
             width:  parent.width /** width : display elements that are on screen*/
             height : cellSize + verticalSpacing /** height : the height of the cell*/
             property int rowIndex: index /** rowIndex : the index of the row inside clusterModel */
-
+            interactive: false
             /** columnDelegate : Item representing the cluster */
             delegate: Item {
                 id: columnDelegate
