@@ -217,6 +217,7 @@ Page {
                             stepSize : 1
                             from: 0
                             to: 50
+                            digits: 0
                         }
                     }
 
@@ -230,6 +231,7 @@ Page {
                             stepSize : 1
                             from: 0
                             to: 50
+                            digits: 0
                         }
                     }
 

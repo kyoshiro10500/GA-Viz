@@ -11,6 +11,8 @@ Slider {
     Layout.fillWidth: true
     Layout.preferredHeight: 50
 
+    property int digits : 2
+
     handle: Rectangle {
         x: slider.leftPadding + slider.visualPosition * (slider.availableWidth - width)
         y: slider.topPadding + slider.availableHeight / 2 - height / 2
@@ -24,7 +26,7 @@ Slider {
     Label
     {
         width : parent.width
-        text : slider.valueAt(slider.position)
+        text : slider.valueAt(slider.position).toFixed(digits)
         color: "yellow"
         anchors.top : handle.bottom
         anchors.left: slider.left
