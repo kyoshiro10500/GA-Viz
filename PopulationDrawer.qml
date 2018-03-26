@@ -61,7 +61,7 @@ Drawer {
 
         DrawerInfo {
             infoTitle: "Global Performance"
-            value: globalPerformance
+            value: globalPerformance.toFixed(2)
         }
 
         DrawerInfo {

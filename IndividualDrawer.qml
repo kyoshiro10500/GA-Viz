@@ -163,7 +163,7 @@ Drawer {
 
                 DrawerInfo {
                     infoTitle: "Performance"
-                    value: performance
+                    value: performance.toFixed(2)
                 }
 
                 DrawerInfo {
